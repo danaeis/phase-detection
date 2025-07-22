@@ -9,7 +9,7 @@ from sklearn.model_selection import StratifiedGroupKFold
 from sklearn.metrics import classification_report
 from tqdm import tqdm
 
-
+data = 'vindr_ds'
 data_root = '/media/disk1/saeedeh_danaei/ncct_cect/vindr_ds/'
 
 organs = ["liver", "pancreas", "urinary_bladder", "gallbladder",
@@ -18,7 +18,8 @@ organs = ["liver", "pancreas", "urinary_bladder", "gallbladder",
           "pulmonary_vein", "brain", "colon", "small_bowel"]
 
 # Load metadata
-metadata_df = pd.read_csv(os.path.join(data_root, 'ct_hcc_metadata_v2.csv'))
+# metadata_df = pd.read_csv(os.path.join(data_root, 'ct_hcc_metadata_v2.csv'))
+metadata_df = pd.read_csv(os.path.join(data_root, 'vindr_nifti_metadata.csv'))
 # metadata_df['filepath'] = metadata_df.apply(
 #     lambda x: os.path.join(data_root, 'stats', x['ct_file_name']) + '_scan.pkl', axis=1)
 
@@ -27,9 +28,19 @@ metadata_df = pd.read_csv(os.path.join(data_root, 'ct_hcc_metadata_v2.csv'))
 sgkf = StratifiedGroupKFold(n_splits=5, random_state=42, shuffle=True)
 
 # Convert the split generator to a list and access the desired split directly
-splits = sgkf.split(X=metadata_df['ct_file_name'],
+patient = 'patient'
+series = 'series'
+
+if data == "waw_tace":
+    patient = 'patient_id'
+    series = 'ct_file_name'
+elif data == "vindr_ds":
+    patient = 'StudyInstanceUID'
+    series = 'SeriesInstanceUID'
+    
+splits = sgkf.split(X=metadata_df[series],
                     y=metadata_df['ct_phase'],
-                    groups=metadata_df['patient_id'])
+                    groups=metadata_df[patient])
 splits = list(splits)
 
 
@@ -50,8 +61,9 @@ for fold in range(5):
 
     # Load all train data
     X_train=[]; y_train=[]
+    print("metadata columns", metadata_df.columns)
     for idx, row in tqdm(train_df.iterrows(), total=len(train_df)):
-        stats = load_pickle(row['filepath'])
+        stats = load_pickle(row['stats_path'])
 
         features = []
         for organ in organs:
@@ -64,7 +76,7 @@ for fold in range(5):
     # Load all test data
     X_test=[]; y_test=[]
     for idx, row in tqdm(test_df.iterrows(), total=len(test_df)):
-        stats = load_pickle(row['filepath'])
+        stats = load_pickle(row['stats_path'])
 
         features = []
         for organ in organs:
@@ -73,7 +85,6 @@ for fold in range(5):
 
         X_test.append(features)
         y_test.append(row['ct_phase'])
-
     # Convert to DMatrix
     dtrain = xgb.DMatrix(X_train, label=y_train)
     dtest = xgb.DMatrix(X_test, label=y_test)
@@ -102,6 +113,10 @@ for fold in range(5):
     })
 
 # Save all models in one file
-with open("xgb_wawtace.pkl", "wb") as f:
-    pickle.dump(all_models, f)
+if data == "vindr_ds":
+    with open("xgb_vindr.pkl", "wb") as f:
+        pickle.dump(all_models, f)
+elif data == "waw_tace":
+    with open("xgb_wawtace.pkl", "wb") as f:
+        pickle.dump(all_models, f)
 print("✅ All fold models saved to .pkl")
