@@ -2,7 +2,7 @@
 **/.idea
 **/.DS_Store
 **/.vscode
-
+*.pyc
 # Ignore cache
 **/__pycache__
 

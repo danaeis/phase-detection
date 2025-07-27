@@ -49,7 +49,7 @@ if __name__ == '__main__':
         if not os.path.exists(opt.HN_label_dir):
             os.makedirs(opt.HN_label_dir)
         if not os.path.exists(opt.HN_pro_data_dir):
-            os.makefirs(opt.HN_pro_data_dir)
+            os.makedirs(opt.HN_pro_data_dir)
         if not os.path.exists(opt.HN_log_dir):
             os.makedirs(opt.HN_log_dir)
 

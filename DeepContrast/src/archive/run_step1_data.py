@@ -2,7 +2,8 @@ import os
 import numpy as np
 import pandas as pd
 import matplotlib
-import matplotlib.pyplot as pltimport glob
+import matplotlib.pyplot as plt
+import glob
 from time import gmtime, strftime
 from datetime import datetime
 import timeit
