@@ -35,23 +35,23 @@ def preprocess_data(data_dir, pre_data_dir, new_spacing, data_exclude=None,
     Return:
         save nifti image data;
     """
-
-    # Select template based on region (assume .nii.gz templates exist in data_dir)
-    if region == 'head_neck':
-        reg_temp_img = os.path.join(data_dir, 'HN001.nii.gz')
-    elif region == 'abdomen':
-        reg_temp_img = os.path.join(data_dir, 'ABD001.nii.gz')
-    elif region == 'chest':
-        reg_temp_img = os.path.join(data_dir, 'CHEST001.nii.gz')
-    else:
-        raise ValueError('Unknown region')
     
     # Recursively find all .nii.gz files in nested folders
     fns = [fn for fn in sorted(glob.glob(os.path.join(data_dir, '*', '*.nii.gz')))]
     fns += [fn for fn in sorted(glob.glob(os.path.join(data_dir, '*', '*.nii')))]
 
+    # Select template based on region (assume .nii.gz templates exist in data_dir)
+    # if region == 'head_neck':
+    #     reg_temp_img = fns[0]
+    # elif region == 'abdomen':
+    #     reg_temp_img = fns[0]
+    # elif region == 'chest':
+    #     reg_temp_img = fns[0]
+    # else:
+    #     raise ValueError('Unknown region')
+    reg_temp_img = fns[0]
     # Use the filename (without extension) as the ID
-    IDs = [os.path.splitext(os.path.basename(fn))[0].replace('.nii', '') for fn in fns]
+    IDs = [os.path.splitext(os.path.basename(fn))[0].replace('.nii.gz', '') for fn in fns]
 
     # PMH dataframe
     df = pd.DataFrame({'ID': IDs, 'file': fns})
@@ -65,8 +65,12 @@ def preprocess_data(data_dir, pre_data_dir, new_spacing, data_exclude=None,
             patient_id=ID,
             return_type='nifti',
             save_dir=None)
+        print("data dir", data_dir)
+        # Construct seg_path
+        seg_dir = os.path.join(os.path.dirname(data_dir), 'segmentation_masks')
+        seg_path = os.path.join(seg_dir, f"{ID}_seg.nii.gz")
         
-        # ROI crop using TotalSegmentator
+        # ROI crop using TotalSegmentator or pre-existing segmentation
         img_roi = crop_image(
             nrrd_file=img_respaced,
             patient_id=ID,
@@ -74,7 +78,8 @@ def preprocess_data(data_dir, pre_data_dir, new_spacing, data_exclude=None,
             return_type='nifti',
             save_dir=None,  # don't save intermediate
             region=region,
-            mode='roi')
+            mode='roi',
+            seg_path=seg_path)
         
         # registration on ROI cropped image
         img_reg = nrrd_reg_rigid_ref(

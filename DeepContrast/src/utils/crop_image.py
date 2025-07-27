@@ -18,7 +18,7 @@ import tempfile
 #--------------------------------------------------------------------------------------
 # crop image
 #-------------------------------------------------------------------------------------
-def crop_image(nrrd_file, patient_id, crop_shape, return_type, save_dir, region='abdomen', mode='final'):
+def crop_image(nrrd_file, patient_id, crop_shape, return_type, save_dir, region='abdomen', mode='final', seg_path=None):
     
     img_sitk = nrrd_file
     img_arr = sitk.GetArrayFromImage(img_sitk)
@@ -31,12 +31,17 @@ def crop_image(nrrd_file, patient_id, crop_shape, return_type, save_dir, region=
             sitk.WriteImage(img_sitk, input_path)
             output_path = os.path.join(tmp_dir, 'segmentations.nii.gz')
             
-            # Run TotalSegmentator
-            totalsegmentator(input_path, output_path, ml=True, task='total')
-            
-            # Load segmentation
-            seg_sitk = sitk.ReadImage(output_path)
-            seg_arr = sitk.GetArrayFromImage(seg_sitk)
+            if seg_path:
+                # Load pre-existing segmentation
+                seg_sitk = sitk.ReadImage(seg_path)
+                seg_arr = sitk.GetArrayFromImage(seg_sitk)
+            else:
+                # Run TotalSegmentator
+                totalsegmentator(input_path, output_path, ml=True, task='total')
+                
+                # Load segmentation
+                seg_sitk = sitk.ReadImage(output_path)
+                seg_arr = sitk.GetArrayFromImage(seg_sitk)
         
         # Accurate class indices from TotalSegmentator (based on standard mapping)
         # Full map abbreviated; key regions:
