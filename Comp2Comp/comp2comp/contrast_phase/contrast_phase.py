@@ -6,7 +6,6 @@ from typing import Union
 from totalsegmentator.libs import (
     download_pretrained_weights,
     nostdout,
-    setup_nnunet,
 )
 # from totalsegmentatorv2.python_api import totalsegmentator
 
@@ -66,7 +65,11 @@ class ContrastPhaseDetection(InferenceClass):
         crop_path = None
         task_id = [251]
 
-        setup_nnunet()
+        # Explicitly set nnUNet environment variables
+        os.environ["nnUNet_raw_data_base"] = str(self.model_dir)
+        os.environ["nnUNet_preprocessed"] = str(self.model_dir)
+        os.environ["RESULTS_FOLDER"] = str(self.model_dir)
+
         for task_id in [251]:
             download_pretrained_weights(task_id)
 

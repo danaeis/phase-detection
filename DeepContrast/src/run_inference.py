@@ -18,8 +18,8 @@ if __name__ == '__main__':
     parser.add_argument(
         '--body_part',
         type = str,
-        choices = ['HeadNeck', 'Chest'],
-        help = 'Specify the body part ("HeadNeck" or "Chest") to run inference.'
+        choices = ['HeadNeck', 'Chest', 'Abdomen'],
+        help = 'Specify the body part ("HeadNeck" or "Chest" or "Abdomen") to run inference.'
         )
     parser.add_argument(
         '-v',

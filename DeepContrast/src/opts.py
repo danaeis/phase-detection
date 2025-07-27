@@ -29,8 +29,20 @@ def parse_opts():
     parser.add_argument('--CH_train', default='Chest/out/train', type=str, help='Train results path')
     parser.add_argument('--CH_val', default='Chest/out/val', type=str, help='Validation results path')
     parser.add_argument('--CH_test', default='Chest/out/test', type=str, help='Test results path')
+    # abdomen dataset
+    parser.add_argument('--AB_data', default='Abdomen/raw_image', type=str, help='Raw image path')
+    parser.add_argument('--AB_pre_data', default='Abdomen/pre_image', type=str, help='Preprocessed image path')
+    parser.add_argument('--AB_label', default='Abdomen/label', type=str, help='Label path')
+    parser.add_argument('--AB_out', default='Abdomen/out', type=str, help='Results output path')
+    parser.add_argument('--AB_pro_data', default='Abdomen/pro_data', type=str, help='Processed data path')
+    parser.add_argument('--AB_model', default='Abdomen/out/model', type=str, help='Results output path')
+    parser.add_argument('--AB_log', default='Abdomen/out/log', type=str, help='Log data path')
+    parser.add_argument('--AB_train', default='Abdomen/out/train', type=str, help='Train results path')
+    parser.add_argument('--AB_val', default='Abdomen/out/val', type=str, help='Validation results path')
+    parser.add_argument('--AB_test', default='Abdomen/out/test', type=str, help='Test results path')
 
     # data preprocessing
+    parser.add_argument('--dataset', default='Abdomen', type=str, help='Dataset to use: HeadNeck, Chest, Abdomen')
     parser.add_argument('--preprocess_data', action='store_true', help='If true, test is performed.')
     parser.set_defaults(preprocess_data=True)
     parser.add_argument('--manual_seed', default=1234, type=int, help='seed')
@@ -47,6 +59,9 @@ def parse_opts():
     parser.add_argument('--CH_slice_range', default=range(50, 120), type=int, help='Chest axial slice range')
     parser.add_argument('--interp', default='linear', type=str, help='Interpolation for respacing')
     parser.add_argument('--data_exclude', default=None, type=str, help='excluding data')
+    parser.add_argument('--AB_label_file', default='Abdomen_label.csv', type=str, help='Abdomen data label file')
+    parser.add_argument('--AB_crop_shape', default=[192, 192, 100], type=float, help='Abdomen crop image shape')
+    parser.add_argument('--AB_slice_range', default=range(17, 83), type=int, help='Abdomen axial slice range')
     
     # train model
     parser.add_argument('--no_train', action='store_true', help='If true, training is not performed.')

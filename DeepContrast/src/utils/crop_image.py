@@ -46,7 +46,7 @@ def crop_image(nrrd_file, patient_id, crop_shape, return_type, save_dir):
     #starty = y//2 - crop_shape[1]//2
     startz = int(c - crop_shape[2])
     #print("start X, Y, Z: ", startx, starty, startz)
-    
+
     ## crop image using crop shape
     if startz < 0:
         img_arr = np.pad(
@@ -79,20 +79,19 @@ def crop_image(nrrd_file, patient_id, crop_shape, return_type, save_dir):
         #print("padded size: ", img_crop_arr.shape)
     #print(img_crop_arr.shape)    
     ## get nrrd from numpy array
-    img_crop_nrrd = sitk.GetImageFromArray(img_crop_arr)
-    img_crop_nrrd.SetSpacing(nrrd_file.GetSpacing())
-    img_crop_nrrd.SetOrigin(nrrd_file.GetOrigin())
+    img_crop_nifti = sitk.GetImageFromArray(img_crop_arr)
+    img_crop_nifti.SetSpacing(nrrd_file.GetSpacing())
+    img_crop_nifti.SetOrigin(nrrd_file.GetOrigin())
 
-    if save_dir != None:
-        fn = str(patient_id) + '.nrrd'
+    if save_dir is not None:
+        fn = str(patient_id) + '.nii.gz'
         writer = sitk.ImageFileWriter()
         writer.SetFileName(os.path.join(save_dir, fn))
         writer.SetUseCompression(True)
-        writer.Execute(img_crop_nrrd)
+        writer.Execute(img_crop_nifti)
 
-    if return_type == 'nrrd':
-        return img_crop_nrrd
-
+    if return_type == 'nifti':
+        return img_crop_nifti
     elif return_type == 'npy':
         return img_crop_arr
  

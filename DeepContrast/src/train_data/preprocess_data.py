@@ -2,7 +2,7 @@ import glob
 import shutil
 import os
 import pandas as pd
-import nrrd
+#import nrrd  # No longer needed for NIfTI
 import re
 from sklearn.model_selection import train_test_split
 import pickle
@@ -20,7 +20,6 @@ import SimpleITK as sitk
 
 def preprocess_data(data_dir, pre_data_dir, new_spacing, data_exclude=None,
                     crop_shape=[192, 192, 10], interp_type='linear'):
-
     """
     Preprocess data including: respacing, registration, cropping;
 
@@ -34,40 +33,45 @@ def preprocess_data(data_dir, pre_data_dir, new_spacing, data_exclude=None,
         crop_shape {np.array} -- numpy array size afer cropping;
         interp_type {str} -- interpolation type for respacing, default: 'linear';
     Return:
-        save nrrd image data;
+        save nifti image data;
     """
 
-    reg_temp_img = os.path.join(data_dir, 'HN001.nrrd')
-    fns = [fn for fn in sorted(glob.glob(data_dir + '/*nrrd'))]
-    ## patient ID
-    IDs = []
-    for fn in fns:
-        ID = fn.split('/')[-1].split('.')[0].strip()
-        IDs.append(ID)
-    ## PMH dataframe
+    # Recursively find all .nii.gz files in nested folders
+    fns = [fn for fn in sorted(glob.glob(os.path.join(data_dir, '*', '*.nii.gz')))]
+    # If you also want to support .nii (uncompressed), add:
+    fns += [fn for fn in sorted(glob.glob(os.path.join(data_dir, '*', '*.nii')))]
+
+    # Use the filename (without extension) as the ID
+    IDs = [os.path.splitext(os.path.basename(fn))[0].replace('.nii', '') for fn in fns]
+
+    # PMH dataframe
     df = pd.DataFrame({'ID': IDs, 'file': fns})
     for fn, ID in zip(df['file'], df['ID']):
         print(ID)
-        ## respacing
-        img_nrrd = respacing(
-            nrrd_dir=fn,
+        # respacing
+        img_nifti = respacing(
+            nrrd_dir=fn,  # param name kept for compatibility, but it's now a NIfTI file
             interp_type=interp_type,
             new_spacing=new_spacing,
             patient_id=ID,
-            return_type='nrrd',
+            return_type='nifti',  # change to 'nifti' for clarity
             save_dir=None)
-        ## registration
+        # registration
+        # For registration, you need a fixed image. You may want to select a reference NIfTI from your dataset.
+        # For now, we'll skip registration or use the first file as reference.
+        reg_temp_img = fns[0]  # Use the first file as reference
         img_reg = nrrd_reg_rigid_ref(
-            img_nrrd=img_nrrd,
+            img_nrrd=img_nifti,
             fixed_img_dir=reg_temp_img,
             patient_id=ID,
             save_dir=None)
-        ## crop image from (500, 500, 116) to (180, 180, 60)
+        # img_reg = img_nifti  # If skipping registration for now
+        # crop image
         img_crop = crop_image(
             nrrd_file=img_reg,
             patient_id=ID,
             crop_shape=crop_shape,
-            return_type='nrrd',
+            return_type='nifti',
             save_dir=pre_data_dir)
 
 

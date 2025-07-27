@@ -11,7 +11,6 @@ import pandas as pd
 from totalsegmentator.libs import (
     download_pretrained_weights,
     nostdout,
-    setup_nnunet,
 )
 
 from comp2comp.hip import hip_utils
@@ -74,7 +73,11 @@ class HipSegmentation(InferenceClass):
         task_id = [254]
 
         if self.model_name == "ts_hip":
-            setup_nnunet()
+            # Explicitly set nnUNet environment variables
+            os.environ["nnUNet_raw_data_base"] = str(self.model_dir)
+            os.environ["nnUNet_preprocessed"] = str(self.model_dir)
+            os.environ["RESULTS_FOLDER"] = str(self.model_dir)
+
             download_pretrained_weights(task_id[0])
         else:
             raise ValueError("Invalid model name.")

@@ -25,7 +25,6 @@ from comp2comp.visualization.dicom import to_dicom
 from totalsegmentator.libs import (
     download_pretrained_weights,
     nostdout,
-    setup_nnunet,
 )
 
 
@@ -178,7 +177,11 @@ class SpineSegmentation(InferenceClass):
             task_id = [252]
 
             if self.model_name == "ts_spine":
-                setup_nnunet()
+                # Explicitly set nnUNet environment variables
+                os.environ["nnUNet_raw_data_base"] = str(self.model_dir)
+                os.environ["nnUNet_preprocessed"] = str(self.model_dir)
+                os.environ["RESULTS_FOLDER"] = str(self.model_dir)
+
                 download_pretrained_weights(task_id[0])
             elif self.model_name == "stanford_spine_v0.0.1":
                 self.setup_nnunet_c2c(model_dir)

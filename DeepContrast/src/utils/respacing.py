@@ -42,21 +42,19 @@ def respacing(nrrd_dir, interp_type, new_spacing, patient_id, return_type, save_
     resample.SetInterpolator(interp_type)
     resample.SetDefaultPixelValue(img.GetPixelIDValue())
     resample.SetOutputPixelType(sitk.sitkFloat32)
-    img_nrrd = resample.Execute(img) 
+    img_nifti = resample.Execute(img) 
     
-    ## save nrrd images
-    if save_dir != None:
+    # Save NIfTI images
+    if save_dir is not None:
         writer = sitk.ImageFileWriter()
-        writer.SetFileName(os.path.join(save_dir, '{}.nrrd'.format(patient_id)))
+        writer.SetFileName(os.path.join(save_dir, '{}.nii.gz'.format(patient_id)))
         writer.SetUseCompression(True)
-        writer.Execute(img_nrrd)
+        writer.Execute(img_nifti)
 
-    ## save as numpy array
-    img_arr = sitk.GetArrayFromImage(img_nrrd)
+    img_arr = sitk.GetArrayFromImage(img_nifti)
 
-    if return_type == 'nrrd':
-        return img_nrrd
-    
+    if return_type == 'nifti':
+        return img_nifti
     elif return_type == 'npy':
         return img_arr
 
