@@ -11,12 +11,12 @@ from time import gmtime, strftime
 from datetime import datetime
 import timeit
 from utils.respacing import respacing
-from utils.nrrd_reg import nrrd_reg_rigid_reffrom utils.crop_image import crop_image
-
+from utils.nrrd_reg import nrrd_reg_rigid_ref
+from utils.crop_image import crop_image
 
 
 def preprocess_data(data_dir, data_reg_dir, new_spacing, data_exclude=None, 
-                    crop_shape=[192, 192, 10], interp_type='linear'):
+                    crop_shape=[192, 192, 10], interp_type='linear', region='head_neck'):
     
     """
     Preprocess data including: respacing, registration, cropping;
@@ -31,13 +31,23 @@ def preprocess_data(data_dir, data_reg_dir, new_spacing, data_exclude=None,
         data_exclude {str} -- exclude patient data due to data issue, default: None;
         crop_shape {np.array} -- numpy array size afer cropping;
         interp_type {str} -- interpolation type for respacing, default: 'linear';
+        region {str} -- body region: 'abdomen', 'chest', 'head_neck'
 
     Return:
         save nrrd image data;
     """
  
 
-    reg_temp_img = os.path.join(data_dir, 'HN001.nrrd')
+    # Select template based on region
+    if region == 'head_neck':
+        reg_temp_img = os.path.join(data_dir, 'HN001.nrrd')
+    elif region == 'abdomen':
+        reg_temp_img = os.path.join(data_dir, 'ABD001.nrrd')  # Assume exists or handle
+    elif region == 'chest':
+        reg_temp_img = os.path.join(data_dir, 'CHEST001.nrrd')  # Assume exists or handle
+    else:
+        raise ValueError('Unknown region')
+    
     fns = [fn for fn in sorted(glob.glob(data_dir + '/*nrrd'))]
     ## patient ID
     IDs = []
@@ -74,8 +84,9 @@ def preprocess_data(data_dir, data_reg_dir, new_spacing, data_exclude=None,
             patient_id=ID,
             crop_shape=crop_shape,
             return_type='nrrd',
-            save_dir=data_reg_dir
-            ) 
+            save_dir=data_reg_dir,
+            region=region
+            )
 
 
 
