@@ -79,12 +79,17 @@ def get_model(out_dir, run_model, activation, input_shape=(192, 192, 3),
     
     # plot cnn architectures and save png    
     fn = os.path.join(train_dir, str(run_model) + '.png')
-    plot_model(
-        model=my_model,
-        to_file=fn,
-        show_shapes=True,
-        show_layer_names=True
-        )
+    fn = os.path.join(train_dir, str(run_model) + '.png')
+    try:
+        plot_model(
+            model=my_model,
+            to_file=fn,
+            show_shapes=True,
+            show_layer_names=True
+            )
+    except ImportError as e:
+        print(f'Failed to plot model: {e}. Continuing without plotting.')
+
 
 
     return my_model

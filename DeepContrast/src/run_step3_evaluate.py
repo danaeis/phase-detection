@@ -37,7 +37,7 @@ if __name__ == '__main__':
         if not os.path.exists(opt.HN_model_dir):
             os.makedirs(opt.HN_model_dir)
         if not os.path.exists(opt.HN_pro_data_dir):
-            os.makefirs(opt.HN_pro_data_dir)
+            os.makedirs(opt.HN_pro_data_dir)
      
     print('\n--- STEP 3 - MODEL EVALUATION ---\n')   
     

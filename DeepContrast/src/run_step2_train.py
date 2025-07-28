@@ -36,36 +36,53 @@ if __name__ == '__main__':
     np.random.seed(opt.manual_seed)
     tf.random.set_seed(opt.manual_seed)
 
+    # Add dataset selection: HeadNeck, Chest, Abdomen
+    import sys
+    dataset = 'Abdomen'  # default
+    for i, arg in enumerate(sys.argv):
+        if arg == '--dataset' and i+1 < len(sys.argv):
+            dataset = sys.argv[i+1]
+    print(f'Using dataset: {dataset}')
+
     if opt.root_dir is not None:
-        opt.HN_out_dir = os.path.join(opt.root_dir, opt.HN_out)
-        opt.HN_model_dir = os.path.join(opt.root_dir, opt.HN_model)
-        opt.HN_label_dir = os.path.join(opt.root_dir, opt.HN_label)
-        opt.HN_pro_data_dir = os.path.join(opt.root_dir, opt.HN_pro_data)
-        opt.HN_log_dir = os.path.join(opt.root_dir, opt.HN_log)
-        if not os.path.exists(opt.HN_out_dir):
-            os.makedirs(opt.HN_out_dir)
-        if not os.path.exists(opt.HN_model_dir):
-            os.makedirs(opt.HN_model_dir)
-        if not os.path.exists(opt.HN_label_dir):
-            os.makedirs(opt.HN_label_dir)
-        if not os.path.exists(opt.HN_pro_data_dir):
-            os.makedirs(opt.HN_pro_data_dir)
-        if not os.path.exists(opt.HN_log_dir):
-            os.makedirs(opt.HN_log_dir)
+        if dataset == 'HeadNeck':
+            out_dir = os.path.join(opt.root_dir, opt.HN_out)
+            model_dir = os.path.join(opt.root_dir, opt.HN_model)
+            label_dir = os.path.join(opt.root_dir, opt.HN_label)
+            pro_data_dir = os.path.join(opt.root_dir, opt.HN_pro_data)
+            log_dir = os.path.join(opt.root_dir, opt.HN_log)
+        elif dataset == 'Chest':
+            out_dir = os.path.join(opt.root_dir, opt.CH_out)
+            model_dir = os.path.join(opt.root_dir, opt.CH_model)
+            label_dir = os.path.join(opt.root_dir, opt.CH_label)
+            pro_data_dir = os.path.join(opt.root_dir, opt.CH_pro_data)
+            log_dir = os.path.join(opt.root_dir, opt.CH_log)
+        elif dataset == 'Abdomen':
+            out_dir = os.path.join(opt.root_dir, opt.AB_out)
+            model_dir = os.path.join(opt.root_dir, opt.AB_model)
+            label_dir = os.path.join(opt.root_dir, opt.AB_label)
+            pro_data_dir = os.path.join(opt.root_dir, opt.AB_pro_data)
+            log_dir = os.path.join(opt.root_dir, opt.AB_log)
+        else:
+            raise ValueError(f'Unknown dataset: {dataset}')
+            
+        for d in [out_dir, model_dir, label_dir, pro_data_dir, log_dir]:
+            if not os.path.exists(d):
+                os.makedirs(d)
 
     print('\n--- STEP 2 - TRAIN MODEL ---\n')
 
     # data generator for train and val data
     train_gen = train_generator(
-        pro_data_dir=opt.HN_pro_data_dir,
+        pro_data_dir=pro_data_dir,
         batch_size=opt.batch_size)
     x_val, y_val, val_gen = val_generator(
-        pro_data_dir=opt.HN_pro_data_dir,
+        pro_data_dir=pro_data_dir,
         batch_size=opt.batch_size)
 
     # get CNN model 
     my_model = get_model(
-        out_dir=opt.HN_out_dir,
+        out_dir=out_dir,
         run_model=opt.run_model, 
         activation=opt.activation, 
         input_shape=opt.input_shape,
@@ -78,9 +95,9 @@ if __name__ == '__main__':
             optimizer = Adam(learning_rate=opt.lr)
         train_model(
             root_dir=opt.root_dir,
-            out_dir=opt.HN_out_dir,
-            log_dir=opt.HN_log_dir,
-            model_dir=opt.HN_model_dir,
+            out_dir=out_dir,
+            log_dir=log_dir,
+            model_dir=model_dir,
             model=my_model,
             run_model=opt.run_model,
             train_gen=train_gen,

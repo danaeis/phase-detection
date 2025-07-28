@@ -46,7 +46,7 @@ if __name__ == '__main__':
         if not os.path.exists(opt.CH_label_dir):
             os.makedirs(opt.CH_label_dir)
         if not os.path.exists(opt.CH_pro_data_dir):
-            os.makefirs(opt.CH_pro_data_dir)
+            os.makedirs(opt.CH_pro_data_dir)
         if not os.path.exists(opt.CH_pre_data_dir):
             os.makedirs(opt.CH_pre_data_dir)
         if not os.path.exists(opt.CH_model_dir):
