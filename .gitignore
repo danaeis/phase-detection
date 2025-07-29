@@ -3,6 +3,7 @@
 **/.DS_Store
 **/.vscode
 *.pyc
+*.zip*
 # Ignore cache
 **/__pycache__
 

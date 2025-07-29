@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import tensorflow
 from tensorflow.keras.models import Model
-from tensorflow.keras.layers import Dense, Dropout, BatchNormalization
+from tensorflow.keras.layers import Dense, Dropout, BatchNormalization, GlobalAveragePooling2D
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.losses import BinaryCrossentropy

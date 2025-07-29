@@ -6,6 +6,7 @@ from typing import Union
 from totalsegmentator.libs import (
     download_pretrained_weights,
     nostdout,
+    get_config_dir,
 )
 # from totalsegmentatorv2.python_api import totalsegmentator
 
@@ -70,8 +71,17 @@ class ContrastPhaseDetection(InferenceClass):
         os.environ["nnUNet_preprocessed"] = str(self.model_dir)
         os.environ["RESULTS_FOLDER"] = str(self.model_dir)
 
+        print("path", self.model_dir)
         for task_id in [251]:
-            download_pretrained_weights(task_id)
+            # download_pretrained_weights(task_id)
+            config_dir = get_config_dir()
+            weights_dir = os.path.join(self.model_dir, f"nnUNet/Task{task_id}_TotalSegmentator_part1_organs_1139subj/nnUNetTrainerV2_ep4000_nomirror__nnUNetPlansv2.1/")
+            print("weights dir", weights_dir)
+            if os.path.isdir(weights_dir) and os.path.isfile(os.path.join(weights_dir, "plans.pkl")):
+                print(f"✅ Weights for Task {task_id} already exist at: {weights_dir}")
+            else:
+                print(f"⬇️ Downloading weights for Task {task_id} ...")
+                download_pretrained_weights(task_id)
 
         from totalsegmentator.nnunet import nnUNet_predict_image
 
