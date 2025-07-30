@@ -55,17 +55,24 @@ def data_prepro(body_part, data_dir, new_spacing=[1, 1, 3],
         crop_shape = [192, 192, 140]
         slice_range = range(50, 120)
         data_dir = os.path.join(data_dir, 'Chest')
+    elif body_part == 'Abdomen':
+        crop_shape = [192, 192, 100]
+        slice_range = range(17, 83)
+        data_dir = os.path.join(data_dir, 'Abdomen')
+    else:
+        raise ValueError(f'Unsupported body part: {body_part}')
     
     # choose first scan as registration template
-    reg_template = sorted(glob.glob(data_dir + '/*nrrd'))[0]
+    all_files = sorted(glob.glob(data_dir + '/*nrrd') + glob.glob(data_dir + '/*.nii.gz') + glob.glob(data_dir + '/*.nii'))
+    reg_template = all_files[0] if all_files else None
 
     # registration, respacing, cropping   
     img_ids = []
     pat_ids = []
     slice_numbers = []
     arr = np.empty([0, 192, 192])
-    for fn in sorted(glob.glob(data_dir + '/*nrrd')):
-        pat_id = fn.split('/')[-1].split('.')[0].strip()
+    for fn in sorted(all_files):
+        pat_id = os.path.splitext(os.path.basename(fn))[0].replace('.nii', '').strip()
         print(pat_id)
         ## respacing      
         img_nrrd = respacing(
@@ -83,7 +90,7 @@ def data_prepro(body_part, data_dir, new_spacing=[1, 1, 3],
             patient_id=pat_id,
             save_dir=None
             )
-        ## crop image from (500, 500, 116) to (180, 180, 60)
+        ## crop image
         img_crop = crop_image(
             nrrd_file=img_reg,
             patient_id=pat_id,
@@ -132,5 +139,5 @@ def data_prepro(body_part, data_dir, new_spacing=[1, 1, 3],
         img_arr = np.broadcast_to(arr, (3, arr.shape[0], arr.shape[1], arr.shape[2]))
         img_arr = np.transpose(img_arr, (1, 2, 3, 0))
 
-    return df_img, img_arr 
+    return df_img, img_arr
 

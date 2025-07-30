@@ -28,11 +28,26 @@ if __name__ == '__main__':
         help = 'Specify True or False to save csv for contrast prediction.',
         default = 'False'
         )
+    parser.add_argument(
+        '-i',
+        '--input_dir',
+        required = False,
+        help = 'input directory for images',
+        default = 'False'
+        )
+    parser.add_argument(
+        '-m',
+        '--run_model',
+        required = False,
+        help = 'run model',
+        default = 'EffNetB4'
+        )
     args = parser.parse_args()
     
-    proj_dir = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
-    model_dir = os.path.join(proj_dir, 'models')
-    data_dir = os.path.join(proj_dir, 'datasets') 
+    # proj_dir = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
+    proj_dir = args.input_dir
+    model_dir = os.path.join(proj_dir, f'{args.body_part}/out/models')
+    data_dir = os.path.join(proj_dir, f'{args.body_part}/pro_data') 
 
     print('\n--- MODEL INFERENCE ---\n')
     
@@ -47,6 +62,7 @@ if __name__ == '__main__':
         body_part=args.body_part,
         save_csv=args.save_csv,
         model_dir=model_dir,
+        run_model=args.run_model,
         out_dir=proj_dir,
         df_img=df_img,
         img_arr=img_arr

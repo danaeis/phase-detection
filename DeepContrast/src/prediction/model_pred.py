@@ -22,7 +22,7 @@ from sklearn.metrics import confusion_matrix
 
 
 
-def model_pred(body_part, save_csv, model_dir, out_dir, df_img, img_arr, thr_img=0.5, thr_pat=0.5):    
+def model_pred(body_part, save_csv, model_dir, run_model, out_dir, df_img, img_arr, thr_img=0.5, thr_pat=0.5):    
 
     """
     model prediction for IV contrast
@@ -43,11 +43,7 @@ def model_pred(body_part, save_csv, model_dir, out_dir, df_img, img_arr, thr_img
     """
     
 
-    if body_part == 'HeadNeck':
-        saved_model = 'EffNet_HeadNeck.h5'
-    elif body_part == 'Chest':
-        saved_model = 'EffNet_Chest.h5'
-
+    saved_model = f'{run_model}.h5'
     ## load saved model
     #print(str(saved_model))
     model = load_model(os.path.join(model_dir, saved_model))

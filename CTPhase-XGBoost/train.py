@@ -103,14 +103,64 @@ for fold in range(5):
 
     # Predict and evaluate
     y_pred = model.predict(X_test)
+    report = classification_report(y_test, y_pred)
 
-    print(classification_report(y_test, y_pred))
+    # Save to a text file
+    output_file = "classification_report.txt"
+    with open(output_file, 'a') as f:
+        f.write(f"=== Fold {fold+1} ===\n")
+        f.write(report)
+        f.write("\n\n")
+    print(report, f"saved to {output_file}")
 
     # Save model in the list
     all_models.append({
         "fold": fold,
         "model": model,
     })
+
+import re
+
+# Path to your saved classification report
+report_path = "classification_report.txt"
+
+# Storage for each fold's metrics
+accuracies = []
+macro_precisions = []
+macro_recalls = []
+macro_f1s = []
+
+with open(report_path, 'r') as f:
+    lines = f.readlines()
+
+# Go through each line and extract metrics
+for line in lines:
+    if "accuracy" in line:
+        accuracy = float(re.findall(r"\d+\.\d+", line)[0])
+        accuracies.append(accuracy)
+    elif "macro avg" in line:
+        parts = re.findall(r"\d+\.\d+", line)
+        precision, recall, f1 = map(float, parts[:3])
+        macro_precisions.append(precision)
+        macro_recalls.append(recall)
+        macro_f1s.append(f1)
+
+# Compute averages
+def avg(lst): return sum(lst) / len(lst)
+
+final_report = {
+    "Accuracy": avg(accuracies),
+    "Macro Precision": avg(macro_precisions),
+    "Macro Recall": avg(macro_recalls),
+    "Macro F1 Score": avg(macro_f1s)
+}
+
+# Print nicely
+print("\n📊 Final Averaged Classification Report (Across Folds):")
+for metric, value in final_report.items():
+    print(f"{metric:<20}: {value:.4f}")
+
+
 
 # Save all models in one file
 if data == "vindr_ds":
