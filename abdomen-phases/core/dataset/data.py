@@ -14,10 +14,10 @@ class Data(Dataset):
             cfg (CfgNode): Config object containing running configuration
             mode (str): Model running mode
         """
-        self.imgs = data_csv["image"].values
-        self.labels = data_csv["label"].values
-        self.study_IDs = data_csv["study"].values
-        self.series = data_csv["series"].values
+        self.imgs = data_csv["Image"].values
+        self.labels = data_csv["Label"].values
+        self.study_IDs = data_csv["study_ID"].values
+        self.series = data_csv["seriesNumber"].values
         self.cfg = cfg
 
     def __len__(self):
