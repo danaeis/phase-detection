@@ -14,8 +14,8 @@ def respacing(nrrd_dir, interp_type, new_spacing, patient_id, return_type, save_
     img = sitk.ReadImage(nrrd_dir)
     old_size = img.GetSize()
     old_spacing = img.GetSpacing()
-    #print('{} {}'.format('old size: ', old_size))
-    #print('{} {}'.format('old spacing: ', old_spacing))
+    print('{} {}'.format('old size: ', old_size))
+    print('{} {}'.format('old spacing: ', old_spacing))
 
     new_size = [
         int(round((old_size[0] * old_spacing[0]) / float(new_spacing[0]))),
@@ -23,7 +23,7 @@ def respacing(nrrd_dir, interp_type, new_spacing, patient_id, return_type, save_
         int(round((old_size[2] * old_spacing[2]) / float(new_spacing[2])))
         ]
 
-    #print('{} {}'.format('new size: ', new_size))
+    print('{} {}'.format('new size: ', new_size))
 
     ### choose interpolation algorithm
     if interp_type == 'linear':
@@ -42,19 +42,21 @@ def respacing(nrrd_dir, interp_type, new_spacing, patient_id, return_type, save_
     resample.SetInterpolator(interp_type)
     resample.SetDefaultPixelValue(img.GetPixelIDValue())
     resample.SetOutputPixelType(sitk.sitkFloat32)
-    img_nifti = resample.Execute(img) 
+    img_nrrd = resample.Execute(img) 
     
-    # Save NIfTI images
-    if save_dir is not None:
+    ## save nrrd images
+    if save_dir != None:
         writer = sitk.ImageFileWriter()
-        writer.SetFileName(os.path.join(save_dir, '{}.nii.gz'.format(patient_id)))
+        writer.SetFileName(os.path.join(save_dir, '{}.nrrd'.format(patient_id)))
         writer.SetUseCompression(True)
-        writer.Execute(img_nifti)
+        writer.Execute(img_nrrd)
 
-    img_arr = sitk.GetArrayFromImage(img_nifti)
+    ## save as numpy array
+    img_arr = sitk.GetArrayFromImage(img_nrrd)
 
-    if return_type == 'nifti':
-        return img_nifti
+    if return_type == 'nrrd':
+        return img_nrrd
+    
     elif return_type == 'npy':
         return img_arr
 
@@ -87,7 +89,6 @@ if __name__ == '__main__':
         return_type=return_type, 
         save_dir=save_dir
         )
-
 
 
 

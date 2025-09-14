@@ -82,7 +82,7 @@ def EfficientNet(effnet, input_shape, transfer=False, freeze_layer=None, activat
     x = Dropout(0.3)(x)
     x = Dense(1000, activation='relu')(x)
     x = Dropout(0.3)(x)
-    outputs = Dense(1, activation=activation)(x)
+    outputs = Dense(3, activation='softmax')(x)
     model = Model(inputs=inputs, outputs=outputs)
 
     ### freeze specific number of layers

@@ -53,26 +53,34 @@ def img_dataset(pro_data_dir, run_type, nrrds, IDs, labels, fn_arr_1ch, fn_arr_3
 
     for nrrd, patient_id in zip(nrrds, IDs):
         count += 1
-        print(count)
         #print(nrrd)
         nrrd = sitk.ReadImage(nrrd, sitk.sitkFloat32)
         img_arr = sitk.GetArrayFromImage(nrrd)
-        #print(img_arr.shape)
+        img_arr = np.nan_to_num(img_arr, nan=-1024)
+        print("image arr shape",img_arr.shape, "IDs", patient_id)
         #data = img_arr[30:78, :, :]
         #data = img_arr[17:83, :, :]
-        data = img_arr[slice_range, :, :]
+        data = img_arr#[slice_range, :, :]
+        print("data shape", data.shape)
+        print(np.min(data), np.max(data), np.average(data))
         ### clear signals lower than -1024
         data[data <= -1024] = -1024
         ### strip skull, skull UHI = ~700
-        data[data > 700] = 0
+        # data[data > 700] = 0
+        print("data shape", data.shape)
+        print(np.min(data), np.max(data), np.average(data))
         ### normalize UHI to 0 - 1, all signlas outside of [0, 1] will be 0;
         if norm_type == 'np_interp':
             data = np.interp(data, [-200, 200], [0, 1])
         elif norm_type == 'np_clip':
             data = np.clip(data, a_min=-200, a_max=200)
             MAX, MIN = data.max(), data.min()
-            data = (data - MIN) / (MAX - MIN)
+            print("Max", MAX, MIN)
+
+            data = (data - MIN) / (MAX - MIN) if MAX - MIN > 0 else 0
         ## stack all image arrays to one array for CNN input
+        print(arr.shape)
+        print(type(data))
         arr = np.concatenate([arr, data], 0)
         ### create patient ID and slice index for img
         slice_numbers.append(data.shape[0])
@@ -113,6 +121,7 @@ def img_dataset(pro_data_dir, run_type, nrrds, IDs, labels, fn_arr_1ch, fn_arr_3
         #print(img_df[0:100])
         img_df.to_csv(os.path.join(pro_data_dir, fn_df))
         #print('data size:', img_df.shape[0])
+        
 
 
 def get_img_dataset(pro_data_dir, run_type, data_tot, ID_tot, label_tot, slice_range):

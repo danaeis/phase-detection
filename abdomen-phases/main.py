@@ -35,7 +35,6 @@ def main(cfg, args):
         os.mkdir(cfg.DIRS.WEIGHTS)
 
     # Load Data
-    trainloader = build_dataloader(cfg, mode="train")
     validloader = build_dataloader(cfg, mode="valid")
     # testloader = build_dataloader(cfg, mode="test")
 
@@ -45,9 +44,9 @@ def main(cfg, args):
     # loss = build_loss_func(cfg)
     weight=torch.Tensor([0.1, 0.1, 0.1, 1.5])
     weight = weight.to("cuda")
-    loss = nn.CrossEntropyLoss(weight=weight)
+    loss = build_loss_func(cfg)
     optimizer = build_optim(cfg, model)
-    scheduler = build_scheduler(args, len(trainloader), cfg)
+    # Note: scheduler will be recreated inside the loop after trainloader
     # Load model checkpoint
     model, start_epoch, best_metric = load_checkpoint(args, model)
     start_epoch = 0
@@ -58,6 +57,8 @@ def main(cfg, args):
     # Run Script
     if mode == "train":
         for epoch in range(start_epoch, cfg.TRAIN.EPOCHES):
+            trainloader = build_dataloader(cfg, mode="train")
+            scheduler = build_scheduler(args, len(trainloader), cfg)
             print("EPOCH", epoch)
             train_loss = train_loop(
                 cfg,

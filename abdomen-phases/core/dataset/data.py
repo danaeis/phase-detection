@@ -67,13 +67,21 @@ def build_dataloader(cfg, mode="train"):
     """
     if mode == "train":
         data_csv = pd.read_csv(cfg.DATA.CSV.TRAIN)
+        # Group by Study_ID and SeriesNumber, sample 30% per group
+        sampled_dfs = []
+        for _, group in data_csv.groupby(['study_ID', 'seriesNumber']):
+            sample_size = max(1, int(len(group) * 0.3))
+            sampled_group = group.sample(n=sample_size, replace=False)
+            sampled_dfs.append(sampled_group)
+        sampled_csv = pd.concat(sampled_dfs).reset_index(drop=True)
+        dataset = Data(cfg, sampled_csv, mode)
     elif mode == "valid":
         data_csv = pd.read_csv(cfg.DATA.CSV.VALID)
         # data_csv = data_csv.head(200)
+        dataset = Data(cfg, data_csv, mode)
     elif mode == "test":
         data_csv = pd.read_csv(cfg.DATA.CSV.TEST)
-
-    dataset = Data(cfg, data_csv, mode)
+        dataset = Data(cfg, data_csv, mode)
     # DEBUG: Only take a subset of dataloader to run script
     if cfg.DATA.DEBUG:
         dataset = Subset(dataset, np.random.choice(np.arange(len(dataset)), 904))

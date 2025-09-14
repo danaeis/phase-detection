@@ -17,8 +17,10 @@ from PIL import Image
 # crop image
 #-------------------------------------------------------------------------------------
 def crop_image(nrrd_file, patient_id, crop_shape, return_type, save_dir):
+    print(f"[Crop] Starting image cropping for patient {patient_id}...")
     
     ## load stik and arr
+    print("[Crop] Loading image array...")
     img_arr = sitk.GetArrayFromImage(nrrd_file)
     ## Return top 25 rows of 3D volume, centered in x-y space / start at anterior (y=0)?
 #    img_arr = np.transpose(img_arr, (2, 1, 0))
@@ -30,71 +32,105 @@ def crop_image(nrrd_file, patient_id, crop_shape, return_type, save_dir):
 #    print('x:', x)
     
     ## Get center of mass to center the crop in Y plane
-    mask_arr = np.copy(img_arr) 
-    mask_arr[mask_arr > -500] = 1
-    mask_arr[mask_arr <= -500] = 0
-    mask_arr[mask_arr >= -500] = 1 
-    #print("mask_arr min and max:", np.amin(mask_arr), np.amax(mask_arr))
-    centermass = ndimage.measurements.center_of_mass(mask_arr) # z,x,y   
-    cpoint = c - crop_shape[2]//2
-    #print("cpoint, ", cpoint)
-    centermass = ndimage.measurements.center_of_mass(mask_arr[cpoint, :, :])   
-    #print("center of mass: ", centermass)
+    print("[Crop] Calculating center of mass...")
+    try:
+        print("[Crop] Creating binary mask...")
+        mask_arr = np.copy(img_arr)
+        # Handle NaN values first
+        mask_arr = np.nan_to_num(mask_arr, nan=-1024)
+        # Adjust threshold for abdomen tissue (-100 to +200 HU typical for soft tissue)
+        mask_arr[mask_arr > -100] = 1
+        mask_arr[mask_arr <= -100] = 0
+        print(f"[Crop] Mask created with range: {np.amin(mask_arr):.2f} to {np.amax(mask_arr):.2f}")
+        
+        print("[Crop] Computing center of mass...")
+        # Get initial center of mass for all slices
+        centermass_3d = ndimage.measurements.center_of_mass(mask_arr)
+        # Use the slice with maximum tissue content for x-y centering
+        tissue_sums = np.sum(mask_arr, axis=(1,2))
+        max_tissue_slice = np.argmax(tissue_sums)
+        centermass = ndimage.measurements.center_of_mass(mask_arr[max_tissue_slice, :, :])
+        print(f"[Crop] Center of mass computed at: ({centermass[0]:.1f}, {centermass[1]:.1f})")
+        print(f"[Crop] Using slice {max_tissue_slice} of {c} for centering (maximum tissue content)")
+    except Exception as e:
+        print(f"[Crop] Error during mask creation or center calculation: {str(e)}")
+        raise
     startx = int(centermass[0] - crop_shape[0]//2)
-    starty = int(centermass[1] - crop_shape[1]//2)      
-    #startx = x//2 - crop_shape[0]//2       
-    #starty = y//2 - crop_shape[1]//2
-    startz = int(c - crop_shape[2])
-    #print("start X, Y, Z: ", startx, starty, startz)
+    starty = int(centermass[1] - crop_shape[1]//2)
     
+    # Center the z-axis crop around the slice with maximum tissue content
+    startz = max(0, int(max_tissue_slice - crop_shape[2]//2))
+    
+    # Ensure we don't exceed image boundaries
+    startx = max(0, min(startx, x - crop_shape[0]))
+    starty = max(0, min(starty, y - crop_shape[1]))
+    startz = max(0, min(startz, c - crop_shape[2]))
+    
+    print(f"[Crop] Crop region - X: {startx}:{startx + crop_shape[0]}, Y: {starty}:{starty + crop_shape[1]}, Z: {startz}:{startz + crop_shape[2]}")
+    
+    print("[Crop] Cropping image to shape", crop_shape, "...")
     ## crop image using crop shape
-    if startz < 0:
-        img_arr = np.pad(
-            img_arr,
-            ((abs(startz)//2, abs(startz)//2), (0, 0), (0, 0)), 
-            'constant', 
-            constant_values=-1024
+    try:
+        # Extract the region, handling boundary cases
+        print(f"[Crop] Extracting region: z={startz}:{startz + crop_shape[2]}, y={starty}:{starty + crop_shape[1]}, x={startx}:{startx + crop_shape[0]}")
+        
+        # Calculate required padding for each dimension
+        pad_x = max(0, (startx + crop_shape[0]) - x)
+        pad_y = max(0, (starty + crop_shape[1]) - y)
+        pad_z = max(0, (startz + crop_shape[2]) - c)
+        
+        if pad_x > 0 or pad_y > 0 or pad_z > 0:
+            print(f"[Crop] Adding padding - X: {pad_x}, Y: {pad_y}, Z: {pad_z}")
+            img_arr = np.pad(
+                img_arr,
+                ((0, pad_z), (0, pad_y), (0, pad_x)),
+                'constant',
+                constant_values=-1024  # Standard air HU value
             )
+            print(f"[Crop] Padded image shape: {img_arr.shape}")
+        
+        # Extract the region
         img_crop_arr = img_arr[
-            0:crop_shape[2], 
-            starty:starty + crop_shape[1], 
+            startz:startz + crop_shape[2],
+            starty:starty + crop_shape[1],
             startx:startx + crop_shape[0]
-            ]
-    else:
-        img_crop_arr = img_arr[
-#           0:crop_shape[2],
-            startz:startz + crop_shape[2], 
-            starty:starty + crop_shape[1], 
-            startx:startx + crop_shape[0]
-            ]
-    if img_crop_arr.shape[0] < crop_shape[2]:
-        #print('initial cropped image shape too small:', img_arr.shape)
-        #print(crop_shape[2], img_crop_arr.shape[0])
-        img_crop_arr = np.pad(
-            img_crop_arr,
-            ((int(crop_shape[2] - img_crop_arr.shape[0]), 0), (0, 0), (0, 0)),
-            'constant',
-            constant_values=-1024
-            )
-        #print("padded size: ", img_crop_arr.shape)
-    #print(img_crop_arr.shape)    
-    ## get nrrd from numpy array
-    img_crop_nrrd = sitk.GetImageFromArray(img_crop_arr)
-    img_crop_nrrd.SetSpacing(nrrd_file.GetSpacing())
-    img_crop_nrrd.SetOrigin(nrrd_file.GetOrigin())
+        ]
+        
+        # Handle any NaN values in the cropped region
+        img_crop_arr = np.nan_to_num(img_crop_arr, nan=-1024)
+        
+        print(f"[Crop] Cropped shape: {img_crop_arr.shape}")
+        print(f"[Crop] Value range: {np.min(img_crop_arr):.1f} to {np.max(img_crop_arr):.1f} HU")
+    except Exception as e:
+        print(f"[Crop] Error during cropping/padding: {str(e)}")
+        raise
+    try:
+        print("[Crop] Converting cropped array to NRRD format...")
+        img_crop_nrrd = sitk.GetImageFromArray(img_crop_arr)
+        img_crop_nrrd.SetSpacing(nrrd_file.GetSpacing())
+        img_crop_nrrd.SetOrigin(nrrd_file.GetOrigin())
+        print("[Crop] NRRD conversion complete")
 
-    if save_dir != None:
-        fn = str(patient_id) + '.nrrd'
-        writer = sitk.ImageFileWriter()
-        writer.SetFileName(os.path.join(save_dir, fn))
-        writer.SetUseCompression(True)
-        writer.Execute(img_crop_nrrd)
+        if save_dir != None:
+            print(f"[Crop] Saving cropped image for patient {patient_id}...")
+            fn = str(patient_id) + '.nrrd'
+            writer = sitk.ImageFileWriter()
+            writer.SetFileName(os.path.join(save_dir, fn))
+            writer.SetUseCompression(True)
+            writer.Execute(img_crop_nrrd)
+            print(f"[Crop] Successfully saved cropped image for patient {patient_id}")
 
-    if return_type == 'nrrd':
-        return img_crop_nrrd
-
-    elif return_type == 'npy':
-        return img_crop_arr
+        print(f"[Crop] Returning result as {return_type}...")
+        if return_type == 'nrrd':
+            return img_crop_nrrd
+        elif return_type == 'npy':
+            return img_crop_arr
+        else:
+            raise ValueError(f"Unsupported return type: {return_type}")
+            
+    except Exception as e:
+        print(f"[Crop] Error during final processing: {str(e)}")
+        raise
  
 #-----------------------------------------------------------------------
 # run codes to test

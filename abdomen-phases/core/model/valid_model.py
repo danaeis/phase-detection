@@ -18,8 +18,8 @@ from sklearn.metrics import roc_auc_score, roc_curve, auc
 
 import matplotlib.pyplot as plt
 
-target_names_dict = {"Non": 0, "Venous": 1, "Aterial": 2, "Others": 3}
-map_id_name = {0: "Non Contrast", 1: "Venous", 2: "Aterial", 3: "Others"}
+target_names_dict = {"Non-contrast": 0, "Arterial": 1, "Venous": 2}
+map_id_name = {0: "Non-contrast", 1: "Arterial", 2: "Venous"}
 
 def valid_model(
     cfg,
@@ -118,7 +118,7 @@ def valid_model(
         fpr = dict()
         tpr = dict()
         roc_auc = dict()
-        for i in range(4):
+        for i in range(3):
             fpr[i], tpr[i], _ = roc_curve(all_target[:, i], all_probs[:, i])
             roc_auc[i] = auc(fpr[i], tpr[i])
         colors = cycle(["aqua", "darkorange", "cornflowerblue", "red"])
@@ -160,7 +160,7 @@ def valid_model(
         report = classification_report(
             targets,
             preds,
-            target_names=["Non", "Venous", "Aterial", "Others"],
+            target_names=["Non-contrast", "Arterial", "Venous"],
             digits=4,
         )
         print(report)
@@ -174,22 +174,46 @@ def valid_model(
     data["Prediction"] = preds
     data["Label"] = targets
     data = pd.DataFrame(data)
-    all_series = []
+    from collections import Counter
+    import random
+    all_series_preds = []
+    all_series_labels = []
     for (studyuid, seriesuid), tmp_df in data.groupby(['Study_ID', 'SeriesNumber']):
         preds = tmp_df['Prediction'].tolist()
         labels = tmp_df['Label'].tolist()
-        f1_series = f1_score(labels, preds, average='macro')
-        all_series.append(f1_series)
-    all_series = np.array(all_series)
-    f1_series = np.mean(all_series)
-    print("series", f1_series)
+        # Assume all labels in series are the same
+        true_label = labels[0] if labels else None
+        # Random sample 30% of slices
+        sample_size = max(1, int(len(preds) * 0.3))
+        sampled_preds = random.sample(preds, sample_size)
+        # Majority voting
+        majority_pred = Counter(sampled_preds).most_common(1)[0][0]
+        all_series_preds.append(majority_pred)
+        all_series_labels.append(true_label)
+    # Compute scan-level metrics
+    scan_accuracy = accuracy_score(all_series_labels, all_series_preds)
+    scan_recall = recall_score(all_series_labels, all_series_preds, average="macro")
+    scan_precision = precision_score(all_series_labels, all_series_preds, average="macro")
+    scan_f1 = f1_score(all_series_labels, all_series_preds, average="macro")
+    print(
+        f"SCAN-LEVEL: ACCURACY: {scan_accuracy:.4f}, RECALL: {scan_recall:.4f}, PRECISION: {scan_precision:.4f}, F1: {scan_f1:.4f}"
+    )
+    if len(np.unique(all_series_preds)) == cfg.MODEL.NUM_CLASSES:
+        scan_report = classification_report(
+            all_series_labels,
+            all_series_preds,
+            target_names=["Non-contrast", "Arterial", "Venous"],
+            digits=4,
+        )
+        print("Scan-level Report:")
+        print(scan_report)
     save_dict = {
             "epoch": epoch + 1,
             "arch": cfg.NAME,
             "state_dict": model.state_dict(),
             "best_metric": best_metric,
         }
-    save_filename = f"{cfg.NAME}_{str(f1)}_{str(f1_series)}.pth"
+    save_filename = f"{cfg.NAME}_{str(f1)}_{str(scan_f1)}.pth"
     
     save_checkpoint(save_dict, root=cfg.DIRS.WEIGHTS, filename=save_filename)
         # print(studyuid, seriesuid, f1)

@@ -34,10 +34,22 @@ def train_generator(pro_data_dir, batch_size, input_channel=3):
         #fn = 'train_arr_3ch_crop.npy'
         fn = 'train_arr_3ch.npy'
     x_train = np.load(os.path.join(pro_data_dir, fn))
+    print('x_train shape:', x_train.shape)
+    print('Any NaN in x_train:', np.isnan(x_train).any())
+    # Handle NaN in x_train
+    for i in range(x_train.shape[0]):
+        img = x_train[i]
+        nan_mask = np.isnan(img)
+        if np.any(nan_mask):
+            mean_val = np.nanmean(img)
+            img[nan_mask] = mean_val
+    print('Any NaN in x_train after handling:', np.isnan(x_train).any())
 
     ### load val labels
     train_df = pd.read_csv(os.path.join(pro_data_dir, 'train_img_df.csv'))
-    y_train  = np.asarray(train_df['label']).astype('int').reshape((-1, 1))
+    y_train  = np.asarray(train_df['label']).astype('int')
+    print('y_train shape:', y_train.shape)
+    print('Any NaN in y_train:', np.isnan(y_train).any())
 
     ## data generator
     datagen = ImageDataGenerator(
@@ -75,7 +87,10 @@ def train_generator(pro_data_dir, batch_size, input_channel=3):
         shuffle=True,
         )
     print('Train generator created')
-
+    print('x_train shape:', x_train.shape)
+    print('Any NaN in x_train:', np.isnan(x_train).any())
+    print('y_train shape:', y_train.shape)
+    print('Any NaN in y_train:', np.isnan(y_train).any())
     return train_gen
 
 
@@ -100,10 +115,22 @@ def val_generator(pro_data_dir, batch_size, input_channel=3):
     elif input_channel == 3:
         fn = 'val_arr_3ch.npy'
     x_val = np.load(os.path.join(pro_data_dir, fn))
+    print('x_val shape:', x_val.shape)
+    print('Any NaN in x_val:', np.isnan(x_val).any())
+    # Handle NaN in x_val
+    for i in range(x_val.shape[0]):
+        img = x_val[i]
+        nan_mask = np.isnan(img)
+        if np.any(nan_mask):
+            mean_val = np.nanmean(img)
+            img[nan_mask] = mean_val
+    print('Any NaN in x_val after handling:', np.isnan(x_val).any())
 
     ### load val labels
     val_df = pd.read_csv(os.path.join(pro_data_dir, 'val_img_df.csv'))
-    y_val = np.asarray(val_df['label']).astype('int').reshape((-1, 1))
+    y_val = np.asarray(val_df['label']).astype('int')
+    print('y_val shape:', y_val.shape)
+    print('Any NaN in y_val:', np.isnan(y_val).any())
 
     datagen = ImageDataGenerator(
         featurewise_center=False,
@@ -141,7 +168,8 @@ def val_generator(pro_data_dir, batch_size, input_channel=3):
         )
     print('val generator created')
 
+    print('x_val shape:', x_val.shape)
+    print('Any NaN in x_val:', np.isnan(x_val).any())
+    print('y_val shape:', y_val.shape)
+    print('Any NaN in y_val:', np.isnan(y_val).any())
     return x_val, y_val, val_gen
-
-
-

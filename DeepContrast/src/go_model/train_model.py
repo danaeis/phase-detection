@@ -44,9 +44,17 @@ def train_model(root_dir, out_dir, log_dir, model_dir, model, run_model, train_g
     print('complie model')
     model.compile(
         optimizer=optimizer,
-        loss=loss_function,
+        loss='sparse_categorical_crossentropy',
         metrics=['acc']
         )
+    model.summary()
+    batch_x, batch_y = next(train_gen)
+    initial_preds = model.predict(batch_x)
+    print('batch_x', batch_x)
+    print('batch_y', batch_y)
+    print('Sample batch labels:', batch_y)
+    print('Initial predictions shape:', initial_preds.shape)
+    print('Any NaN in initial predictions:', np.isnan(initial_preds).any())
 	
     ## call back functions
     my_callbacks = callbacks(log_dir)
@@ -57,9 +65,7 @@ def train_model(root_dir, out_dir, log_dir, model_dir, model, run_model, train_g
         steps_per_epoch=train_gen.n//batch_size,
         epochs=epoch,
         validation_data=val_gen,
-        #validation_data=(x_val, y_val),
         validation_steps=val_gen.n//batch_size,
-        #validation_steps=y_val.shape[0]//batch_size,
         verbose=2,
         callbacks=my_callbacks,
         validation_split=None,
@@ -68,6 +74,10 @@ def train_model(root_dir, out_dir, log_dir, model_dir, model, run_model, train_g
         sample_weight=None,
         initial_epoch=0
         )
+    print('Training loss history:', history.history['loss'])
+    print('Any NaN in training loss:', any(np.isnan(val) for val in history.history['loss']))
+    print('Validation loss history:', history.history['val_loss'])
+    print('Any NaN in val loss:', any(np.isnan(val) for val in history.history['val_loss']))
     
     ## valudation acc and loss
     score = model.evaluate(x_val, y_val)

@@ -63,6 +63,8 @@ if __name__ == '__main__':
             label_dir = os.path.join(opt.root_dir, opt.AB_label)
             pro_data_dir = os.path.join(opt.root_dir, opt.AB_pro_data)
             log_dir = os.path.join(opt.root_dir, opt.AB_log)
+            opt.loss_function = 'sparse_categorical_crossentropy'
+            opt.activation = 'softmax'
         else:
             raise ValueError(f'Unknown dataset: {dataset}')
             

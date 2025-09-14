@@ -16,6 +16,6 @@ def extract_slices(nifti_path, output_dir, study_id, series_id, label):
         slice_img = ((slice_img - slice_img.min()) / (slice_img.max() - slice_img.min() + 1e-6) * 255).astype('uint8')
         slice_path = os.path.join(output_dir, f'slice_{i:04d}.png')
         cv2.imwrite(slice_path, slice_img)
-        csv_rows.append({'Image': slice_path, 'Label': label, 'Study_ID': study_id, 'SeriesNumber': series_id})
+        csv_rows.append({'Image': slice_path, 'Label': label, 'study_ID': study_id, 'seriesNumber': series_id})
     
     return csv_rows

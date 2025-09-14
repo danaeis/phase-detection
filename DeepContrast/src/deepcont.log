@@ -1,0 +1,4246 @@
+Using dataset: Abdomen
+
+--- STEP 1 - GET DATA ---
+
+
+Preprocessing data...
+DF                                                   ID                                               file
+0  1.2.392.200036.9116.2.5.1.37.2418751871.157404...  ../../../ncct_cect/vindr_ds/original_volumes/A...
+1  1.2.392.200036.9116.2.5.1.37.2418751871.157404...  ../../../ncct_cect/vindr_ds/original_volumes/A...
+2  1.2.392.200036.9116.2.5.1.37.2418751871.157404...  ../../../ncct_cect/vindr_ds/original_volumes/A...
+3  1.2.392.200036.9116.2.5.1.37.2418751871.157422...  ../../../ncct_cect/vindr_ds/original_volumes/A...
+4  1.2.392.200036.9116.2.5.1.37.2418751871.157422...  ../../../ncct_cect/vindr_ds/original_volumes/A...
+5  1.2.392.200036.9116.2.5.1.37.2418751871.157422...  ../../../ncct_cect/vindr_ds/original_volumes/A...
+6  1.2.392.200036.9116.2.5.1.37.2418751871.157430...  ../../../ncct_cect/vindr_ds/original_volumes/A...
+7  1.2.392.200036.9116.2.5.1.37.2418751871.157430...  ../../../ncct_cect/vindr_ds/original_volumes/A...
+8  1.2.392.200036.9116.2.5.1.37.2418751871.157430...  ../../../ncct_cect/vindr_ds/original_volumes/A...
+9  1.2.392.200036.9116.2.5.1.37.2418751871.157465...  ../../../ncct_cect/vindr_ds/original_volumes/A...
+../../../ncct_cect/vindr_ds/original_volumes/Abdomen/raw_image/1.2.392.200036.9116.2.5.1.37.2418751871.1574048385.958233_registered/registered_1.2.392.200036.9116.2.5.1.37.2418751871.1574048534.842006.nii.gz
+1.2.392.200036.9116.2.5.1.37.2418751871.1574048534.842006
+old size:  (512, 512, 1467)
+old spacing:  (0.7820000052452087, 0.7820000052452087, 0.300048828125)
+new size:  [400, 400, 147]
+img_nrrd Image (0x1d07a200)
+  RTTI typeinfo:   itk::Image<float, 3u>
+  Reference Count: 1
+  Modified Time: 933
+  Debug: Off
+  Object Name: 
+  Observers: 
+    none
+  Source: (none)
+  Source output name: (none)
+  Release Data: Off
+  Data Released: False
+  Global Release Data: Off
+  PipelineMTime: 917
+  UpdateMTime: 932
+  RealTimeStamp: 0 seconds 
+  LargestPossibleRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 147]
+  BufferedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 147]
+  RequestedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 147]
+  Spacing: [1, 1, 3]
+  Origin: [-190.039, 199.798, 1823]
+  Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  IndexToPointMatrix: 
+1 0 0
+0 -1 0
+0 0 3
+
+  PointToIndexMatrix: 
+1 0 0
+0 -1 0
+0 0 0.333333
+
+  Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PixelContainer: 
+    ImportImageContainer (0x1d5a4ef0)
+      RTTI typeinfo:   itk::ImportImageContainer<unsigned long, float>
+      Reference Count: 1
+      Modified Time: 929
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Pointer: 0x7fdb16b7f010
+      Container manages memory: true
+      Size: 23520000
+      Capacity: 23520000
+
+
+Starting registration for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574048534.842006...
+Reading fixed image...
+Setting up moving image...
+Executing registration (this may take a while)...
+Iteration: 0, Metric: -1.993896
+Iteration: 1, Metric: -1.833776
+Iteration: 2, Metric: -1.879900
+Iteration: 3, Metric: -1.820749
+Iteration: 0, Metric: -1.602105
+Iteration: 1, Metric: -1.642039
+Iteration: 2, Metric: -1.615374
+Iteration: 3, Metric: -1.623886
+Iteration: 4, Metric: -1.634912
+Iteration: 0, Metric: -1.424184
+Iteration: 1, Metric: -1.458068
+Iteration: 2, Metric: -1.396671
+Iteration: 3, Metric: -1.496950
+Registration complete, resampling image...
+Saving registered image to ../../../ncct_cect/vindr_ds/original_volumes/Abdomen/pre_image/1.2.392.200036.9116.2.5.1.37.2418751871.1574048534.842006_reg.nrrd...
+Save complete.
+[Crop] Starting image cropping for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574048534.842006...
+[Crop] Loading image array...
+[Crop] Calculating center of mass...
+[Crop] Creating binary mask...
+[Crop] Mask created with range: 0.00 to 1.00
+[Crop] Computing center of mass...
+[Crop] Center of mass computed at: (255.5, 255.5)
+[Crop] Using slice 1465 of 1467 for centering (maximum tissue content)
+[Crop] Crop region - X: 159:351, Y: 159:351, Z: 1367:1467
+[Crop] Cropping image to shape [192, 192, 100] ...
+[Crop] Extracting region: z=1367:1467, y=159:351, x=159:351
+[Crop] Cropped shape: (100, 192, 192)
+[Crop] Value range: -1050.7 to 1482.7 HU
+[Crop] Converting cropped array to NRRD format...
+[Crop] NRRD conversion complete
+[Crop] Saving cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574048534.842006...
+[Crop] Successfully saved cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574048534.842006
+[Crop] Returning result as nrrd...
+After respacing: -2048.0 1828.49169921875
+After registration: -2048.0 1802.9976806640625
+1.2.392.200036.9116.2.5.1.37.2418751871.1574048766.799043
+old size:  (512, 512, 1467)
+old spacing:  (0.7820000052452087, 0.7820000052452087, 0.300048828125)
+new size:  [400, 400, 147]
+img_nrrd Image (0x1d900ad0)
+  RTTI typeinfo:   itk::Image<float, 3u>
+  Reference Count: 1
+  Modified Time: 5483924
+  Debug: Off
+  Object Name: 
+  Observers: 
+    none
+  Source: (none)
+  Source output name: (none)
+  Release Data: Off
+  Data Released: False
+  Global Release Data: Off
+  PipelineMTime: 5483909
+  UpdateMTime: 5483923
+  RealTimeStamp: 0 seconds 
+  LargestPossibleRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 147]
+  BufferedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 147]
+  RequestedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 147]
+  Spacing: [1, 1, 3]
+  Origin: [-190.039, 199.798, 1823]
+  Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  IndexToPointMatrix: 
+1 0 0
+0 -1 0
+0 0 3
+
+  PointToIndexMatrix: 
+1 0 0
+0 -1 0
+0 0 0.333333
+
+  Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PixelContainer: 
+    ImportImageContainer (0x1d610f40)
+      RTTI typeinfo:   itk::ImportImageContainer<unsigned long, float>
+      Reference Count: 1
+      Modified Time: 5483921
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Pointer: 0x7fd9fa647010
+      Container manages memory: true
+      Size: 23520000
+      Capacity: 23520000
+
+
+Starting registration for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574048766.799043...
+Reading fixed image...
+Setting up moving image...
+Executing registration (this may take a while)...
+Iteration: 0, Metric: -1.751546
+Iteration: 1, Metric: -1.688863
+Iteration: 2, Metric: -1.653433
+Iteration: 3, Metric: -1.683154
+Iteration: 0, Metric: -1.409852
+Iteration: 1, Metric: -1.523898
+Iteration: 2, Metric: -1.523994
+Iteration: 3, Metric: -1.523079
+Iteration: 4, Metric: -1.517071
+Iteration: 0, Metric: -1.335371
+Iteration: 1, Metric: -1.251758
+Iteration: 2, Metric: -1.185019
+Iteration: 3, Metric: -1.249149
+Registration complete, resampling image...
+Saving registered image to ../../../ncct_cect/vindr_ds/original_volumes/Abdomen/pre_image/1.2.392.200036.9116.2.5.1.37.2418751871.1574048766.799043_reg.nrrd...
+Save complete.
+[Crop] Starting image cropping for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574048766.799043...
+[Crop] Loading image array...
+[Crop] Calculating center of mass...
+[Crop] Creating binary mask...
+[Crop] Mask created with range: 0.00 to 1.00
+[Crop] Computing center of mass...
+[Crop] Center of mass computed at: (255.5, 255.5)
+[Crop] Using slice 1463 of 1467 for centering (maximum tissue content)
+[Crop] Crop region - X: 159:351, Y: 159:351, Z: 1367:1467
+[Crop] Cropping image to shape [192, 192, 100] ...
+[Crop] Extracting region: z=1367:1467, y=159:351, x=159:351
+[Crop] Cropped shape: (100, 192, 192)
+[Crop] Value range: -1029.0 to 1466.6 HU
+[Crop] Converting cropped array to NRRD format...
+[Crop] NRRD conversion complete
+[Crop] Saving cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574048766.799043...
+[Crop] Successfully saved cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574048766.799043
+[Crop] Returning result as nrrd...
+After respacing: -2048.0 1826.2135009765625
+After registration: -2048.0 1794.012451171875
+1.2.392.200036.9116.2.5.1.37.2418751871.1574048914.399831
+old size:  (512, 512, 1467)
+old spacing:  (0.7820000052452087, 0.7820000052452087, 0.300048828125)
+new size:  [400, 400, 147]
+img_nrrd Image (0x1e03fc40)
+  RTTI typeinfo:   itk::Image<float, 3u>
+  Reference Count: 1
+  Modified Time: 10966914
+  Debug: Off
+  Object Name: 
+  Observers: 
+    none
+  Source: (none)
+  Source output name: (none)
+  Release Data: Off
+  Data Released: False
+  Global Release Data: Off
+  PipelineMTime: 10966899
+  UpdateMTime: 10966913
+  RealTimeStamp: 0 seconds 
+  LargestPossibleRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 147]
+  BufferedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 147]
+  RequestedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 147]
+  Spacing: [1, 1, 3]
+  Origin: [-190.039, 199.798, 1823]
+  Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  IndexToPointMatrix: 
+1 0 0
+0 -1 0
+0 0 3
+
+  PointToIndexMatrix: 
+1 0 0
+0 -1 0
+0 0 0.333333
+
+  Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PixelContainer: 
+    ImportImageContainer (0x1d8f18e0)
+      RTTI typeinfo:   itk::ImportImageContainer<unsigned long, float>
+      Reference Count: 1
+      Modified Time: 10966911
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Pointer: 0x7fdb16b7f010
+      Container manages memory: true
+      Size: 23520000
+      Capacity: 23520000
+
+
+Starting registration for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574048914.399831...
+Reading fixed image...
+Setting up moving image...
+Executing registration (this may take a while)...
+Iteration: 0, Metric: -1.671431
+Iteration: 1, Metric: -1.643685
+Iteration: 2, Metric: -1.679275
+Iteration: 3, Metric: -1.678695
+Iteration: 4, Metric: -1.695894
+Iteration: 5, Metric: -1.676424
+Iteration: 6, Metric: -1.697986
+Iteration: 0, Metric: -1.439328
+Iteration: 1, Metric: -1.501118
+Iteration: 2, Metric: -1.483658
+Iteration: 3, Metric: -1.493426
+Iteration: 4, Metric: -1.479948
+Iteration: 0, Metric: -1.318414
+Iteration: 1, Metric: -1.272164
+Iteration: 2, Metric: -1.307581
+Iteration: 3, Metric: -1.271256
+Registration complete, resampling image...
+Saving registered image to ../../../ncct_cect/vindr_ds/original_volumes/Abdomen/pre_image/1.2.392.200036.9116.2.5.1.37.2418751871.1574048914.399831_reg.nrrd...
+Save complete.
+[Crop] Starting image cropping for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574048914.399831...
+[Crop] Loading image array...
+[Crop] Calculating center of mass...
+[Crop] Creating binary mask...
+[Crop] Mask created with range: 0.00 to 1.00
+[Crop] Computing center of mass...
+[Crop] Center of mass computed at: (255.5, 255.5)
+[Crop] Using slice 1458 of 1467 for centering (maximum tissue content)
+[Crop] Crop region - X: 159:351, Y: 159:351, Z: 1367:1467
+[Crop] Cropping image to shape [192, 192, 100] ...
+[Crop] Extracting region: z=1367:1467, y=159:351, x=159:351
+[Crop] Cropped shape: (100, 192, 192)
+[Crop] Value range: -1025.7 to 1454.0 HU
+[Crop] Converting cropped array to NRRD format...
+[Crop] NRRD conversion complete
+[Crop] Saving cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574048914.399831...
+[Crop] Successfully saved cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574048914.399831
+[Crop] Returning result as nrrd...
+After respacing: -2048.0 1800.428955078125
+After registration: -2048.0 1779.830810546875
+1.2.392.200036.9116.2.5.1.37.2418751871.1574224602.131200
+old size:  (512, 512, 1401)
+old spacing:  (0.7820000052452087, 0.7820000052452087, 0.300048828125)
+new size:  [400, 400, 140]
+img_nrrd Image (0x1d620410)
+  RTTI typeinfo:   itk::Image<float, 3u>
+  Reference Count: 1
+  Modified Time: 16450306
+  Debug: Off
+  Object Name: 
+  Observers: 
+    none
+  Source: (none)
+  Source output name: (none)
+  Release Data: Off
+  Data Released: False
+  Global Release Data: Off
+  PipelineMTime: 16450291
+  UpdateMTime: 16450305
+  RealTimeStamp: 0 seconds 
+  LargestPossibleRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 140]
+  BufferedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 140]
+  RequestedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 140]
+  Spacing: [1, 1, 3]
+  Origin: [-189.062, 204.681, 1699.5]
+  Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  IndexToPointMatrix: 
+1 0 0
+0 -1 0
+0 0 3
+
+  PointToIndexMatrix: 
+1 0 0
+0 -1 0
+0 0 0.333333
+
+  Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PixelContainer: 
+    ImportImageContainer (0x1d59fb70)
+      RTTI typeinfo:   itk::ImportImageContainer<unsigned long, float>
+      Reference Count: 1
+      Modified Time: 16450303
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Pointer: 0x7fd9faa8c010
+      Container manages memory: true
+      Size: 22400000
+      Capacity: 22400000
+
+
+Starting registration for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574224602.131200...
+Reading fixed image...
+Setting up moving image...
+Executing registration (this may take a while)...
+Iteration: 0, Metric: -1.087107
+Iteration: 1, Metric: -1.040353
+Iteration: 2, Metric: -1.073853
+Iteration: 3, Metric: -1.036986
+Iteration: 0, Metric: -0.853724
+Iteration: 1, Metric: -0.831290
+Iteration: 2, Metric: -0.845736
+Iteration: 3, Metric: -0.836437
+Iteration: 0, Metric: -0.745822
+Iteration: 1, Metric: -0.745261
+Iteration: 2, Metric: -0.745810
+Iteration: 3, Metric: -0.745217
+Iteration: 4, Metric: -0.745871
+Registration complete, resampling image...
+Saving registered image to ../../../ncct_cect/vindr_ds/original_volumes/Abdomen/pre_image/1.2.392.200036.9116.2.5.1.37.2418751871.1574224602.131200_reg.nrrd...
+Save complete.
+[Crop] Starting image cropping for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574224602.131200...
+[Crop] Loading image array...
+[Crop] Calculating center of mass...
+[Crop] Creating binary mask...
+[Crop] Mask created with range: 0.00 to 1.00
+[Crop] Computing center of mass...
+[Crop] Center of mass computed at: (255.5, 255.5)
+[Crop] Using slice 0 of 1467 for centering (maximum tissue content)
+[Crop] Crop region - X: 159:351, Y: 159:351, Z: 0:100
+[Crop] Cropping image to shape [192, 192, 100] ...
+[Crop] Extracting region: z=0:100, y=159:351, x=159:351
+[Crop] Cropped shape: (100, 192, 192)
+[Crop] Value range: -1020.0 to 1596.5 HU
+[Crop] Converting cropped array to NRRD format...
+[Crop] NRRD conversion complete
+[Crop] Saving cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574224602.131200...
+[Crop] Successfully saved cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574224602.131200
+[Crop] Returning result as nrrd...
+After respacing: -2048.0 11265.1552734375
+After registration: -2048.0 10069.427734375
+1.2.392.200036.9116.2.5.1.37.2418751871.1574224834.609627
+old size:  (512, 512, 1401)
+old spacing:  (0.7820000052452087, 0.7820000052452087, 0.300048828125)
+new size:  [400, 400, 140]
+img_nrrd Image (0x1d933670)
+  RTTI typeinfo:   itk::Image<float, 3u>
+  Reference Count: 1
+  Modified Time: 21933297
+  Debug: Off
+  Object Name: 
+  Observers: 
+    none
+  Source: (none)
+  Source output name: (none)
+  Release Data: Off
+  Data Released: False
+  Global Release Data: Off
+  PipelineMTime: 21933282
+  UpdateMTime: 21933296
+  RealTimeStamp: 0 seconds 
+  LargestPossibleRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 140]
+  BufferedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 140]
+  RequestedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 140]
+  Spacing: [1, 1, 3]
+  Origin: [-189.062, 204.681, 1699.5]
+  Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  IndexToPointMatrix: 
+1 0 0
+0 -1 0
+0 0 3
+
+  PointToIndexMatrix: 
+1 0 0
+0 -1 0
+0 0 0.333333
+
+  Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PixelContainer: 
+    ImportImageContainer (0x1d90f8e0)
+      RTTI typeinfo:   itk::ImportImageContainer<unsigned long, float>
+      Reference Count: 1
+      Modified Time: 21933294
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Pointer: 0x7fdb190c4010
+      Container manages memory: true
+      Size: 22400000
+      Capacity: 22400000
+
+
+Starting registration for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574224834.609627...
+Reading fixed image...
+Setting up moving image...
+Executing registration (this may take a while)...
+Iteration: 0, Metric: -1.017796
+Iteration: 1, Metric: -0.979410
+Iteration: 2, Metric: -1.013742
+Iteration: 3, Metric: -0.974680
+Iteration: 0, Metric: -0.812049
+Iteration: 1, Metric: -0.786067
+Iteration: 2, Metric: -0.792729
+Iteration: 3, Metric: -0.793190
+Iteration: 0, Metric: -0.693361
+Iteration: 1, Metric: -0.713931
+Iteration: 2, Metric: -0.700259
+Iteration: 3, Metric: -0.708372
+Iteration: 4, Metric: -0.700906
+Registration complete, resampling image...
+Saving registered image to ../../../ncct_cect/vindr_ds/original_volumes/Abdomen/pre_image/1.2.392.200036.9116.2.5.1.37.2418751871.1574224834.609627_reg.nrrd...
+Save complete.
+[Crop] Starting image cropping for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574224834.609627...
+[Crop] Loading image array...
+[Crop] Calculating center of mass...
+[Crop] Creating binary mask...
+[Crop] Mask created with range: 0.00 to 1.00
+[Crop] Computing center of mass...
+[Crop] Center of mass computed at: (255.5, 255.5)
+[Crop] Using slice 0 of 1467 for centering (maximum tissue content)
+[Crop] Crop region - X: 159:351, Y: 159:351, Z: 0:100
+[Crop] Cropping image to shape [192, 192, 100] ...
+[Crop] Extracting region: z=0:100, y=159:351, x=159:351
+[Crop] Cropped shape: (100, 192, 192)
+[Crop] Value range: -1022.6 to 1425.5 HU
+[Crop] Converting cropped array to NRRD format...
+[Crop] NRRD conversion complete
+[Crop] Saving cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574224834.609627...
+[Crop] Successfully saved cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574224834.609627
+[Crop] Returning result as nrrd...
+After respacing: -2048.0 11059.1875
+After registration: -2048.0 10666.1513671875
+1.2.392.200036.9116.2.5.1.37.2418751871.1574224969.740485
+old size:  (512, 512, 1401)
+old spacing:  (0.7820000052452087, 0.7820000052452087, 0.300048828125)
+new size:  [400, 400, 140]
+img_nrrd Image (0x1db5a8a0)
+  RTTI typeinfo:   itk::Image<float, 3u>
+  Reference Count: 1
+  Modified Time: 27416288
+  Debug: Off
+  Object Name: 
+  Observers: 
+    none
+  Source: (none)
+  Source output name: (none)
+  Release Data: Off
+  Data Released: False
+  Global Release Data: Off
+  PipelineMTime: 27416273
+  UpdateMTime: 27416287
+  RealTimeStamp: 0 seconds 
+  LargestPossibleRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 140]
+  BufferedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 140]
+  RequestedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 140]
+  Spacing: [1, 1, 3]
+  Origin: [-189.062, 204.681, 1699.5]
+  Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  IndexToPointMatrix: 
+1 0 0
+0 -1 0
+0 0 3
+
+  PointToIndexMatrix: 
+1 0 0
+0 -1 0
+0 0 0.333333
+
+  Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PixelContainer: 
+    ImportImageContainer (0x1d8fa8e0)
+      RTTI typeinfo:   itk::ImportImageContainer<unsigned long, float>
+      Reference Count: 1
+      Modified Time: 27416285
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Pointer: 0x7fd9faa8c010
+      Container manages memory: true
+      Size: 22400000
+      Capacity: 22400000
+
+
+Starting registration for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574224969.740485...
+Reading fixed image...
+Setting up moving image...
+Executing registration (this may take a while)...
+Iteration: 0, Metric: -1.080848
+Iteration: 1, Metric: -1.036610
+Iteration: 2, Metric: -1.072844
+Iteration: 3, Metric: -1.033288
+Iteration: 0, Metric: -0.856220
+Iteration: 1, Metric: -0.832150
+Iteration: 2, Metric: -0.844051
+Iteration: 3, Metric: -0.840071
+Iteration: 0, Metric: -0.747472
+Iteration: 1, Metric: -0.755773
+Iteration: 2, Metric: -0.752070
+Iteration: 3, Metric: -0.753332
+Iteration: 4, Metric: -0.752465
+Registration complete, resampling image...
+Saving registered image to ../../../ncct_cect/vindr_ds/original_volumes/Abdomen/pre_image/1.2.392.200036.9116.2.5.1.37.2418751871.1574224969.740485_reg.nrrd...
+Save complete.
+[Crop] Starting image cropping for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574224969.740485...
+[Crop] Loading image array...
+[Crop] Calculating center of mass...
+[Crop] Creating binary mask...
+[Crop] Mask created with range: 0.00 to 1.00
+[Crop] Computing center of mass...
+[Crop] Center of mass computed at: (255.5, 255.5)
+[Crop] Using slice 0 of 1467 for centering (maximum tissue content)
+[Crop] Crop region - X: 159:351, Y: 159:351, Z: 0:100
+[Crop] Cropping image to shape [192, 192, 100] ...
+[Crop] Extracting region: z=0:100, y=159:351, x=159:351
+[Crop] Cropped shape: (100, 192, 192)
+[Crop] Value range: -1005.3 to 1526.7 HU
+[Crop] Converting cropped array to NRRD format...
+[Crop] NRRD conversion complete
+[Crop] Saving cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574224969.740485...
+[Crop] Successfully saved cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574224969.740485
+[Crop] Returning result as nrrd...
+After respacing: -2048.0 10328.509765625
+After registration: -2048.0 9939.490234375
+1.2.392.200036.9116.2.5.1.37.2418751871.1574308434.394846
+old size:  (512, 512, 1401)
+old spacing:  (0.7590000033378601, 0.7590000033378601, 0.300048828125)
+new size:  [389, 389, 140]
+img_nrrd Image (0x1d8da810)
+  RTTI typeinfo:   itk::Image<float, 3u>
+  Reference Count: 1
+  Modified Time: 32899279
+  Debug: Off
+  Object Name: 
+  Observers: 
+    none
+  Source: (none)
+  Source output name: (none)
+  Release Data: Off
+  Data Released: False
+  Global Release Data: Off
+  PipelineMTime: 32899264
+  UpdateMTime: 32899278
+  RealTimeStamp: 0 seconds 
+  LargestPossibleRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [389, 389, 140]
+  BufferedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [389, 389, 140]
+  RequestedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [389, 389, 140]
+  Spacing: [1, 1, 3]
+  Origin: [-179.308, 200.729, 1746.5]
+  Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  IndexToPointMatrix: 
+1 0 0
+0 -1 0
+0 0 3
+
+  PointToIndexMatrix: 
+1 0 0
+0 -1 0
+0 0 0.333333
+
+  Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PixelContainer: 
+    ImportImageContainer (0x1d9368f0)
+      RTTI typeinfo:   itk::ImportImageContainer<unsigned long, float>
+      Reference Count: 1
+      Modified Time: 32899276
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Pointer: 0x7fdb19567010
+      Container manages memory: true
+      Size: 21184940
+      Capacity: 21184940
+
+
+Starting registration for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574308434.394846...
+Reading fixed image...
+Setting up moving image...
+Executing registration (this may take a while)...
+Iteration: 0, Metric: -0.974269
+Iteration: 1, Metric: -0.941494
+Iteration: 2, Metric: -0.873681
+Iteration: 3, Metric: -0.956288
+Iteration: 0, Metric: -0.679055
+Iteration: 1, Metric: -0.695503
+Iteration: 2, Metric: -0.701589
+Iteration: 3, Metric: -0.704493
+Iteration: 4, Metric: -0.704622
+Iteration: 5, Metric: -0.704317
+Iteration: 6, Metric: -0.704083
+Iteration: 0, Metric: -0.613263
+Iteration: 1, Metric: -0.617617
+Iteration: 2, Metric: -0.617131
+Iteration: 3, Metric: -0.617317
+Iteration: 4, Metric: -0.616682
+Registration complete, resampling image...
+Saving registered image to ../../../ncct_cect/vindr_ds/original_volumes/Abdomen/pre_image/1.2.392.200036.9116.2.5.1.37.2418751871.1574308434.394846_reg.nrrd...
+Save complete.
+[Crop] Starting image cropping for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574308434.394846...
+[Crop] Loading image array...
+[Crop] Calculating center of mass...
+[Crop] Creating binary mask...
+[Crop] Mask created with range: 0.00 to 1.00
+[Crop] Computing center of mass...
+[Crop] Center of mass computed at: (255.5, 255.5)
+[Crop] Using slice 0 of 1467 for centering (maximum tissue content)
+[Crop] Crop region - X: 159:351, Y: 159:351, Z: 0:100
+[Crop] Cropping image to shape [192, 192, 100] ...
+[Crop] Extracting region: z=0:100, y=159:351, x=159:351
+[Crop] Cropped shape: (100, 192, 192)
+[Crop] Value range: -1069.1 to 1367.8 HU
+[Crop] Converting cropped array to NRRD format...
+[Crop] NRRD conversion complete
+[Crop] Saving cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574308434.394846...
+[Crop] Successfully saved cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574308434.394846
+[Crop] Returning result as nrrd...
+After respacing: -2753.419189453125 15330.0751953125
+After registration: -2556.531494140625 14022.880859375
+1.2.392.200036.9116.2.5.1.37.2418751871.1574308657.765101
+old size:  (512, 512, 1401)
+old spacing:  (0.7590000033378601, 0.7590000033378601, 0.300048828125)
+new size:  [389, 389, 140]
+img_nrrd Image (0x1dce9260)
+  RTTI typeinfo:   itk::Image<float, 3u>
+  Reference Count: 1
+  Modified Time: 38382672
+  Debug: Off
+  Object Name: 
+  Observers: 
+    none
+  Source: (none)
+  Source output name: (none)
+  Release Data: Off
+  Data Released: False
+  Global Release Data: Off
+  PipelineMTime: 38382657
+  UpdateMTime: 38382671
+  RealTimeStamp: 0 seconds 
+  LargestPossibleRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [389, 389, 140]
+  BufferedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [389, 389, 140]
+  RequestedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [389, 389, 140]
+  Spacing: [1, 1, 3]
+  Origin: [-179.308, 200.729, 1746.5]
+  Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  IndexToPointMatrix: 
+1 0 0
+0 -1 0
+0 0 3
+
+  PointToIndexMatrix: 
+1 0 0
+0 -1 0
+0 0 0.333333
+
+  Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PixelContainer: 
+    ImportImageContainer (0x1d8da700)
+      RTTI typeinfo:   itk::ImportImageContainer<unsigned long, float>
+      Reference Count: 1
+      Modified Time: 38382669
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Pointer: 0x7fdb14496010
+      Container manages memory: true
+      Size: 21184940
+      Capacity: 21184940
+
+
+Starting registration for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574308657.765101...
+Reading fixed image...
+Setting up moving image...
+Executing registration (this may take a while)...
+Iteration: 0, Metric: -0.950039
+Iteration: 1, Metric: -0.922021
+Iteration: 2, Metric: -0.836678
+Iteration: 3, Metric: -0.915971
+Iteration: 0, Metric: -0.666396
+Iteration: 1, Metric: -0.689509
+Iteration: 2, Metric: -0.704566
+Iteration: 3, Metric: -0.710572
+Iteration: 4, Metric: -0.710365
+Iteration: 5, Metric: -0.710387
+Iteration: 6, Metric: -0.710421
+Iteration: 0, Metric: -0.607640
+Iteration: 1, Metric: -0.609677
+Iteration: 2, Metric: -0.608510
+Iteration: 3, Metric: -0.608819
+Iteration: 4, Metric: -0.608264
+Registration complete, resampling image...
+Saving registered image to ../../../ncct_cect/vindr_ds/original_volumes/Abdomen/pre_image/1.2.392.200036.9116.2.5.1.37.2418751871.1574308657.765101_reg.nrrd...
+Save complete.
+[Crop] Starting image cropping for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574308657.765101...
+[Crop] Loading image array...
+[Crop] Calculating center of mass...
+[Crop] Creating binary mask...
+[Crop] Mask created with range: 0.00 to 1.00
+[Crop] Computing center of mass...
+[Crop] Center of mass computed at: (255.5, 255.5)
+[Crop] Using slice 0 of 1467 for centering (maximum tissue content)
+[Crop] Crop region - X: 159:351, Y: 159:351, Z: 0:100
+[Crop] Cropping image to shape [192, 192, 100] ...
+[Crop] Extracting region: z=0:100, y=159:351, x=159:351
+[Crop] Cropped shape: (100, 192, 192)
+[Crop] Value range: -1010.5 to 1129.0 HU
+[Crop] Converting cropped array to NRRD format...
+[Crop] NRRD conversion complete
+[Crop] Saving cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574308657.765101...
+[Crop] Successfully saved cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574308657.765101
+[Crop] Returning result as nrrd...
+After respacing: -2677.909423828125 15113.9775390625
+After registration: -2449.554931640625 14189.8828125
+1.2.392.200036.9116.2.5.1.37.2418751871.1574308815.58753
+old size:  (512, 512, 1401)
+old spacing:  (0.7590000033378601, 0.7590000033378601, 0.300048828125)
+new size:  [389, 389, 140]
+img_nrrd Image (0x1dcabab0)
+  RTTI typeinfo:   itk::Image<float, 3u>
+  Reference Count: 1
+  Modified Time: 43866065
+  Debug: Off
+  Object Name: 
+  Observers: 
+    none
+  Source: (none)
+  Source output name: (none)
+  Release Data: Off
+  Data Released: False
+  Global Release Data: Off
+  PipelineMTime: 43866050
+  UpdateMTime: 43866064
+  RealTimeStamp: 0 seconds 
+  LargestPossibleRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [389, 389, 140]
+  BufferedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [389, 389, 140]
+  RequestedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [389, 389, 140]
+  Spacing: [1, 1, 3]
+  Origin: [-179.308, 200.729, 1746.5]
+  Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  IndexToPointMatrix: 
+1 0 0
+0 -1 0
+0 0 3
+
+  PointToIndexMatrix: 
+1 0 0
+0 -1 0
+0 0 0.333333
+
+  Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PixelContainer: 
+    ImportImageContainer (0x1d6099f0)
+      RTTI typeinfo:   itk::ImportImageContainer<unsigned long, float>
+      Reference Count: 1
+      Modified Time: 43866062
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Pointer: 0x7fdb19567010
+      Container manages memory: true
+      Size: 21184940
+      Capacity: 21184940
+
+
+Starting registration for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574308815.58753...
+Reading fixed image...
+Setting up moving image...
+Executing registration (this may take a while)...
+Iteration: 0, Metric: -0.940082
+Iteration: 1, Metric: -0.914084
+Iteration: 2, Metric: -0.891461
+Iteration: 3, Metric: -0.908176
+Iteration: 0, Metric: -0.694598
+Iteration: 1, Metric: -0.701592
+Iteration: 2, Metric: -0.701429
+Iteration: 3, Metric: -0.701344
+Iteration: 4, Metric: -0.701421
+Iteration: 0, Metric: -0.612139
+Iteration: 1, Metric: -0.614991
+Iteration: 2, Metric: -0.615522
+Iteration: 3, Metric: -0.616899
+Iteration: 4, Metric: -0.616699
+Iteration: 5, Metric: -0.616774
+Iteration: 6, Metric: -0.616651
+Registration complete, resampling image...
+Saving registered image to ../../../ncct_cect/vindr_ds/original_volumes/Abdomen/pre_image/1.2.392.200036.9116.2.5.1.37.2418751871.1574308815.58753_reg.nrrd...
+Save complete.
+[Crop] Starting image cropping for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574308815.58753...
+[Crop] Loading image array...
+[Crop] Calculating center of mass...
+[Crop] Creating binary mask...
+[Crop] Mask created with range: 0.00 to 1.00
+[Crop] Computing center of mass...
+[Crop] Center of mass computed at: (255.5, 255.5)
+[Crop] Using slice 0 of 1467 for centering (maximum tissue content)
+[Crop] Crop region - X: 159:351, Y: 159:351, Z: 0:100
+[Crop] Cropping image to shape [192, 192, 100] ...
+[Crop] Extracting region: z=0:100, y=159:351, x=159:351
+[Crop] Cropped shape: (100, 192, 192)
+[Crop] Value range: -1032.7 to 1225.2 HU
+[Crop] Converting cropped array to NRRD format...
+[Crop] NRRD conversion complete
+[Crop] Saving cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574308815.58753...
+[Crop] Successfully saved cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574308815.58753
+[Crop] Returning result as nrrd...
+After respacing: -2363.8603515625 14593.349609375
+After registration: -2257.478515625 12545.2333984375
+1.2.392.200036.9116.2.5.1.37.2418751871.1574651214.259258
+old size:  (512, 512, 1384)
+old spacing:  (0.753000020980835, 0.753000020980835, 0.300048828125)
+new size:  [386, 386, 138]
+img_nrrd Image (0x1d8e1ea0)
+  RTTI typeinfo:   itk::Image<float, 3u>
+  Reference Count: 1
+  Modified Time: 49349458
+  Debug: Off
+  Object Name: 
+  Observers: 
+    none
+  Source: (none)
+  Source output name: (none)
+  Release Data: Off
+  Data Released: False
+  Global Release Data: Off
+  PipelineMTime: 49349443
+  UpdateMTime: 49349457
+  RealTimeStamp: 0 seconds 
+  LargestPossibleRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [386, 386, 138]
+  BufferedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [386, 386, 138]
+  RequestedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [386, 386, 138]
+  Spacing: [1, 1, 3]
+  Origin: [-197.279, 192.191, 1730.5]
+  Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  IndexToPointMatrix: 
+1 0 0
+0 -1 0
+0 0 3
+
+  PointToIndexMatrix: 
+1 0 0
+0 -1 0
+0 0 0.333333
+
+  Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PixelContainer: 
+    ImportImageContainer (0x1d8864d0)
+      RTTI typeinfo:   itk::ImportImageContainer<unsigned long, float>
+      Reference Count: 1
+      Modified Time: 49349455
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Pointer: 0x7fdb146f7010
+      Container manages memory: true
+      Size: 20561448
+      Capacity: 20561448
+
+
+Starting registration for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574651214.259258...
+Reading fixed image...
+Setting up moving image...
+Executing registration (this may take a while)...
+Iteration: 0, Metric: -0.951386
+Iteration: 1, Metric: -0.933524
+Iteration: 2, Metric: -0.948876
+Iteration: 3, Metric: -0.926900
+Iteration: 0, Metric: -0.744683
+Iteration: 1, Metric: -0.742172
+Iteration: 2, Metric: -0.742422
+Iteration: 3, Metric: -0.742410
+Iteration: 0, Metric: -0.626165
+Iteration: 1, Metric: -0.628643
+Iteration: 2, Metric: -0.634264
+Iteration: 3, Metric: -0.637744
+Iteration: 4, Metric: -0.637489
+Iteration: 5, Metric: -0.637502
+Iteration: 6, Metric: -0.637777
+Iteration: 7, Metric: -0.638005
+Iteration: 8, Metric: -0.638257
+Iteration: 9, Metric: -0.638505
+Iteration: 10, Metric: -0.638715
+Iteration: 11, Metric: -0.638913
+Iteration: 12, Metric: -0.639058
+Iteration: 13, Metric: -0.639167
+Iteration: 14, Metric: -0.639281
+Iteration: 15, Metric: -0.639380
+Iteration: 16, Metric: -0.639453
+Iteration: 17, Metric: -0.639546
+Iteration: 18, Metric: -0.639635
+Iteration: 19, Metric: -0.639698
+Iteration: 20, Metric: -0.639778
+Iteration: 21, Metric: -0.639816
+Iteration: 22, Metric: -0.639887
+Iteration: 23, Metric: -0.639946
+Iteration: 24, Metric: -0.640019
+Iteration: 25, Metric: -0.640101
+Iteration: 26, Metric: -0.640161
+Iteration: 27, Metric: -0.640229
+Iteration: 28, Metric: -0.640266
+Iteration: 29, Metric: -0.640340
+Iteration: 30, Metric: -0.640402
+Iteration: 31, Metric: -0.640460
+Iteration: 32, Metric: -0.640522
+Registration complete, resampling image...
+Saving registered image to ../../../ncct_cect/vindr_ds/original_volumes/Abdomen/pre_image/1.2.392.200036.9116.2.5.1.37.2418751871.1574651214.259258_reg.nrrd...
+Save complete.
+[Crop] Starting image cropping for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574651214.259258...
+[Crop] Loading image array...
+[Crop] Calculating center of mass...
+[Crop] Creating binary mask...
+[Crop] Mask created with range: 0.00 to 1.00
+[Crop] Computing center of mass...
+[Crop] Center of mass computed at: (255.5, 255.5)
+[Crop] Using slice 0 of 1467 for centering (maximum tissue content)
+[Crop] Crop region - X: 159:351, Y: 159:351, Z: 0:100
+[Crop] Cropping image to shape [192, 192, 100] ...
+[Crop] Extracting region: z=0:100, y=159:351, x=159:351
+[Crop] Cropped shape: (100, 192, 192)
+[Crop] Value range: -1038.1 to 1481.0 HU
+[Crop] Converting cropped array to NRRD format...
+[Crop] NRRD conversion complete
+[Crop] Saving cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574651214.259258...
+[Crop] Successfully saved cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574651214.259258
+[Crop] Returning result as nrrd...
+After respacing: -2048.0 9102.1298828125
+After registration: -2048.0 8189.05419921875
+1.2.392.200036.9116.2.5.1.37.2418751871.1574651406.540758
+old size:  (512, 512, 1384)
+old spacing:  (0.753000020980835, 0.753000020980835, 0.300048828125)
+new size:  [386, 386, 138]
+img_nrrd Image (0x1d61e170)
+  RTTI typeinfo:   itk::Image<float, 3u>
+  Reference Count: 1
+  Modified Time: 54836201
+  Debug: Off
+  Object Name: 
+  Observers: 
+    none
+  Source: (none)
+  Source output name: (none)
+  Release Data: Off
+  Data Released: False
+  Global Release Data: Off
+  PipelineMTime: 54836186
+  UpdateMTime: 54836200
+  RealTimeStamp: 0 seconds 
+  LargestPossibleRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [386, 386, 138]
+  BufferedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [386, 386, 138]
+  RequestedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [386, 386, 138]
+  Spacing: [1, 1, 3]
+  Origin: [-197.279, 192.191, 1730.5]
+  Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  IndexToPointMatrix: 
+1 0 0
+0 -1 0
+0 0 3
+
+  PointToIndexMatrix: 
+1 0 0
+0 -1 0
+0 0 0.333333
+
+  Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PixelContainer: 
+    ImportImageContainer (0x1d905f80)
+      RTTI typeinfo:   itk::ImportImageContainer<unsigned long, float>
+      Reference Count: 1
+      Modified Time: 54836198
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Pointer: 0x7fdb1a048010
+      Container manages memory: true
+      Size: 20561448
+      Capacity: 20561448
+
+
+Starting registration for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574651406.540758...
+Reading fixed image...
+Setting up moving image...
+Executing registration (this may take a while)...
+Iteration: 0, Metric: -0.932276
+Iteration: 1, Metric: -0.909518
+Iteration: 2, Metric: -0.917821
+Iteration: 3, Metric: -0.892581
+Iteration: 0, Metric: -0.754667
+Iteration: 1, Metric: -0.747486
+Iteration: 2, Metric: -0.738858
+Iteration: 3, Metric: -0.746081
+Iteration: 0, Metric: -0.655298
+Iteration: 1, Metric: -0.655288
+Iteration: 2, Metric: -0.657186
+Iteration: 3, Metric: -0.659576
+Iteration: 4, Metric: -0.660332
+Iteration: 5, Metric: -0.660658
+Iteration: 6, Metric: -0.660706
+Iteration: 7, Metric: -0.660729
+Iteration: 8, Metric: -0.660827
+Iteration: 9, Metric: -0.660952
+Iteration: 10, Metric: -0.661097
+Iteration: 11, Metric: -0.661233
+Iteration: 12, Metric: -0.661382
+Iteration: 13, Metric: -0.661528
+Iteration: 14, Metric: -0.661698
+Iteration: 15, Metric: -0.661835
+Iteration: 16, Metric: -0.661967
+Iteration: 17, Metric: -0.662109
+Iteration: 18, Metric: -0.662248
+Iteration: 19, Metric: -0.662396
+Iteration: 20, Metric: -0.662504
+Iteration: 21, Metric: -0.662615
+Iteration: 22, Metric: -0.662744
+Iteration: 23, Metric: -0.662860
+Iteration: 24, Metric: -0.662977
+Iteration: 25, Metric: -0.663107
+Iteration: 26, Metric: -0.663259
+Iteration: 27, Metric: -0.663402
+Iteration: 28, Metric: -0.663539
+Iteration: 29, Metric: -0.663646
+Iteration: 30, Metric: -0.663766
+Iteration: 31, Metric: -0.663884
+Iteration: 32, Metric: -0.664042
+Iteration: 33, Metric: -0.664160
+Iteration: 34, Metric: -0.664298
+Iteration: 35, Metric: -0.664447
+Iteration: 36, Metric: -0.664580
+Iteration: 37, Metric: -0.664731
+Iteration: 38, Metric: -0.664850
+Iteration: 39, Metric: -0.664989
+Iteration: 40, Metric: -0.665119
+Iteration: 41, Metric: -0.665236
+Iteration: 42, Metric: -0.665340
+Iteration: 43, Metric: -0.665458
+Iteration: 44, Metric: -0.665569
+Iteration: 45, Metric: -0.665708
+Iteration: 46, Metric: -0.665816
+Iteration: 47, Metric: -0.665909
+Iteration: 48, Metric: -0.666015
+Iteration: 49, Metric: -0.666152
+Registration complete, resampling image...
+Saving registered image to ../../../ncct_cect/vindr_ds/original_volumes/Abdomen/pre_image/1.2.392.200036.9116.2.5.1.37.2418751871.1574651406.540758_reg.nrrd...
+Save complete.
+[Crop] Starting image cropping for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574651406.540758...
+[Crop] Loading image array...
+[Crop] Calculating center of mass...
+[Crop] Creating binary mask...
+[Crop] Mask created with range: 0.00 to 1.00
+[Crop] Computing center of mass...
+[Crop] Center of mass computed at: (255.5, 255.5)
+[Crop] Using slice 0 of 1467 for centering (maximum tissue content)
+[Crop] Crop region - X: 159:351, Y: 159:351, Z: 0:100
+[Crop] Cropping image to shape [192, 192, 100] ...
+[Crop] Extracting region: z=0:100, y=159:351, x=159:351
+[Crop] Cropped shape: (100, 192, 192)
+[Crop] Value range: -938.8 to 1385.4 HU
+[Crop] Converting cropped array to NRRD format...
+[Crop] NRRD conversion complete
+[Crop] Saving cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574651406.540758...
+[Crop] Successfully saved cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574651406.540758
+[Crop] Returning result as nrrd...
+After respacing: -2048.0 5061.521484375
+After registration: -2048.0 4557.1416015625
+1.2.392.200036.9116.2.5.1.37.2418751871.1574651550.58008
+old size:  (512, 512, 1384)
+old spacing:  (0.753000020980835, 0.753000020980835, 0.300048828125)
+new size:  [386, 386, 138]
+img_nrrd Image (0x1d8f4310)
+  RTTI typeinfo:   itk::Image<float, 3u>
+  Reference Count: 1
+  Modified Time: 60325092
+  Debug: Off
+  Object Name: 
+  Observers: 
+    none
+  Source: (none)
+  Source output name: (none)
+  Release Data: Off
+  Data Released: False
+  Global Release Data: Off
+  PipelineMTime: 60325077
+  UpdateMTime: 60325091
+  RealTimeStamp: 0 seconds 
+  LargestPossibleRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [386, 386, 138]
+  BufferedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [386, 386, 138]
+  RequestedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [386, 386, 138]
+  Spacing: [1, 1, 3]
+  Origin: [-197.279, 192.191, 1730.5]
+  Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  IndexToPointMatrix: 
+1 0 0
+0 -1 0
+0 0 3
+
+  PointToIndexMatrix: 
+1 0 0
+0 -1 0
+0 0 0.333333
+
+  Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PixelContainer: 
+    ImportImageContainer (0x1bc35bf0)
+      RTTI typeinfo:   itk::ImportImageContainer<unsigned long, float>
+      Reference Count: 1
+      Modified Time: 60325089
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Pointer: 0x7fdb151d8010
+      Container manages memory: true
+      Size: 20561448
+      Capacity: 20561448
+
+
+Starting registration for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574651550.58008...
+Reading fixed image...
+Setting up moving image...
+Executing registration (this may take a while)...
+Iteration: 0, Metric: -0.952561
+Iteration: 1, Metric: -0.927982
+Iteration: 2, Metric: -0.930018
+Iteration: 3, Metric: -0.909948
+Iteration: 0, Metric: -0.743105
+Iteration: 1, Metric: -0.744923
+Iteration: 2, Metric: -0.744984
+Iteration: 3, Metric: -0.745557
+Iteration: 4, Metric: -0.745670
+Iteration: 5, Metric: -0.746239
+Iteration: 6, Metric: -0.746209
+Iteration: 7, Metric: -0.746736
+Iteration: 8, Metric: -0.746694
+Iteration: 9, Metric: -0.747193
+Iteration: 10, Metric: -0.747238
+Iteration: 11, Metric: -0.747551
+Iteration: 12, Metric: -0.747627
+Iteration: 13, Metric: -0.747873
+Iteration: 14, Metric: -0.747950
+Iteration: 15, Metric: -0.748394
+Iteration: 16, Metric: -0.748312
+Iteration: 17, Metric: -0.748690
+Iteration: 18, Metric: -0.748817
+Iteration: 19, Metric: -0.749064
+Iteration: 20, Metric: -0.749066
+Iteration: 21, Metric: -0.749424
+Iteration: 22, Metric: -0.749425
+Iteration: 23, Metric: -0.749923
+Iteration: 24, Metric: -0.749872
+Iteration: 25, Metric: -0.750145
+Iteration: 26, Metric: -0.750185
+Iteration: 27, Metric: -0.750487
+Iteration: 28, Metric: -0.750549
+Iteration: 29, Metric: -0.750870
+Iteration: 30, Metric: -0.750931
+Iteration: 31, Metric: -0.751264
+Iteration: 32, Metric: -0.751336
+Iteration: 33, Metric: -0.751611
+Iteration: 34, Metric: -0.751651
+Iteration: 35, Metric: -0.752002
+Iteration: 36, Metric: -0.751954
+Iteration: 37, Metric: -0.752359
+Iteration: 38, Metric: -0.752349
+Iteration: 39, Metric: -0.752695
+Iteration: 40, Metric: -0.752691
+Iteration: 41, Metric: -0.753029
+Iteration: 42, Metric: -0.752980
+Iteration: 43, Metric: -0.753353
+Iteration: 44, Metric: -0.753138
+Iteration: 0, Metric: -0.648142
+Iteration: 1, Metric: -0.650717
+Iteration: 2, Metric: -0.653369
+Iteration: 3, Metric: -0.654076
+Iteration: 4, Metric: -0.653757
+Iteration: 5, Metric: -0.653771
+Iteration: 6, Metric: -0.653861
+Registration complete, resampling image...
+Saving registered image to ../../../ncct_cect/vindr_ds/original_volumes/Abdomen/pre_image/1.2.392.200036.9116.2.5.1.37.2418751871.1574651550.58008_reg.nrrd...
+Save complete.
+[Crop] Starting image cropping for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574651550.58008...
+[Crop] Loading image array...
+[Crop] Calculating center of mass...
+[Crop] Creating binary mask...
+[Crop] Mask created with range: 0.00 to 1.00
+[Crop] Computing center of mass...
+[Crop] Center of mass computed at: (255.5, 255.5)
+[Crop] Using slice 0 of 1467 for centering (maximum tissue content)
+[Crop] Crop region - X: 159:351, Y: 159:351, Z: 0:100
+[Crop] Cropping image to shape [192, 192, 100] ...
+[Crop] Extracting region: z=0:100, y=159:351, x=159:351
+[Crop] Cropped shape: (100, 192, 192)
+[Crop] Value range: -1007.3 to 1481.2 HU
+[Crop] Converting cropped array to NRRD format...
+[Crop] NRRD conversion complete
+[Crop] Saving cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574651550.58008...
+[Crop] Successfully saved cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574651550.58008
+[Crop] Returning result as nrrd...
+After respacing: -2048.0 7788.14892578125
+After registration: -2048.0 7000.32958984375
+1.2.392.200036.9116.2.5.1.37.2418751871.1574653064.64105
+old size:  (512, 512, 1334)
+old spacing:  (0.7400000095367432, 0.7400000095367432, 0.300048828125)
+new size:  [379, 379, 133]
+img_nrrd Image (0x1d92e240)
+  RTTI typeinfo:   itk::Image<float, 3u>
+  Reference Count: 1
+  Modified Time: 65813845
+  Debug: Off
+  Object Name: 
+  Observers: 
+    none
+  Source: (none)
+  Source output name: (none)
+  Release Data: Off
+  Data Released: False
+  Global Release Data: Off
+  PipelineMTime: 65813830
+  UpdateMTime: 65813844
+  RealTimeStamp: 0 seconds 
+  LargestPossibleRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [379, 379, 133]
+  BufferedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [379, 379, 133]
+  RequestedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [379, 379, 133]
+  Spacing: [1, 1, 3]
+  Origin: [-195.919, 204.682, 1813.5]
+  Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  IndexToPointMatrix: 
+1 0 0
+0 -1 0
+0 0 3
+
+  PointToIndexMatrix: 
+1 0 0
+0 -1 0
+0 0 0.333333
+
+  Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PixelContainer: 
+    ImportImageContainer (0x1d5a0b30)
+      RTTI typeinfo:   itk::ImportImageContainer<unsigned long, float>
+      Reference Count: 1
+      Modified Time: 65813842
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Pointer: 0x7fdb1bed7010
+      Container manages memory: true
+      Size: 19104253
+      Capacity: 19104253
+
+
+Starting registration for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574653064.64105...
+Reading fixed image...
+Setting up moving image...
+Executing registration (this may take a while)...
+Iteration: 0, Metric: -0.855327
+Iteration: 1, Metric: -0.850955
+Iteration: 2, Metric: -0.856007
+Iteration: 3, Metric: -0.850540
+Iteration: 0, Metric: -0.658035
+Iteration: 1, Metric: -0.660283
+Iteration: 2, Metric: -0.661198
+Iteration: 3, Metric: -0.661966
+Iteration: 4, Metric: -0.662584
+Iteration: 5, Metric: -0.663384
+Iteration: 6, Metric: -0.664051
+Iteration: 7, Metric: -0.664708
+Iteration: 8, Metric: -0.665404
+Iteration: 9, Metric: -0.665758
+Iteration: 10, Metric: -0.666232
+Iteration: 11, Metric: -0.666863
+Iteration: 12, Metric: -0.667361
+Iteration: 13, Metric: -0.667791
+Iteration: 14, Metric: -0.668294
+Iteration: 15, Metric: -0.668460
+Iteration: 16, Metric: -0.668644
+Iteration: 17, Metric: -0.668871
+Iteration: 18, Metric: -0.669086
+Iteration: 19, Metric: -0.669280
+Iteration: 20, Metric: -0.669454
+Iteration: 21, Metric: -0.669573
+Iteration: 22, Metric: -0.669784
+Iteration: 23, Metric: -0.669842
+Iteration: 24, Metric: -0.670045
+Iteration: 25, Metric: -0.670114
+Iteration: 26, Metric: -0.670273
+Iteration: 27, Metric: -0.670409
+Iteration: 28, Metric: -0.670668
+Iteration: 29, Metric: -0.670693
+Iteration: 30, Metric: -0.670850
+Iteration: 31, Metric: -0.670952
+Iteration: 32, Metric: -0.671091
+Iteration: 33, Metric: -0.671170
+Iteration: 34, Metric: -0.671160
+Iteration: 0, Metric: -0.613949
+Iteration: 1, Metric: -0.615228
+Iteration: 2, Metric: -0.614773
+Iteration: 3, Metric: -0.613934
+Registration complete, resampling image...
+Saving registered image to ../../../ncct_cect/vindr_ds/original_volumes/Abdomen/pre_image/1.2.392.200036.9116.2.5.1.37.2418751871.1574653064.64105_reg.nrrd...
+Save complete.
+[Crop] Starting image cropping for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574653064.64105...
+[Crop] Loading image array...
+[Crop] Calculating center of mass...
+[Crop] Creating binary mask...
+[Crop] Mask created with range: 0.00 to 1.00
+[Crop] Computing center of mass...
+[Crop] Center of mass computed at: (255.5, 255.5)
+[Crop] Using slice 0 of 1467 for centering (maximum tissue content)
+[Crop] Crop region - X: 159:351, Y: 159:351, Z: 0:100
+[Crop] Cropping image to shape [192, 192, 100] ...
+[Crop] Extracting region: z=0:100, y=159:351, x=159:351
+[Crop] Cropped shape: (100, 192, 192)
+[Crop] Value range: 0.0 to 0.0 HU
+[Crop] Converting cropped array to NRRD format...
+[Crop] NRRD conversion complete
+[Crop] Saving cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574653064.64105...
+[Crop] Successfully saved cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574653064.64105
+[Crop] Returning result as nrrd...
+After respacing: -2048.0 1960.3978271484375
+After registration: -2048.0 1934.3404541015625
+1.2.392.200036.9116.2.5.1.37.2418751871.1574653294.529158
+old size:  (512, 512, 1334)
+old spacing:  (0.7400000095367432, 0.7400000095367432, 0.300048828125)
+new size:  [379, 379, 133]
+img_nrrd Image (0x1dca6600)
+  RTTI typeinfo:   itk::Image<float, 3u>
+  Reference Count: 1
+  Modified Time: 71300856
+  Debug: Off
+  Object Name: 
+  Observers: 
+    none
+  Source: (none)
+  Source output name: (none)
+  Release Data: Off
+  Data Released: False
+  Global Release Data: Off
+  PipelineMTime: 71300841
+  UpdateMTime: 71300855
+  RealTimeStamp: 0 seconds 
+  LargestPossibleRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [379, 379, 133]
+  BufferedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [379, 379, 133]
+  RequestedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [379, 379, 133]
+  Spacing: [1, 1, 3]
+  Origin: [-195.919, 204.682, 1813.5]
+  Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  IndexToPointMatrix: 
+1 0 0
+0 -1 0
+0 0 3
+
+  PointToIndexMatrix: 
+1 0 0
+0 -1 0
+0 0 0.333333
+
+  Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PixelContainer: 
+    ImportImageContainer (0x1dfecdf0)
+      RTTI typeinfo:   itk::ImportImageContainer<unsigned long, float>
+      Reference Count: 1
+      Modified Time: 71300853
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Pointer: 0x7fdb175f6010
+      Container manages memory: true
+      Size: 19104253
+      Capacity: 19104253
+
+
+Starting registration for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574653294.529158...
+Reading fixed image...
+Setting up moving image...
+Executing registration (this may take a while)...
+Iteration: 0, Metric: -0.831997
+Iteration: 1, Metric: -0.832035
+Iteration: 2, Metric: -0.836837
+Iteration: 3, Metric: -0.836446
+Iteration: 4, Metric: -0.836960
+Iteration: 5, Metric: -0.836543
+Iteration: 6, Metric: -0.837178
+Iteration: 7, Metric: -0.836352
+Iteration: 8, Metric: -0.837230
+Iteration: 0, Metric: -0.663724
+Iteration: 1, Metric: -0.665631
+Iteration: 2, Metric: -0.667238
+Iteration: 3, Metric: -0.668258
+Iteration: 4, Metric: -0.669107
+Iteration: 5, Metric: -0.669533
+Iteration: 6, Metric: -0.669933
+Iteration: 7, Metric: -0.670268
+Iteration: 8, Metric: -0.670695
+Iteration: 9, Metric: -0.671026
+Iteration: 10, Metric: -0.671183
+Iteration: 11, Metric: -0.671417
+Iteration: 12, Metric: -0.671624
+Iteration: 13, Metric: -0.671851
+Iteration: 14, Metric: -0.672149
+Iteration: 15, Metric: -0.672384
+Iteration: 16, Metric: -0.672466
+Iteration: 17, Metric: -0.672533
+Iteration: 18, Metric: -0.672559
+Iteration: 19, Metric: -0.672605
+Iteration: 20, Metric: -0.672762
+Iteration: 21, Metric: -0.672827
+Iteration: 22, Metric: -0.672898
+Iteration: 23, Metric: -0.672872
+Iteration: 0, Metric: -0.610672
+Iteration: 1, Metric: -0.612845
+Iteration: 2, Metric: -0.613543
+Iteration: 3, Metric: -0.613076
+Iteration: 4, Metric: -0.612501
+Registration complete, resampling image...
+Saving registered image to ../../../ncct_cect/vindr_ds/original_volumes/Abdomen/pre_image/1.2.392.200036.9116.2.5.1.37.2418751871.1574653294.529158_reg.nrrd...
+Save complete.
+[Crop] Starting image cropping for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574653294.529158...
+[Crop] Loading image array...
+[Crop] Calculating center of mass...
+[Crop] Creating binary mask...
+[Crop] Mask created with range: 0.00 to 1.00
+[Crop] Computing center of mass...
+[Crop] Center of mass computed at: (255.5, 255.5)
+[Crop] Using slice 0 of 1467 for centering (maximum tissue content)
+[Crop] Crop region - X: 159:351, Y: 159:351, Z: 0:100
+[Crop] Cropping image to shape [192, 192, 100] ...
+[Crop] Extracting region: z=0:100, y=159:351, x=159:351
+[Crop] Cropped shape: (100, 192, 192)
+[Crop] Value range: -638.9 to 0.0 HU
+[Crop] Converting cropped array to NRRD format...
+[Crop] NRRD conversion complete
+[Crop] Saving cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574653294.529158...
+[Crop] Successfully saved cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574653294.529158
+[Crop] Returning result as nrrd...
+After respacing: -2048.0 1901.6597900390625
+After registration: -2048.0 1880.72509765625
+1.2.392.200036.9116.2.5.1.37.2418751871.1574653441.636174
+old size:  (512, 512, 1334)
+old spacing:  (0.7400000095367432, 0.7400000095367432, 0.300048828125)
+new size:  [379, 379, 133]
+img_nrrd Image (0x1dca9930)
+  RTTI typeinfo:   itk::Image<float, 3u>
+  Reference Count: 1
+  Modified Time: 76787197
+  Debug: Off
+  Object Name: 
+  Observers: 
+    none
+  Source: (none)
+  Source output name: (none)
+  Release Data: Off
+  Data Released: False
+  Global Release Data: Off
+  PipelineMTime: 76787182
+  UpdateMTime: 76787196
+  RealTimeStamp: 0 seconds 
+  LargestPossibleRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [379, 379, 133]
+  BufferedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [379, 379, 133]
+  RequestedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [379, 379, 133]
+  Spacing: [1, 1, 3]
+  Origin: [-195.919, 204.682, 1813.5]
+  Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  IndexToPointMatrix: 
+1 0 0
+0 -1 0
+0 0 3
+
+  PointToIndexMatrix: 
+1 0 0
+0 -1 0
+0 0 0.333333
+
+  Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PixelContainer: 
+    ImportImageContainer (0x1dcb7360)
+      RTTI typeinfo:   itk::ImportImageContainer<unsigned long, float>
+      Reference Count: 1
+      Modified Time: 76787194
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Pointer: 0x7fdb1bed7010
+      Container manages memory: true
+      Size: 19104253
+      Capacity: 19104253
+
+
+Starting registration for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574653441.636174...
+Reading fixed image...
+Setting up moving image...
+Executing registration (this may take a while)...
+Iteration: 0, Metric: -0.859054
+Iteration: 1, Metric: -0.857152
+Iteration: 2, Metric: -0.860564
+Iteration: 3, Metric: -0.860236
+Iteration: 4, Metric: -0.861590
+Iteration: 5, Metric: -0.861195
+Iteration: 6, Metric: -0.862064
+Iteration: 7, Metric: -0.861681
+Iteration: 8, Metric: -0.861504
+Iteration: 0, Metric: -0.668000
+Iteration: 1, Metric: -0.671505
+Iteration: 2, Metric: -0.675890
+Iteration: 3, Metric: -0.678286
+Iteration: 4, Metric: -0.679600
+Iteration: 5, Metric: -0.680617
+Iteration: 6, Metric: -0.681269
+Iteration: 7, Metric: -0.681522
+Iteration: 8, Metric: -0.681721
+Iteration: 9, Metric: -0.682017
+Iteration: 10, Metric: -0.682139
+Iteration: 11, Metric: -0.682308
+Iteration: 12, Metric: -0.682426
+Iteration: 13, Metric: -0.682620
+Iteration: 14, Metric: -0.682776
+Iteration: 15, Metric: -0.682791
+Iteration: 16, Metric: -0.682822
+Iteration: 17, Metric: -0.682940
+Iteration: 18, Metric: -0.683127
+Iteration: 19, Metric: -0.683312
+Iteration: 20, Metric: -0.683493
+Iteration: 21, Metric: -0.683526
+Iteration: 22, Metric: -0.683617
+Iteration: 23, Metric: -0.683701
+Iteration: 24, Metric: -0.683789
+Iteration: 25, Metric: -0.683898
+Iteration: 26, Metric: -0.683952
+Iteration: 27, Metric: -0.684024
+Iteration: 28, Metric: -0.684100
+Iteration: 29, Metric: -0.684228
+Iteration: 30, Metric: -0.684244
+Iteration: 31, Metric: -0.684331
+Iteration: 32, Metric: -0.684452
+Iteration: 33, Metric: -0.684483
+Iteration: 34, Metric: -0.684573
+Iteration: 35, Metric: -0.684640
+Iteration: 0, Metric: -0.613733
+Iteration: 1, Metric: -0.613014
+Iteration: 2, Metric: -0.612369
+Iteration: 3, Metric: -0.611984
+Registration complete, resampling image...
+Saving registered image to ../../../ncct_cect/vindr_ds/original_volumes/Abdomen/pre_image/1.2.392.200036.9116.2.5.1.37.2418751871.1574653441.636174_reg.nrrd...
+Save complete.
+[Crop] Starting image cropping for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574653441.636174...
+[Crop] Loading image array...
+[Crop] Calculating center of mass...
+[Crop] Creating binary mask...
+[Crop] Mask created with range: 0.00 to 1.00
+[Crop] Computing center of mass...
+[Crop] Center of mass computed at: (255.5, 255.5)
+[Crop] Using slice 0 of 1467 for centering (maximum tissue content)
+[Crop] Crop region - X: 159:351, Y: 159:351, Z: 0:100
+[Crop] Cropping image to shape [192, 192, 100] ...
+[Crop] Extracting region: z=0:100, y=159:351, x=159:351
+[Crop] Cropped shape: (100, 192, 192)
+[Crop] Value range: -1041.9 to 1388.9 HU
+[Crop] Converting cropped array to NRRD format...
+[Crop] NRRD conversion complete
+[Crop] Saving cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574653441.636174...
+[Crop] Successfully saved cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574653441.636174
+[Crop] Returning result as nrrd...
+After respacing: -2048.0 1880.98193359375
+After registration: -2048.0 1828.306396484375
+1.2.392.200036.9116.2.5.1.37.2418751871.1574734971.168553
+old size:  (512, 512, 1401)
+old spacing:  (0.746999979019165, 0.746999979019165, 0.300048828125)
+new size:  [382, 382, 140]
+img_nrrd Image (0x1d9392e0)
+  RTTI typeinfo:   itk::Image<float, 3u>
+  Reference Count: 1
+  Modified Time: 82275012
+  Debug: Off
+  Object Name: 
+  Observers: 
+    none
+  Source: (none)
+  Source output name: (none)
+  Release Data: Off
+  Data Released: False
+  Global Release Data: Off
+  PipelineMTime: 82274997
+  UpdateMTime: 82275011
+  RealTimeStamp: 0 seconds 
+  LargestPossibleRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [382, 382, 140]
+  BufferedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [382, 382, 140]
+  RequestedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [382, 382, 140]
+  Spacing: [1, 1, 3]
+  Origin: [-198.845, 201.427, 1639]
+  Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  IndexToPointMatrix: 
+1 0 0
+0 -1 0
+0 0 3
+
+  PointToIndexMatrix: 
+1 0 0
+0 -1 0
+0 0 0.333333
+
+  Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PixelContainer: 
+    ImportImageContainer (0x1dfef7f0)
+      RTTI typeinfo:   itk::ImportImageContainer<unsigned long, float>
+      Reference Count: 1
+      Modified Time: 82275009
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Pointer: 0x7fdb454ca010
+      Container manages memory: true
+      Size: 20429360
+      Capacity: 20429360
+
+
+Starting registration for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574734971.168553...
+Reading fixed image...
+Setting up moving image...
+Executing registration (this may take a while)...
+Iteration: 0, Metric: -0.951681
+Iteration: 1, Metric: -0.950897
+Iteration: 2, Metric: -0.958041
+Iteration: 3, Metric: -0.956563
+Iteration: 4, Metric: -0.956480
+Iteration: 5, Metric: -0.954034
+Iteration: 0, Metric: -0.752723
+Iteration: 1, Metric: -0.756979
+Iteration: 2, Metric: -0.758199
+Iteration: 3, Metric: -0.760151
+Iteration: 4, Metric: -0.760850
+Iteration: 5, Metric: -0.761649
+Iteration: 6, Metric: -0.762182
+Iteration: 7, Metric: -0.762808
+Iteration: 8, Metric: -0.763301
+Iteration: 9, Metric: -0.763826
+Iteration: 10, Metric: -0.764267
+Iteration: 11, Metric: -0.764789
+Iteration: 12, Metric: -0.765211
+Iteration: 13, Metric: -0.765447
+Iteration: 14, Metric: -0.765859
+Iteration: 15, Metric: -0.766140
+Iteration: 16, Metric: -0.766466
+Iteration: 17, Metric: -0.766727
+Iteration: 18, Metric: -0.766966
+Iteration: 19, Metric: -0.767130
+Iteration: 20, Metric: -0.767256
+Iteration: 21, Metric: -0.767404
+Iteration: 22, Metric: -0.767480
+Iteration: 23, Metric: -0.767609
+Iteration: 24, Metric: -0.767668
+Iteration: 25, Metric: -0.767698
+Iteration: 26, Metric: -0.767877
+Iteration: 27, Metric: -0.767917
+Iteration: 28, Metric: -0.768010
+Iteration: 29, Metric: -0.768140
+Iteration: 30, Metric: -0.768189
+Iteration: 31, Metric: -0.768230
+Iteration: 0, Metric: -0.696204
+Iteration: 1, Metric: -0.701939
+Iteration: 2, Metric: -0.702718
+Iteration: 3, Metric: -0.702584
+Iteration: 4, Metric: -0.702220
+Iteration: 5, Metric: -0.702276
+Registration complete, resampling image...
+Saving registered image to ../../../ncct_cect/vindr_ds/original_volumes/Abdomen/pre_image/1.2.392.200036.9116.2.5.1.37.2418751871.1574734971.168553_reg.nrrd...
+Save complete.
+[Crop] Starting image cropping for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574734971.168553...
+[Crop] Loading image array...
+[Crop] Calculating center of mass...
+[Crop] Creating binary mask...
+[Crop] Mask created with range: 0.00 to 1.00
+[Crop] Computing center of mass...
+[Crop] Center of mass computed at: (255.5, 255.5)
+[Crop] Using slice 0 of 1467 for centering (maximum tissue content)
+[Crop] Crop region - X: 159:351, Y: 159:351, Z: 0:100
+[Crop] Cropping image to shape [192, 192, 100] ...
+[Crop] Extracting region: z=0:100, y=159:351, x=159:351
+[Crop] Cropped shape: (100, 192, 192)
+[Crop] Value range: -1031.2 to 1435.1 HU
+[Crop] Converting cropped array to NRRD format...
+[Crop] NRRD conversion complete
+[Crop] Saving cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574734971.168553...
+[Crop] Successfully saved cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574734971.168553
+[Crop] Returning result as nrrd...
+After respacing: -2048.0 1864.16796875
+After registration: -2048.0 1847.560791015625
+1.2.392.200036.9116.2.5.1.37.2418751871.1574735190.12206
+old size:  (512, 512, 1401)
+old spacing:  (0.746999979019165, 0.746999979019165, 0.300048828125)
+new size:  [382, 382, 140]
+img_nrrd Image (0x1dff0780)
+  RTTI typeinfo:   itk::Image<float, 3u>
+  Reference Count: 1
+  Modified Time: 87762157
+  Debug: Off
+  Object Name: 
+  Observers: 
+    none
+  Source: (none)
+  Source output name: (none)
+  Release Data: Off
+  Data Released: False
+  Global Release Data: Off
+  PipelineMTime: 87762142
+  UpdateMTime: 87762156
+  RealTimeStamp: 0 seconds 
+  LargestPossibleRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [382, 382, 140]
+  BufferedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [382, 382, 140]
+  RequestedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [382, 382, 140]
+  Spacing: [1, 1, 3]
+  Origin: [-198.845, 201.427, 1639]
+  Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  IndexToPointMatrix: 
+1 0 0
+0 -1 0
+0 0 3
+
+  PointToIndexMatrix: 
+1 0 0
+0 -1 0
+0 0 0.333333
+
+  Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PixelContainer: 
+    ImportImageContainer (0x1d8dbd00)
+      RTTI typeinfo:   itk::ImportImageContainer<unsigned long, float>
+      Reference Count: 1
+      Modified Time: 87762154
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Pointer: 0x7fdb14a5a010
+      Container manages memory: true
+      Size: 20429360
+      Capacity: 20429360
+
+
+Starting registration for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574735190.12206...
+Reading fixed image...
+Setting up moving image...
+Executing registration (this may take a while)...
+Iteration: 0, Metric: -0.929088
+Iteration: 1, Metric: -0.927685
+Iteration: 2, Metric: -0.934491
+Iteration: 3, Metric: -0.934918
+Iteration: 4, Metric: -0.933204
+Iteration: 5, Metric: -0.933616
+Iteration: 0, Metric: -0.730773
+Iteration: 1, Metric: -0.736271
+Iteration: 2, Metric: -0.740801
+Iteration: 3, Metric: -0.743198
+Iteration: 4, Metric: -0.743927
+Iteration: 5, Metric: -0.744558
+Iteration: 6, Metric: -0.745227
+Iteration: 7, Metric: -0.746218
+Iteration: 8, Metric: -0.747537
+Iteration: 9, Metric: -0.748866
+Iteration: 10, Metric: -0.749733
+Iteration: 11, Metric: -0.750504
+Iteration: 12, Metric: -0.751114
+Iteration: 13, Metric: -0.751539
+Iteration: 14, Metric: -0.751889
+Iteration: 15, Metric: -0.752115
+Iteration: 16, Metric: -0.752206
+Iteration: 17, Metric: -0.752244
+Iteration: 18, Metric: -0.752264
+Iteration: 0, Metric: -0.680174
+Iteration: 1, Metric: -0.680931
+Iteration: 2, Metric: -0.682677
+Iteration: 3, Metric: -0.680749
+Iteration: 4, Metric: -0.682859
+Registration complete, resampling image...
+Saving registered image to ../../../ncct_cect/vindr_ds/original_volumes/Abdomen/pre_image/1.2.392.200036.9116.2.5.1.37.2418751871.1574735190.12206_reg.nrrd...
+Save complete.
+[Crop] Starting image cropping for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574735190.12206...
+[Crop] Loading image array...
+[Crop] Calculating center of mass...
+[Crop] Creating binary mask...
+[Crop] Mask created with range: 0.00 to 1.00
+[Crop] Computing center of mass...
+[Crop] Center of mass computed at: (255.5, 255.5)
+[Crop] Using slice 1395 of 1467 for centering (maximum tissue content)
+[Crop] Crop region - X: 159:351, Y: 159:351, Z: 1345:1445
+[Crop] Cropping image to shape [192, 192, 100] ...
+[Crop] Extracting region: z=1345:1445, y=159:351, x=159:351
+[Crop] Cropped shape: (100, 192, 192)
+[Crop] Value range: -1028.4 to 1510.4 HU
+[Crop] Converting cropped array to NRRD format...
+[Crop] NRRD conversion complete
+[Crop] Saving cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574735190.12206...
+[Crop] Successfully saved cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574735190.12206
+[Crop] Returning result as nrrd...
+After respacing: -2048.0 1847.05224609375
+After registration: -2048.0 1842.2418212890625
+1.2.392.200036.9116.2.5.1.37.2418751871.1574735331.26278
+old size:  (512, 512, 1401)
+old spacing:  (0.746999979019165, 0.746999979019165, 0.300048828125)
+new size:  [382, 382, 140]
+img_nrrd Image (0x1d9328d0)
+  RTTI typeinfo:   itk::Image<float, 3u>
+  Reference Count: 1
+  Modified Time: 93247426
+  Debug: Off
+  Object Name: 
+  Observers: 
+    none
+  Source: (none)
+  Source output name: (none)
+  Release Data: Off
+  Data Released: False
+  Global Release Data: Off
+  PipelineMTime: 93247411
+  UpdateMTime: 93247425
+  RealTimeStamp: 0 seconds 
+  LargestPossibleRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [382, 382, 140]
+  BufferedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [382, 382, 140]
+  RequestedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [382, 382, 140]
+  Spacing: [1, 1, 3]
+  Origin: [-198.845, 201.427, 1639]
+  Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  IndexToPointMatrix: 
+1 0 0
+0 -1 0
+0 0 3
+
+  PointToIndexMatrix: 
+1 0 0
+0 -1 0
+0 0 0.333333
+
+  Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PixelContainer: 
+    ImportImageContainer (0x1d8f75d0)
+      RTTI typeinfo:   itk::ImportImageContainer<unsigned long, float>
+      Reference Count: 1
+      Modified Time: 93247423
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Pointer: 0x7fdb19849010
+      Container manages memory: true
+      Size: 20429360
+      Capacity: 20429360
+
+
+Starting registration for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574735331.26278...
+Reading fixed image...
+Setting up moving image...
+Executing registration (this may take a while)...
+Iteration: 0, Metric: -0.933185
+Iteration: 1, Metric: -0.929141
+Iteration: 2, Metric: -0.934340
+Iteration: 3, Metric: -0.933128
+Iteration: 0, Metric: -0.744118
+Iteration: 1, Metric: -0.750453
+Iteration: 2, Metric: -0.757600
+Iteration: 3, Metric: -0.763317
+Iteration: 4, Metric: -0.767557
+Iteration: 5, Metric: -0.769293
+Iteration: 6, Metric: -0.769930
+Iteration: 7, Metric: -0.770077
+Iteration: 8, Metric: -0.770372
+Iteration: 9, Metric: -0.770618
+Iteration: 10, Metric: -0.770884
+Iteration: 11, Metric: -0.771267
+Iteration: 12, Metric: -0.771710
+Iteration: 13, Metric: -0.772041
+Iteration: 14, Metric: -0.772377
+Iteration: 15, Metric: -0.772618
+Iteration: 16, Metric: -0.772930
+Iteration: 17, Metric: -0.773174
+Iteration: 18, Metric: -0.773365
+Iteration: 19, Metric: -0.773533
+Iteration: 20, Metric: -0.773695
+Iteration: 21, Metric: -0.773799
+Iteration: 22, Metric: -0.773885
+Iteration: 23, Metric: -0.773910
+Iteration: 24, Metric: -0.773906
+Iteration: 0, Metric: -0.706789
+Iteration: 1, Metric: -0.697120
+Iteration: 2, Metric: -0.700985
+Iteration: 3, Metric: -0.702345
+Registration complete, resampling image...
+Saving registered image to ../../../ncct_cect/vindr_ds/original_volumes/Abdomen/pre_image/1.2.392.200036.9116.2.5.1.37.2418751871.1574735331.26278_reg.nrrd...
+Save complete.
+[Crop] Starting image cropping for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574735331.26278...
+[Crop] Loading image array...
+[Crop] Calculating center of mass...
+[Crop] Creating binary mask...
+[Crop] Mask created with range: 0.00 to 1.00
+[Crop] Computing center of mass...
+[Crop] Center of mass computed at: (255.5, 255.5)
+[Crop] Using slice 0 of 1467 for centering (maximum tissue content)
+[Crop] Crop region - X: 159:351, Y: 159:351, Z: 0:100
+[Crop] Cropping image to shape [192, 192, 100] ...
+[Crop] Extracting region: z=0:100, y=159:351, x=159:351
+[Crop] Cropped shape: (100, 192, 192)
+[Crop] Value range: -1005.7 to 1482.9 HU
+[Crop] Converting cropped array to NRRD format...
+[Crop] NRRD conversion complete
+[Crop] Saving cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574735331.26278...
+[Crop] Successfully saved cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574735331.26278
+[Crop] Returning result as nrrd...
+After respacing: -2048.0 1860.4132080078125
+After registration: -2048.0 1841.794189453125
+1.2.392.200036.9116.2.5.1.37.2418751871.1574737081.879678
+old size:  (512, 512, 1467)
+old spacing:  (0.7820000052452087, 0.7820000052452087, 0.300048828125)
+new size:  [400, 400, 147]
+img_nrrd Image (0x1dcae280)
+  RTTI typeinfo:   itk::Image<float, 3u>
+  Reference Count: 1
+  Modified Time: 98733097
+  Debug: Off
+  Object Name: 
+  Observers: 
+    none
+  Source: (none)
+  Source output name: (none)
+  Release Data: Off
+  Data Released: False
+  Global Release Data: Off
+  PipelineMTime: 98733082
+  UpdateMTime: 98733096
+  RealTimeStamp: 0 seconds 
+  LargestPossibleRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 147]
+  BufferedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 147]
+  RequestedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 147]
+  Spacing: [1, 1, 3]
+  Origin: [-197.851, 225.188, 1676.5]
+  Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  IndexToPointMatrix: 
+1 0 0
+0 -1 0
+0 0 3
+
+  PointToIndexMatrix: 
+1 0 0
+0 -1 0
+0 0 0.333333
+
+  Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PixelContainer: 
+    ImportImageContainer (0x1d908cf0)
+      RTTI typeinfo:   itk::ImportImageContainer<unsigned long, float>
+      Reference Count: 1
+      Modified Time: 98733094
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Pointer: 0x7fdb44900010
+      Container manages memory: true
+      Size: 23520000
+      Capacity: 23520000
+
+
+Starting registration for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574737081.879678...
+Reading fixed image...
+Setting up moving image...
+Executing registration (this may take a while)...
+Iteration: 0, Metric: -0.970927
+Iteration: 1, Metric: -0.953081
+Iteration: 2, Metric: -0.973341
+Iteration: 3, Metric: -0.962349
+Iteration: 0, Metric: -0.765012
+Iteration: 1, Metric: -0.768840
+Iteration: 2, Metric: -0.765453
+Iteration: 3, Metric: -0.767587
+Iteration: 4, Metric: -0.766546
+Iteration: 0, Metric: -0.690779
+Iteration: 1, Metric: -0.686584
+Iteration: 2, Metric: -0.687565
+Iteration: 3, Metric: -0.688114
+Registration complete, resampling image...
+Saving registered image to ../../../ncct_cect/vindr_ds/original_volumes/Abdomen/pre_image/1.2.392.200036.9116.2.5.1.37.2418751871.1574737081.879678_reg.nrrd...
+Save complete.
+[Crop] Starting image cropping for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574737081.879678...
+[Crop] Loading image array...
+[Crop] Calculating center of mass...
+[Crop] Creating binary mask...
+[Crop] Mask created with range: 0.00 to 1.00
+[Crop] Computing center of mass...
+[Crop] Center of mass computed at: (260.3, 250.4)
+[Crop] Using slice 290 of 1467 for centering (maximum tissue content)
+[Crop] Crop region - X: 164:356, Y: 154:346, Z: 240:340
+[Crop] Cropping image to shape [192, 192, 100] ...
+[Crop] Extracting region: z=240:340, y=154:346, x=164:356
+[Crop] Cropped shape: (100, 192, 192)
+[Crop] Value range: -1010.4 to 1554.2 HU
+[Crop] Converting cropped array to NRRD format...
+[Crop] NRRD conversion complete
+[Crop] Saving cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574737081.879678...
+[Crop] Successfully saved cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574737081.879678
+[Crop] Returning result as nrrd...
+After respacing: -3282.486572265625 16645.08984375
+After registration: -2725.06005859375 15411.970703125
+1.2.392.200036.9116.2.5.1.37.2418751871.1574737322.988342
+old size:  (512, 512, 1467)
+old spacing:  (0.7820000052452087, 0.7820000052452087, 0.300048828125)
+new size:  [400, 400, 147]
+img_nrrd Image (0x1d923b30)
+  RTTI typeinfo:   itk::Image<float, 3u>
+  Reference Count: 1
+  Modified Time: 104216088
+  Debug: Off
+  Object Name: 
+  Observers: 
+    none
+  Source: (none)
+  Source output name: (none)
+  Release Data: Off
+  Data Released: False
+  Global Release Data: Off
+  PipelineMTime: 104216073
+  UpdateMTime: 104216087
+  RealTimeStamp: 0 seconds 
+  LargestPossibleRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 147]
+  BufferedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 147]
+  RequestedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 147]
+  Spacing: [1, 1, 3]
+  Origin: [-197.851, 225.188, 1676.5]
+  Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  IndexToPointMatrix: 
+1 0 0
+0 -1 0
+0 0 3
+
+  PointToIndexMatrix: 
+1 0 0
+0 -1 0
+0 0 0.333333
+
+  Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PixelContainer: 
+    ImportImageContainer (0x1d604f60)
+      RTTI typeinfo:   itk::ImportImageContainer<unsigned long, float>
+      Reference Count: 1
+      Modified Time: 104216085
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Pointer: 0x7fd9fa647010
+      Container manages memory: true
+      Size: 23520000
+      Capacity: 23520000
+
+
+Starting registration for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574737322.988342...
+Reading fixed image...
+Setting up moving image...
+Executing registration (this may take a while)...
+Iteration: 0, Metric: -0.950884
+Iteration: 1, Metric: -0.938135
+Iteration: 2, Metric: -0.955810
+Iteration: 3, Metric: -0.951898
+Iteration: 0, Metric: -0.761372
+Iteration: 1, Metric: -0.767808
+Iteration: 2, Metric: -0.768730
+Iteration: 3, Metric: -0.768854
+Iteration: 4, Metric: -0.771148
+Iteration: 5, Metric: -0.770591
+Iteration: 6, Metric: -0.771161
+Iteration: 7, Metric: -0.770947
+Iteration: 8, Metric: -0.771154
+Iteration: 9, Metric: -0.770870
+Iteration: 0, Metric: -0.690140
+Iteration: 1, Metric: -0.689424
+Iteration: 2, Metric: -0.692430
+Iteration: 3, Metric: -0.691792
+Iteration: 4, Metric: -0.691058
+Iteration: 5, Metric: -0.691707
+Registration complete, resampling image...
+Saving registered image to ../../../ncct_cect/vindr_ds/original_volumes/Abdomen/pre_image/1.2.392.200036.9116.2.5.1.37.2418751871.1574737322.988342_reg.nrrd...
+Save complete.
+[Crop] Starting image cropping for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574737322.988342...
+[Crop] Loading image array...
+[Crop] Calculating center of mass...
+[Crop] Creating binary mask...
+[Crop] Mask created with range: 0.00 to 1.00
+[Crop] Computing center of mass...
+[Crop] Center of mass computed at: (255.5, 255.5)
+[Crop] Using slice 1453 of 1467 for centering (maximum tissue content)
+[Crop] Crop region - X: 159:351, Y: 159:351, Z: 1367:1467
+[Crop] Cropping image to shape [192, 192, 100] ...
+[Crop] Extracting region: z=1367:1467, y=159:351, x=159:351
+[Crop] Cropped shape: (100, 192, 192)
+[Crop] Value range: -1015.3 to 1846.0 HU
+[Crop] Converting cropped array to NRRD format...
+[Crop] NRRD conversion complete
+[Crop] Saving cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574737322.988342...
+[Crop] Successfully saved cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574737322.988342
+[Crop] Returning result as nrrd...
+After respacing: -2791.19140625 16245.6689453125
+After registration: -2536.329833984375 15394.4208984375
+1.2.392.200036.9116.2.5.1.37.2418751871.1574737469.513228
+old size:  (512, 512, 1467)
+old spacing:  (0.7820000052452087, 0.7820000052452087, 0.300048828125)
+new size:  [400, 400, 147]
+img_nrrd Image (0x1d826aa0)
+  RTTI typeinfo:   itk::Image<float, 3u>
+  Reference Count: 1
+  Modified Time: 109700017
+  Debug: Off
+  Object Name: 
+  Observers: 
+    none
+  Source: (none)
+  Source output name: (none)
+  Release Data: Off
+  Data Released: False
+  Global Release Data: Off
+  PipelineMTime: 109700002
+  UpdateMTime: 109700016
+  RealTimeStamp: 0 seconds 
+  LargestPossibleRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 147]
+  BufferedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 147]
+  RequestedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 147]
+  Spacing: [1, 1, 3]
+  Origin: [-197.851, 225.188, 1676.5]
+  Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  IndexToPointMatrix: 
+1 0 0
+0 -1 0
+0 0 3
+
+  PointToIndexMatrix: 
+1 0 0
+0 -1 0
+0 0 0.333333
+
+  Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PixelContainer: 
+    ImportImageContainer (0x1d610d80)
+      RTTI typeinfo:   itk::ImportImageContainer<unsigned long, float>
+      Reference Count: 1
+      Modified Time: 109700014
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Pointer: 0x7fdb16b7f010
+      Container manages memory: true
+      Size: 23520000
+      Capacity: 23520000
+
+
+Starting registration for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574737469.513228...
+Reading fixed image...
+Setting up moving image...
+Executing registration (this may take a while)...
+Iteration: 0, Metric: -0.982226
+Iteration: 1, Metric: -0.964916
+Iteration: 2, Metric: -0.981864
+Iteration: 3, Metric: -0.978579
+Iteration: 0, Metric: -0.757760
+Iteration: 1, Metric: -0.762918
+Iteration: 2, Metric: -0.764959
+Iteration: 3, Metric: -0.761262
+Iteration: 4, Metric: -0.763064
+Iteration: 0, Metric: -0.691573
+Iteration: 1, Metric: -0.686574
+Iteration: 2, Metric: -0.685135
+Iteration: 3, Metric: -0.686044
+Registration complete, resampling image...
+Saving registered image to ../../../ncct_cect/vindr_ds/original_volumes/Abdomen/pre_image/1.2.392.200036.9116.2.5.1.37.2418751871.1574737469.513228_reg.nrrd...
+Save complete.
+[Crop] Starting image cropping for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574737469.513228...
+[Crop] Loading image array...
+[Crop] Calculating center of mass...
+[Crop] Creating binary mask...
+[Crop] Mask created with range: 0.00 to 1.00
+[Crop] Computing center of mass...
+[Crop] Center of mass computed at: (196.4, 222.7)
+[Crop] Using slice 1466 of 1467 for centering (maximum tissue content)
+[Crop] Crop region - X: 100:292, Y: 126:318, Z: 1367:1467
+[Crop] Cropping image to shape [192, 192, 100] ...
+[Crop] Extracting region: z=1367:1467, y=126:318, x=100:292
+[Crop] Cropped shape: (100, 192, 192)
+[Crop] Value range: -1019.9 to 1868.2 HU
+[Crop] Converting cropped array to NRRD format...
+[Crop] NRRD conversion complete
+[Crop] Saving cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574737469.513228...
+[Crop] Successfully saved cropped image for patient 1.2.392.200036.9116.2.5.1.37.2418751871.1574737469.513228
+[Crop] Returning result as nrrd...
+After respacing: -2641.40478515625 17316.029296875
+After registration: -2348.564697265625 15103.734375
+1.2.840.113619.2.278.3.717616.166.1580339212.915.4
+old size:  (512, 512, 565)
+old spacing:  (0.78125, 0.78125, 1.25)
+new size:  [400, 400, 235]
+img_nrrd Image (0x1db55120)
+  RTTI typeinfo:   itk::Image<float, 3u>
+  Reference Count: 1
+  Modified Time: 115183008
+  Debug: Off
+  Object Name: 
+  Observers: 
+    none
+  Source: (none)
+  Source output name: (none)
+  Release Data: Off
+  Data Released: False
+  Global Release Data: Off
+  PipelineMTime: 115182993
+  UpdateMTime: 115183007
+  RealTimeStamp: 0 seconds 
+  LargestPossibleRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 235]
+  BufferedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 235]
+  RequestedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 235]
+  Spacing: [1, 1, 3]
+  Origin: [-208.6, 199.219, -641.25]
+  Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  IndexToPointMatrix: 
+1 0 0
+0 -1 0
+0 0 3
+
+  PointToIndexMatrix: 
+1 0 0
+0 -1 0
+0 0 0.333333
+
+  Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PixelContainer: 
+    ImportImageContainer (0x1dfef7f0)
+      RTTI typeinfo:   itk::ImportImageContainer<unsigned long, float>
+      Reference Count: 1
+      Modified Time: 115183005
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Pointer: 0x7fdb1de49010
+      Container manages memory: true
+      Size: 37600000
+      Capacity: 37600000
+
+
+Starting registration for patient 1.2.840.113619.2.278.3.717616.166.1580339212.915.4...
+Reading fixed image...
+Setting up moving image...
+Executing registration (this may take a while)...
+Iteration: 0, Metric: -1.046415
+Iteration: 1, Metric: -0.979389
+Iteration: 2, Metric: -1.020286
+Iteration: 3, Metric: -0.942748
+Iteration: 0, Metric: -0.864420
+Iteration: 1, Metric: -0.821497
+Iteration: 2, Metric: -0.837260
+Iteration: 3, Metric: -0.850086
+Iteration: 0, Metric: -0.724198
+Iteration: 1, Metric: -0.794955
+Iteration: 2, Metric: -0.732852
+Iteration: 3, Metric: -0.749948
+Registration complete, resampling image...
+Saving registered image to ../../../ncct_cect/vindr_ds/original_volumes/Abdomen/pre_image/1.2.840.113619.2.278.3.717616.166.1580339212.915.4_reg.nrrd...
+Save complete.
+[Crop] Starting image cropping for patient 1.2.840.113619.2.278.3.717616.166.1580339212.915.4...
+[Crop] Loading image array...
+[Crop] Calculating center of mass...
+[Crop] Creating binary mask...
+[Crop] Mask created with range: 0.00 to 1.00
+[Crop] Computing center of mass...
+[Crop] Center of mass computed at: (225.5, 258.3)
+[Crop] Using slice 807 of 1467 for centering (maximum tissue content)
+[Crop] Crop region - X: 129:321, Y: 162:354, Z: 757:857
+[Crop] Cropping image to shape [192, 192, 100] ...
+[Crop] Extracting region: z=757:857, y=162:354, x=129:321
+[Crop] Cropped shape: (100, 192, 192)
+[Crop] Value range: -1016.0 to 1316.1 HU
+[Crop] Converting cropped array to NRRD format...
+[Crop] NRRD conversion complete
+[Crop] Saving cropped image for patient 1.2.840.113619.2.278.3.717616.166.1580339212.915.4...
+[Crop] Successfully saved cropped image for patient 1.2.840.113619.2.278.3.717616.166.1580339212.915.4
+[Crop] Returning result as nrrd...
+After respacing: -3024.0 3071.0
+After registration: -3024.0 2964.982666015625
+1.2.840.113619.2.278.3.717616.166.1580339213.59.5246977
+old size:  (512, 512, 565)
+old spacing:  (0.78125, 0.78125, 1.25)
+new size:  [400, 400, 235]
+img_nrrd Image (0x1dcb36b0)
+  RTTI typeinfo:   itk::Image<float, 3u>
+  Reference Count: 1
+  Modified Time: 120665865
+  Debug: Off
+  Object Name: 
+  Observers: 
+    none
+  Source: (none)
+  Source output name: (none)
+  Release Data: Off
+  Data Released: False
+  Global Release Data: Off
+  PipelineMTime: 120665850
+  UpdateMTime: 120665864
+  RealTimeStamp: 0 seconds 
+  LargestPossibleRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 235]
+  BufferedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 235]
+  RequestedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 235]
+  Spacing: [1, 1, 3]
+  Origin: [-208.6, 199.219, -641.25]
+  Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  IndexToPointMatrix: 
+1 0 0
+0 -1 0
+0 0 3
+
+  PointToIndexMatrix: 
+1 0 0
+0 -1 0
+0 0 0.333333
+
+  Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PixelContainer: 
+    ImportImageContainer (0x1d914130)
+      RTTI typeinfo:   itk::ImportImageContainer<unsigned long, float>
+      Reference Count: 1
+      Modified Time: 120665862
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Pointer: 0x7fdb14eda010
+      Container manages memory: true
+      Size: 37600000
+      Capacity: 37600000
+
+
+Starting registration for patient 1.2.840.113619.2.278.3.717616.166.1580339213.59.5246977...
+Reading fixed image...
+Setting up moving image...
+Executing registration (this may take a while)...
+Iteration: 0, Metric: -1.003628
+Iteration: 1, Metric: -0.932892
+Iteration: 2, Metric: -0.945944
+Iteration: 3, Metric: -0.913106
+Iteration: 0, Metric: -0.834103
+Iteration: 1, Metric: -0.812069
+Iteration: 2, Metric: -0.840689
+Iteration: 3, Metric: -0.806229
+Iteration: 4, Metric: -0.848449
+Iteration: 0, Metric: -0.720077
+Iteration: 1, Metric: -0.750131
+Iteration: 2, Metric: -0.727706
+Iteration: 3, Metric: -0.737101
+Iteration: 4, Metric: -0.739674
+Registration complete, resampling image...
+Saving registered image to ../../../ncct_cect/vindr_ds/original_volumes/Abdomen/pre_image/1.2.840.113619.2.278.3.717616.166.1580339213.59.5246977_reg.nrrd...
+Save complete.
+[Crop] Starting image cropping for patient 1.2.840.113619.2.278.3.717616.166.1580339213.59.5246977...
+[Crop] Loading image array...
+[Crop] Calculating center of mass...
+[Crop] Creating binary mask...
+[Crop] Mask created with range: 0.00 to 1.00
+[Crop] Computing center of mass...
+[Crop] Center of mass computed at: (227.1, 267.5)
+[Crop] Using slice 1169 of 1467 for centering (maximum tissue content)
+[Crop] Crop region - X: 131:323, Y: 171:363, Z: 1119:1219
+[Crop] Cropping image to shape [192, 192, 100] ...
+[Crop] Extracting region: z=1119:1219, y=171:363, x=131:323
+[Crop] Cropped shape: (100, 192, 192)
+[Crop] Value range: -1018.6 to 1283.3 HU
+[Crop] Converting cropped array to NRRD format...
+[Crop] NRRD conversion complete
+[Crop] Saving cropped image for patient 1.2.840.113619.2.278.3.717616.166.1580339213.59.5246977...
+[Crop] Successfully saved cropped image for patient 1.2.840.113619.2.278.3.717616.166.1580339213.59.5246977
+[Crop] Returning result as nrrd...
+After respacing: -3024.0 3071.0
+After registration: -3024.0 2949.923583984375
+1.2.840.113619.2.278.3.717616.166.1580339213.59.5251074
+old size:  (512, 512, 565)
+old spacing:  (0.78125, 0.78125, 1.25)
+new size:  [400, 400, 235]
+img_nrrd Image (0x1d919070)
+  RTTI typeinfo:   itk::Image<float, 3u>
+  Reference Count: 1
+  Modified Time: 126148990
+  Debug: Off
+  Object Name: 
+  Observers: 
+    none
+  Source: (none)
+  Source output name: (none)
+  Release Data: Off
+  Data Released: False
+  Global Release Data: Off
+  PipelineMTime: 126148975
+  UpdateMTime: 126148989
+  RealTimeStamp: 0 seconds 
+  LargestPossibleRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 235]
+  BufferedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 235]
+  RequestedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 235]
+  Spacing: [1, 1, 3]
+  Origin: [-208.6, 199.219, -641.25]
+  Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  IndexToPointMatrix: 
+1 0 0
+0 -1 0
+0 0 3
+
+  PointToIndexMatrix: 
+1 0 0
+0 -1 0
+0 0 0.333333
+
+  Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PixelContainer: 
+    ImportImageContainer (0x1d91b610)
+      RTTI typeinfo:   itk::ImportImageContainer<unsigned long, float>
+      Reference Count: 1
+      Modified Time: 126148987
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Pointer: 0x7fdb1de49010
+      Container manages memory: true
+      Size: 37600000
+      Capacity: 37600000
+
+
+Starting registration for patient 1.2.840.113619.2.278.3.717616.166.1580339213.59.5251074...
+Reading fixed image...
+Setting up moving image...
+Executing registration (this may take a while)...
+Iteration: 0, Metric: -1.020413
+Iteration: 1, Metric: -0.948424
+Iteration: 2, Metric: -0.956293
+Iteration: 3, Metric: -0.925949
+Iteration: 0, Metric: -0.853228
+Iteration: 1, Metric: -0.823332
+Iteration: 2, Metric: -0.862410
+Iteration: 3, Metric: -0.821477
+Iteration: 4, Metric: -0.864090
+Iteration: 0, Metric: -0.744212
+Iteration: 1, Metric: -0.774007
+Iteration: 2, Metric: -0.751112
+Iteration: 3, Metric: -0.762413
+Iteration: 4, Metric: -0.761923
+Registration complete, resampling image...
+Saving registered image to ../../../ncct_cect/vindr_ds/original_volumes/Abdomen/pre_image/1.2.840.113619.2.278.3.717616.166.1580339213.59.5251074_reg.nrrd...
+Save complete.
+[Crop] Starting image cropping for patient 1.2.840.113619.2.278.3.717616.166.1580339213.59.5251074...
+[Crop] Loading image array...
+[Crop] Calculating center of mass...
+[Crop] Creating binary mask...
+[Crop] Mask created with range: 0.00 to 1.00
+[Crop] Computing center of mass...
+[Crop] Center of mass computed at: (227.5, 267.4)
+[Crop] Using slice 767 of 1467 for centering (maximum tissue content)
+[Crop] Crop region - X: 131:323, Y: 171:363, Z: 717:817
+[Crop] Cropping image to shape [192, 192, 100] ...
+[Crop] Extracting region: z=717:817, y=171:363, x=131:323
+[Crop] Cropped shape: (100, 192, 192)
+[Crop] Value range: -1013.9 to 1343.7 HU
+[Crop] Converting cropped array to NRRD format...
+[Crop] NRRD conversion complete
+[Crop] Saving cropped image for patient 1.2.840.113619.2.278.3.717616.166.1580339213.59.5251074...
+[Crop] Successfully saved cropped image for patient 1.2.840.113619.2.278.3.717616.166.1580339213.59.5251074
+[Crop] Returning result as nrrd...
+After respacing: -3024.0 3071.0
+After registration: -3024.0 3024.720458984375
+1.2.840.113619.2.278.3.717616.166.1580339213.596.3
+old size:  (512, 512, 389)
+old spacing:  (0.78125, 0.78125, 1.25)
+new size:  [400, 400, 162]
+img_nrrd Image (0x1d91fff0)
+  RTTI typeinfo:   itk::Image<float, 3u>
+  Reference Count: 1
+  Modified Time: 131632115
+  Debug: Off
+  Object Name: 
+  Observers: 
+    none
+  Source: (none)
+  Source output name: (none)
+  Release Data: Off
+  Data Released: False
+  Global Release Data: Off
+  PipelineMTime: 131632100
+  UpdateMTime: 131632114
+  RealTimeStamp: 0 seconds 
+  LargestPossibleRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 162]
+  BufferedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 162]
+  RequestedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 162]
+  Spacing: [1, 1, 3]
+  Origin: [-228.2, 199.219, -441.5]
+  Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  IndexToPointMatrix: 
+1 0 0
+0 -1 0
+0 0 3
+
+  PointToIndexMatrix: 
+1 0 0
+0 -1 0
+0 0 0.333333
+
+  Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PixelContainer: 
+    ImportImageContainer (0x1d9c5720)
+      RTTI typeinfo:   itk::ImportImageContainer<unsigned long, float>
+      Reference Count: 1
+      Modified Time: 131632112
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Pointer: 0x7fdb2bad7010
+      Container manages memory: true
+      Size: 25920000
+      Capacity: 25920000
+
+
+Starting registration for patient 1.2.840.113619.2.278.3.717616.166.1580339213.596.3...
+Reading fixed image...
+Setting up moving image...
+Executing registration (this may take a while)...
+Iteration: 0, Metric: -0.951640
+Iteration: 1, Metric: -0.873439
+Iteration: 2, Metric: -0.924764
+Iteration: 3, Metric: -0.844010
+Iteration: 0, Metric: -0.793002
+Iteration: 1, Metric: -0.727931
+Iteration: 2, Metric: -0.761014
+Iteration: 3, Metric: -0.756401
+Iteration: 0, Metric: -0.660973
+Iteration: 1, Metric: -0.688015
+Iteration: 2, Metric: -0.656461
+Iteration: 3, Metric: -0.672396
+Registration complete, resampling image...
+Saving registered image to ../../../ncct_cect/vindr_ds/original_volumes/Abdomen/pre_image/1.2.840.113619.2.278.3.717616.166.1580339213.596.3_reg.nrrd...
+Save complete.
+[Crop] Starting image cropping for patient 1.2.840.113619.2.278.3.717616.166.1580339213.596.3...
+[Crop] Loading image array...
+[Crop] Calculating center of mass...
+[Crop] Creating binary mask...
+[Crop] Mask created with range: 0.00 to 1.00
+[Crop] Computing center of mass...
+[Crop] Center of mass computed at: (278.8, 271.6)
+[Crop] Using slice 1081 of 1467 for centering (maximum tissue content)
+[Crop] Crop region - X: 182:374, Y: 175:367, Z: 1031:1131
+[Crop] Cropping image to shape [192, 192, 100] ...
+[Crop] Extracting region: z=1031:1131, y=175:367, x=182:374
+[Crop] Cropped shape: (100, 192, 192)
+[Crop] Value range: -906.9 to 1317.4 HU
+[Crop] Converting cropped array to NRRD format...
+[Crop] NRRD conversion complete
+[Crop] Saving cropped image for patient 1.2.840.113619.2.278.3.717616.166.1580339213.596.3...
+[Crop] Successfully saved cropped image for patient 1.2.840.113619.2.278.3.717616.166.1580339213.596.3
+[Crop] Returning result as nrrd...
+After respacing: -3024.0 3071.0
+After registration: -3024.0 3071.0
+1.2.840.113619.2.278.3.717616.166.1580339213.696.4202498
+old size:  (512, 512, 389)
+old spacing:  (0.78125, 0.78125, 1.25)
+new size:  [400, 400, 162]
+img_nrrd Image (0x1dcaeea0)
+  RTTI typeinfo:   itk::Image<float, 3u>
+  Reference Count: 1
+  Modified Time: 137114972
+  Debug: Off
+  Object Name: 
+  Observers: 
+    none
+  Source: (none)
+  Source output name: (none)
+  Release Data: Off
+  Data Released: False
+  Global Release Data: Off
+  PipelineMTime: 137114957
+  UpdateMTime: 137114971
+  RealTimeStamp: 0 seconds 
+  LargestPossibleRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 162]
+  BufferedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 162]
+  RequestedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 162]
+  Spacing: [1, 1, 3]
+  Origin: [-228.2, 199.219, -441.5]
+  Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  IndexToPointMatrix: 
+1 0 0
+0 -1 0
+0 0 3
+
+  PointToIndexMatrix: 
+1 0 0
+0 -1 0
+0 0 0.333333
+
+  Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PixelContainer: 
+    ImportImageContainer (0x1d9278e0)
+      RTTI typeinfo:   itk::ImportImageContainer<unsigned long, float>
+      Reference Count: 1
+      Modified Time: 137114969
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Pointer: 0x7fdb257f6010
+      Container manages memory: true
+      Size: 25920000
+      Capacity: 25920000
+
+
+Starting registration for patient 1.2.840.113619.2.278.3.717616.166.1580339213.696.4202498...
+Reading fixed image...
+Setting up moving image...
+Executing registration (this may take a while)...
+Iteration: 0, Metric: -0.957136
+Iteration: 1, Metric: -0.876898
+Iteration: 2, Metric: -0.891800
+Iteration: 3, Metric: -0.851373
+Iteration: 0, Metric: -0.765756
+Iteration: 1, Metric: -0.737250
+Iteration: 2, Metric: -0.767020
+Iteration: 3, Metric: -0.738392
+Iteration: 0, Metric: -0.690651
+Iteration: 1, Metric: -0.668890
+Iteration: 2, Metric: -0.673029
+Iteration: 3, Metric: -0.678815
+Registration complete, resampling image...
+Saving registered image to ../../../ncct_cect/vindr_ds/original_volumes/Abdomen/pre_image/1.2.840.113619.2.278.3.717616.166.1580339213.696.4202498_reg.nrrd...
+Save complete.
+[Crop] Starting image cropping for patient 1.2.840.113619.2.278.3.717616.166.1580339213.696.4202498...
+[Crop] Loading image array...
+[Crop] Calculating center of mass...
+[Crop] Creating binary mask...
+[Crop] Mask created with range: 0.00 to 1.00
+[Crop] Computing center of mass...
+[Crop] Center of mass computed at: (278.9, 264.7)
+[Crop] Using slice 1021 of 1467 for centering (maximum tissue content)
+[Crop] Crop region - X: 182:374, Y: 168:360, Z: 971:1071
+[Crop] Cropping image to shape [192, 192, 100] ...
+[Crop] Extracting region: z=971:1071, y=168:360, x=182:374
+[Crop] Cropped shape: (100, 192, 192)
+[Crop] Value range: -924.3 to 1045.9 HU
+[Crop] Converting cropped array to NRRD format...
+[Crop] NRRD conversion complete
+[Crop] Saving cropped image for patient 1.2.840.113619.2.278.3.717616.166.1580339213.696.4202498...
+[Crop] Successfully saved cropped image for patient 1.2.840.113619.2.278.3.717616.166.1580339213.696.4202498
+[Crop] Returning result as nrrd...
+After respacing: -3024.0 3071.0
+After registration: -3024.0 3071.0
+1.2.840.113619.2.278.3.717616.166.1580339218.942.3
+old size:  (512, 512, 537)
+old spacing:  (0.7949219942092896, 0.7949219942092896, 1.25)
+new size:  [407, 407, 224]
+img_nrrd Image (0x1dcb4740)
+  RTTI typeinfo:   itk::Image<float, 3u>
+  Reference Count: 1
+  Modified Time: 142597829
+  Debug: Off
+  Object Name: 
+  Observers: 
+    none
+  Source: (none)
+  Source output name: (none)
+  Release Data: Off
+  Data Released: False
+  Global Release Data: Off
+  PipelineMTime: 142597814
+  UpdateMTime: 142597828
+  RealTimeStamp: 0 seconds 
+  LargestPossibleRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [407, 407, 224]
+  BufferedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [407, 407, 224]
+  RequestedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [407, 407, 224]
+  Spacing: [1, 1, 3]
+  Origin: [-222, 202.705, -655.5]
+  Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  IndexToPointMatrix: 
+1 0 0
+0 -1 0
+0 0 3
+
+  PointToIndexMatrix: 
+1 0 0
+0 -1 0
+0 0 0.333333
+
+  Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PixelContainer: 
+    ImportImageContainer (0x1bc39bc0)
+      RTTI typeinfo:   itk::ImportImageContainer<unsigned long, float>
+      Reference Count: 1
+      Modified Time: 142597826
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Pointer: 0x7fdb4152d010
+      Container manages memory: true
+      Size: 37105376
+      Capacity: 37105376
+
+
+Starting registration for patient 1.2.840.113619.2.278.3.717616.166.1580339218.942.3...
+Reading fixed image...
+Setting up moving image...
+Executing registration (this may take a while)...
+Iteration: 0, Metric: -1.004536
+Iteration: 1, Metric: -0.956721
+Iteration: 2, Metric: -0.911166
+Iteration: 3, Metric: -0.936744
+Iteration: 0, Metric: -0.758442
+Iteration: 1, Metric: -0.787118
+Iteration: 2, Metric: -0.772550
+Iteration: 3, Metric: -0.775984
+Iteration: 4, Metric: -0.782293
+Iteration: 0, Metric: -0.686655
+Iteration: 1, Metric: -0.689184
+Iteration: 2, Metric: -0.688691
+Iteration: 3, Metric: -0.687910
+Registration complete, resampling image...
+Saving registered image to ../../../ncct_cect/vindr_ds/original_volumes/Abdomen/pre_image/1.2.840.113619.2.278.3.717616.166.1580339218.942.3_reg.nrrd...
+Save complete.
+[Crop] Starting image cropping for patient 1.2.840.113619.2.278.3.717616.166.1580339218.942.3...
+[Crop] Loading image array...
+[Crop] Calculating center of mass...
+[Crop] Creating binary mask...
+[Crop] Mask created with range: 0.00 to 1.00
+[Crop] Computing center of mass...
+[Crop] Center of mass computed at: (239.4, 255.5)
+[Crop] Using slice 841 of 1467 for centering (maximum tissue content)
+[Crop] Crop region - X: 143:335, Y: 159:351, Z: 791:891
+[Crop] Cropping image to shape [192, 192, 100] ...
+[Crop] Extracting region: z=791:891, y=159:351, x=143:335
+[Crop] Cropped shape: (100, 192, 192)
+[Crop] Value range: -1017.3 to 1180.6 HU
+[Crop] Converting cropped array to NRRD format...
+[Crop] NRRD conversion complete
+[Crop] Saving cropped image for patient 1.2.840.113619.2.278.3.717616.166.1580339218.942.3...
+[Crop] Successfully saved cropped image for patient 1.2.840.113619.2.278.3.717616.166.1580339218.942.3
+[Crop] Returning result as nrrd...
+After respacing: -3024.0 3071.0
+After registration: -3024.0 3071.0
+1.2.840.113619.2.278.3.717616.166.1580339219.79.4198401
+old size:  (512, 512, 537)
+old spacing:  (0.7949219942092896, 0.7949219942092896, 1.25)
+new size:  [407, 407, 224]
+img_nrrd Image (0x1db51b40)
+  RTTI typeinfo:   itk::Image<float, 3u>
+  Reference Count: 1
+  Modified Time: 148080820
+  Debug: Off
+  Object Name: 
+  Observers: 
+    none
+  Source: (none)
+  Source output name: (none)
+  Release Data: Off
+  Data Released: False
+  Global Release Data: Off
+  PipelineMTime: 148080805
+  UpdateMTime: 148080819
+  RealTimeStamp: 0 seconds 
+  LargestPossibleRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [407, 407, 224]
+  BufferedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [407, 407, 224]
+  RequestedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [407, 407, 224]
+  Spacing: [1, 1, 3]
+  Origin: [-222, 202.705, -655.5]
+  Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  IndexToPointMatrix: 
+1 0 0
+0 -1 0
+0 0 3
+
+  PointToIndexMatrix: 
+1 0 0
+0 -1 0
+0 0 0.333333
+
+  Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PixelContainer: 
+    ImportImageContainer (0x1dcab9d0)
+      RTTI typeinfo:   itk::ImportImageContainer<unsigned long, float>
+      Reference Count: 1
+      Modified Time: 148080817
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Pointer: 0x7fdb16ea0010
+      Container manages memory: true
+      Size: 37105376
+      Capacity: 37105376
+
+
+Starting registration for patient 1.2.840.113619.2.278.3.717616.166.1580339219.79.4198401...
+Reading fixed image...
+Setting up moving image...
+Executing registration (this may take a while)...
+Iteration: 0, Metric: -0.910095
+Iteration: 1, Metric: -0.856744
+Iteration: 2, Metric: -0.841731
+Iteration: 3, Metric: -0.858286
+Iteration: 0, Metric: -0.744048
+Iteration: 1, Metric: -0.810961
+Iteration: 2, Metric: -0.783044
+Iteration: 3, Metric: -0.778682
+Iteration: 4, Metric: -0.796021
+Iteration: 0, Metric: -0.713317
+Iteration: 1, Metric: -0.734429
+Iteration: 2, Metric: -0.706785
+Iteration: 3, Metric: -0.739404
+Iteration: 4, Metric: -0.710493
+Iteration: 5, Metric: -0.735019
+Iteration: 6, Metric: -0.714888
+Registration complete, resampling image...
+Saving registered image to ../../../ncct_cect/vindr_ds/original_volumes/Abdomen/pre_image/1.2.840.113619.2.278.3.717616.166.1580339219.79.4198401_reg.nrrd...
+Save complete.
+[Crop] Starting image cropping for patient 1.2.840.113619.2.278.3.717616.166.1580339219.79.4198401...
+[Crop] Loading image array...
+[Crop] Calculating center of mass...
+[Crop] Creating binary mask...
+[Crop] Mask created with range: 0.00 to 1.00
+[Crop] Computing center of mass...
+[Crop] Center of mass computed at: (241.5, 252.3)
+[Crop] Using slice 1089 of 1467 for centering (maximum tissue content)
+[Crop] Crop region - X: 145:337, Y: 156:348, Z: 1039:1139
+[Crop] Cropping image to shape [192, 192, 100] ...
+[Crop] Extracting region: z=1039:1139, y=156:348, x=145:337
+[Crop] Cropped shape: (100, 192, 192)
+[Crop] Value range: -1019.6 to 1102.5 HU
+[Crop] Converting cropped array to NRRD format...
+[Crop] NRRD conversion complete
+[Crop] Saving cropped image for patient 1.2.840.113619.2.278.3.717616.166.1580339219.79.4198401...
+[Crop] Successfully saved cropped image for patient 1.2.840.113619.2.278.3.717616.166.1580339219.79.4198401
+[Crop] Returning result as nrrd...
+After respacing: -3024.0 3071.0
+After registration: -3024.0 3071.0
+1.2.840.113619.2.278.3.717616.166.1580339219.79.4202498
+old size:  (512, 512, 537)
+old spacing:  (0.7949219942092896, 0.7949219942092896, 1.25)
+new size:  [407, 407, 224]
+img_nrrd Image (0x1db56f80)
+  RTTI typeinfo:   itk::Image<float, 3u>
+  Reference Count: 1
+  Modified Time: 153564213
+  Debug: Off
+  Object Name: 
+  Observers: 
+    none
+  Source: (none)
+  Source output name: (none)
+  Release Data: Off
+  Data Released: False
+  Global Release Data: Off
+  PipelineMTime: 153564198
+  UpdateMTime: 153564212
+  RealTimeStamp: 0 seconds 
+  LargestPossibleRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [407, 407, 224]
+  BufferedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [407, 407, 224]
+  RequestedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [407, 407, 224]
+  Spacing: [1, 1, 3]
+  Origin: [-222, 202.705, -655.5]
+  Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  IndexToPointMatrix: 
+1 0 0
+0 -1 0
+0 0 3
+
+  PointToIndexMatrix: 
+1 0 0
+0 -1 0
+0 0 0.333333
+
+  Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PixelContainer: 
+    ImportImageContainer (0x1dce7300)
+      RTTI typeinfo:   itk::ImportImageContainer<unsigned long, float>
+      Reference Count: 1
+      Modified Time: 153564210
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Pointer: 0x7fdb1fc2c010
+      Container manages memory: true
+      Size: 37105376
+      Capacity: 37105376
+
+
+Starting registration for patient 1.2.840.113619.2.278.3.717616.166.1580339219.79.4202498...
+Reading fixed image...
+Setting up moving image...
+Executing registration (this may take a while)...
+Iteration: 0, Metric: -0.933117
+Iteration: 1, Metric: -0.885946
+Iteration: 2, Metric: -0.863774
+Iteration: 3, Metric: -0.887041
+Iteration: 0, Metric: -0.746801
+Iteration: 1, Metric: -0.825316
+Iteration: 2, Metric: -0.789505
+Iteration: 3, Metric: -0.798373
+Iteration: 4, Metric: -0.809051
+Iteration: 0, Metric: -0.729695
+Iteration: 1, Metric: -0.758590
+Iteration: 2, Metric: -0.722299
+Iteration: 3, Metric: -0.763872
+Iteration: 4, Metric: -0.727180
+Registration complete, resampling image...
+Saving registered image to ../../../ncct_cect/vindr_ds/original_volumes/Abdomen/pre_image/1.2.840.113619.2.278.3.717616.166.1580339219.79.4202498_reg.nrrd...
+Save complete.
+[Crop] Starting image cropping for patient 1.2.840.113619.2.278.3.717616.166.1580339219.79.4202498...
+[Crop] Loading image array...
+[Crop] Calculating center of mass...
+[Crop] Creating binary mask...
+[Crop] Mask created with range: 0.00 to 1.00
+[Crop] Computing center of mass...
+[Crop] Center of mass computed at: (242.0, 250.7)
+[Crop] Using slice 724 of 1467 for centering (maximum tissue content)
+[Crop] Crop region - X: 146:338, Y: 154:346, Z: 674:774
+[Crop] Cropping image to shape [192, 192, 100] ...
+[Crop] Extracting region: z=674:774, y=154:346, x=146:338
+[Crop] Cropped shape: (100, 192, 192)
+[Crop] Value range: -1006.9 to 1057.1 HU
+[Crop] Converting cropped array to NRRD format...
+[Crop] NRRD conversion complete
+[Crop] Saving cropped image for patient 1.2.840.113619.2.278.3.717616.166.1580339219.79.4202498...
+[Crop] Successfully saved cropped image for patient 1.2.840.113619.2.278.3.717616.166.1580339219.79.4202498
+[Crop] Returning result as nrrd...
+After respacing: -3024.0 3071.0
+After registration: -3024.0 3071.0
+1.2.840.113619.2.278.3.717616.166.1580339223.524.3
+old size:  (512, 512, 357)
+old spacing:  (0.78125, 0.78125, 1.25)
+new size:  [400, 400, 149]
+img_nrrd Image (0x1d9392e0)
+  RTTI typeinfo:   itk::Image<float, 3u>
+  Reference Count: 1
+  Modified Time: 159047338
+  Debug: Off
+  Object Name: 
+  Observers: 
+    none
+  Source: (none)
+  Source output name: (none)
+  Release Data: Off
+  Data Released: False
+  Global Release Data: Off
+  PipelineMTime: 159047323
+  UpdateMTime: 159047337
+  RealTimeStamp: 0 seconds 
+  LargestPossibleRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 149]
+  BufferedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 149]
+  RequestedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 149]
+  Spacing: [1, 1, 3]
+  Origin: [-205.5, 199.219, -442.25]
+  Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  IndexToPointMatrix: 
+1 0 0
+0 -1 0
+0 0 3
+
+  PointToIndexMatrix: 
+1 0 0
+0 -1 0
+0 0 0.333333
+
+  Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PixelContainer: 
+    ImportImageContainer (0x1d912ee0)
+      RTTI typeinfo:   itk::ImportImageContainer<unsigned long, float>
+      Reference Count: 1
+      Modified Time: 159047335
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Pointer: 0x7fdb2e2c6010
+      Container manages memory: true
+      Size: 23840000
+      Capacity: 23840000
+
+
+Starting registration for patient 1.2.840.113619.2.278.3.717616.166.1580339223.524.3...
+Reading fixed image...
+Setting up moving image...
+Executing registration (this may take a while)...
+Iteration: 0, Metric: -0.976090
+Iteration: 1, Metric: -0.912475
+Iteration: 2, Metric: -0.917092
+Iteration: 3, Metric: -0.881818
+Iteration: 0, Metric: -0.820388
+Iteration: 1, Metric: -0.788713
+Iteration: 2, Metric: -0.809778
+Iteration: 3, Metric: -0.799773
+Iteration: 0, Metric: -0.727494
+Iteration: 1, Metric: -0.736270
+Iteration: 2, Metric: -0.712662
+Iteration: 3, Metric: -0.741315
+Registration complete, resampling image...
+Saving registered image to ../../../ncct_cect/vindr_ds/original_volumes/Abdomen/pre_image/1.2.840.113619.2.278.3.717616.166.1580339223.524.3_reg.nrrd...
+Save complete.
+[Crop] Starting image cropping for patient 1.2.840.113619.2.278.3.717616.166.1580339223.524.3...
+[Crop] Loading image array...
+[Crop] Calculating center of mass...
+[Crop] Creating binary mask...
+[Crop] Mask created with range: 0.00 to 1.00
+[Crop] Computing center of mass...
+[Crop] Center of mass computed at: (248.3, 252.1)
+[Crop] Using slice 1114 of 1467 for centering (maximum tissue content)
+[Crop] Crop region - X: 152:344, Y: 156:348, Z: 1064:1164
+[Crop] Cropping image to shape [192, 192, 100] ...
+[Crop] Extracting region: z=1064:1164, y=156:348, x=152:344
+[Crop] Cropped shape: (100, 192, 192)
+[Crop] Value range: -990.5 to 1216.6 HU
+[Crop] Converting cropped array to NRRD format...
+[Crop] NRRD conversion complete
+[Crop] Saving cropped image for patient 1.2.840.113619.2.278.3.717616.166.1580339223.524.3...
+[Crop] Successfully saved cropped image for patient 1.2.840.113619.2.278.3.717616.166.1580339223.524.3
+[Crop] Returning result as nrrd...
+After respacing: -3024.0 3071.0
+After registration: -3024.0 3071.0
+1.2.840.113619.2.278.3.717616.166.1580339223.524.3a
+old size:  (512, 512, 357)
+old spacing:  (0.78125, 0.78125, 1.25)
+new size:  [400, 400, 149]
+img_nrrd Image (0x1d91fee0)
+  RTTI typeinfo:   itk::Image<float, 3u>
+  Reference Count: 1
+  Modified Time: 164530195
+  Debug: Off
+  Object Name: 
+  Observers: 
+    none
+  Source: (none)
+  Source output name: (none)
+  Release Data: Off
+  Data Released: False
+  Global Release Data: Off
+  PipelineMTime: 164530180
+  UpdateMTime: 164530194
+  RealTimeStamp: 0 seconds 
+  LargestPossibleRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 149]
+  BufferedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 149]
+  RequestedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 149]
+  Spacing: [1, 1, 3]
+  Origin: [-205.5, 199.219, -442.25]
+  Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  IndexToPointMatrix: 
+1 0 0
+0 -1 0
+0 0 3
+
+  PointToIndexMatrix: 
+1 0 0
+0 -1 0
+0 0 0.333333
+
+  Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PixelContainer: 
+    ImportImageContainer (0x1d92a750)
+      RTTI typeinfo:   itk::ImportImageContainer<unsigned long, float>
+      Reference Count: 1
+      Modified Time: 164530192
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Pointer: 0x7fdb287d4010
+      Container manages memory: true
+      Size: 23840000
+      Capacity: 23840000
+
+
+Starting registration for patient 1.2.840.113619.2.278.3.717616.166.1580339223.524.3a...
+Reading fixed image...
+Setting up moving image...
+Executing registration (this may take a while)...
+Iteration: 0, Metric: -0.989723
+Iteration: 1, Metric: -0.920344
+Iteration: 2, Metric: -0.908219
+Iteration: 3, Metric: -0.899768
+Iteration: 0, Metric: -0.793094
+Iteration: 1, Metric: -0.807781
+Iteration: 2, Metric: -0.800708
+Iteration: 3, Metric: -0.799065
+Iteration: 4, Metric: -0.810219
+Iteration: 0, Metric: -0.722504
+Iteration: 1, Metric: -0.736000
+Iteration: 2, Metric: -0.720924
+Iteration: 3, Metric: -0.732118
+Iteration: 4, Metric: -0.726374
+Registration complete, resampling image...
+Saving registered image to ../../../ncct_cect/vindr_ds/original_volumes/Abdomen/pre_image/1.2.840.113619.2.278.3.717616.166.1580339223.524.3a_reg.nrrd...
+Save complete.
+[Crop] Starting image cropping for patient 1.2.840.113619.2.278.3.717616.166.1580339223.524.3a...
+[Crop] Loading image array...
+[Crop] Calculating center of mass...
+[Crop] Creating binary mask...
+[Crop] Mask created with range: 0.00 to 1.00
+[Crop] Computing center of mass...
+[Crop] Center of mass computed at: (248.4, 252.0)
+[Crop] Using slice 1115 of 1467 for centering (maximum tissue content)
+[Crop] Crop region - X: 152:344, Y: 156:348, Z: 1065:1165
+[Crop] Cropping image to shape [192, 192, 100] ...
+[Crop] Extracting region: z=1065:1165, y=156:348, x=152:344
+[Crop] Cropped shape: (100, 192, 192)
+[Crop] Value range: -986.0 to 1171.9 HU
+[Crop] Converting cropped array to NRRD format...
+[Crop] NRRD conversion complete
+[Crop] Saving cropped image for patient 1.2.840.113619.2.278.3.717616.166.1580339223.524.3a...
+[Crop] Successfully saved cropped image for patient 1.2.840.113619.2.278.3.717616.166.1580339223.524.3a
+[Crop] Returning result as nrrd...
+After respacing: -3024.0 3071.0
+After registration: -3024.0 3071.0
+1.2.840.113619.2.278.3.717616.166.1580339223.616.4198401
+old size:  (512, 512, 357)
+old spacing:  (0.78125, 0.78125, 1.25)
+new size:  [400, 400, 149]
+img_nrrd Image (0x1d8e2b70)
+  RTTI typeinfo:   itk::Image<float, 3u>
+  Reference Count: 1
+  Modified Time: 170013320
+  Debug: Off
+  Object Name: 
+  Observers: 
+    none
+  Source: (none)
+  Source output name: (none)
+  Release Data: Off
+  Data Released: False
+  Global Release Data: Off
+  PipelineMTime: 170013305
+  UpdateMTime: 170013319
+  RealTimeStamp: 0 seconds 
+  LargestPossibleRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 149]
+  BufferedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 149]
+  RequestedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 149]
+  Spacing: [1, 1, 3]
+  Origin: [-205.5, 199.219, -442.25]
+  Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  IndexToPointMatrix: 
+1 0 0
+0 -1 0
+0 0 3
+
+  PointToIndexMatrix: 
+1 0 0
+0 -1 0
+0 0 0.333333
+
+  Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PixelContainer: 
+    ImportImageContainer (0x1d914130)
+      RTTI typeinfo:   itk::ImportImageContainer<unsigned long, float>
+      Reference Count: 1
+      Modified Time: 170013317
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Pointer: 0x7fdb2e2c6010
+      Container manages memory: true
+      Size: 23840000
+      Capacity: 23840000
+
+
+Starting registration for patient 1.2.840.113619.2.278.3.717616.166.1580339223.616.4198401...
+Reading fixed image...
+Setting up moving image...
+Executing registration (this may take a while)...
+Iteration: 0, Metric: -0.984911
+Iteration: 1, Metric: -0.923935
+Iteration: 2, Metric: -0.917871
+Iteration: 3, Metric: -0.897498
+Iteration: 0, Metric: -0.804432
+Iteration: 1, Metric: -0.795714
+Iteration: 2, Metric: -0.807314
+Iteration: 3, Metric: -0.793123
+Iteration: 4, Metric: -0.810125
+Iteration: 0, Metric: -0.722816
+Iteration: 1, Metric: -0.736454
+Iteration: 2, Metric: -0.728641
+Iteration: 3, Metric: -0.729859
+Iteration: 4, Metric: -0.733561
+Registration complete, resampling image...
+Saving registered image to ../../../ncct_cect/vindr_ds/original_volumes/Abdomen/pre_image/1.2.840.113619.2.278.3.717616.166.1580339223.616.4198401_reg.nrrd...
+Save complete.
+[Crop] Starting image cropping for patient 1.2.840.113619.2.278.3.717616.166.1580339223.616.4198401...
+[Crop] Loading image array...
+[Crop] Calculating center of mass...
+[Crop] Creating binary mask...
+[Crop] Mask created with range: 0.00 to 1.00
+[Crop] Computing center of mass...
+[Crop] Center of mass computed at: (248.7, 253.2)
+[Crop] Using slice 1134 of 1467 for centering (maximum tissue content)
+[Crop] Crop region - X: 152:344, Y: 157:349, Z: 1084:1184
+[Crop] Cropping image to shape [192, 192, 100] ...
+[Crop] Extracting region: z=1084:1184, y=157:349, x=152:344
+[Crop] Cropped shape: (100, 192, 192)
+[Crop] Value range: -976.6 to 1109.7 HU
+[Crop] Converting cropped array to NRRD format...
+[Crop] NRRD conversion complete
+[Crop] Saving cropped image for patient 1.2.840.113619.2.278.3.717616.166.1580339223.616.4198401...
+[Crop] Successfully saved cropped image for patient 1.2.840.113619.2.278.3.717616.166.1580339223.616.4198401
+[Crop] Returning result as nrrd...
+After respacing: -3024.0 3071.0
+After registration: -3024.0 3071.0
+1.2.840.113619.2.278.3.717616.166.1580339223.616.4198401a
+old size:  (512, 512, 357)
+old spacing:  (0.78125, 0.78125, 1.25)
+new size:  [400, 400, 149]
+img_nrrd Image (0x1d901a90)
+  RTTI typeinfo:   itk::Image<float, 3u>
+  Reference Count: 1
+  Modified Time: 175496445
+  Debug: Off
+  Object Name: 
+  Observers: 
+    none
+  Source: (none)
+  Source output name: (none)
+  Release Data: Off
+  Data Released: False
+  Global Release Data: Off
+  PipelineMTime: 175496430
+  UpdateMTime: 175496444
+  RealTimeStamp: 0 seconds 
+  LargestPossibleRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 149]
+  BufferedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 149]
+  RequestedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 149]
+  Spacing: [1, 1, 3]
+  Origin: [-205.5, 199.219, -442.25]
+  Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  IndexToPointMatrix: 
+1 0 0
+0 -1 0
+0 0 3
+
+  PointToIndexMatrix: 
+1 0 0
+0 -1 0
+0 0 0.333333
+
+  Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PixelContainer: 
+    ImportImageContainer (0x1db57a10)
+      RTTI typeinfo:   itk::ImportImageContainer<unsigned long, float>
+      Reference Count: 1
+      Modified Time: 175496442
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Pointer: 0x7fdb287d4010
+      Container manages memory: true
+      Size: 23840000
+      Capacity: 23840000
+
+
+Starting registration for patient 1.2.840.113619.2.278.3.717616.166.1580339223.616.4198401a...
+Reading fixed image...
+Setting up moving image...
+Executing registration (this may take a while)...
+Iteration: 0, Metric: -0.971985
+Iteration: 1, Metric: -0.908647
+Iteration: 2, Metric: -0.882220
+Iteration: 3, Metric: -0.897074
+Iteration: 0, Metric: -0.772129
+Iteration: 1, Metric: -0.835826
+Iteration: 2, Metric: -0.795487
+Iteration: 3, Metric: -0.804976
+Iteration: 4, Metric: -0.810894
+Iteration: 0, Metric: -0.720438
+Iteration: 1, Metric: -0.739492
+Iteration: 2, Metric: -0.713355
+Iteration: 3, Metric: -0.734386
+Registration complete, resampling image...
+Saving registered image to ../../../ncct_cect/vindr_ds/original_volumes/Abdomen/pre_image/1.2.840.113619.2.278.3.717616.166.1580339223.616.4198401a_reg.nrrd...
+Save complete.
+[Crop] Starting image cropping for patient 1.2.840.113619.2.278.3.717616.166.1580339223.616.4198401a...
+[Crop] Loading image array...
+[Crop] Calculating center of mass...
+[Crop] Creating binary mask...
+[Crop] Mask created with range: 0.00 to 1.00
+[Crop] Computing center of mass...
+[Crop] Center of mass computed at: (249.0, 256.3)
+[Crop] Using slice 1138 of 1467 for centering (maximum tissue content)
+[Crop] Crop region - X: 152:344, Y: 160:352, Z: 1088:1188
+[Crop] Cropping image to shape [192, 192, 100] ...
+[Crop] Extracting region: z=1088:1188, y=160:352, x=152:344
+[Crop] Cropped shape: (100, 192, 192)
+[Crop] Value range: -989.3 to 1141.6 HU
+[Crop] Converting cropped array to NRRD format...
+[Crop] NRRD conversion complete
+[Crop] Saving cropped image for patient 1.2.840.113619.2.278.3.717616.166.1580339223.616.4198401a...
+[Crop] Successfully saved cropped image for patient 1.2.840.113619.2.278.3.717616.166.1580339223.616.4198401a
+[Crop] Returning result as nrrd...
+After respacing: -3024.0 3071.0
+After registration: -3024.0 3071.0
+1.2.840.113619.2.278.3.717616.166.1580339223.616.4202498
+old size:  (512, 512, 357)
+old spacing:  (0.78125, 0.78125, 1.25)
+new size:  [400, 400, 149]
+img_nrrd Image (0x1da05de0)
+  RTTI typeinfo:   itk::Image<float, 3u>
+  Reference Count: 1
+  Modified Time: 180979436
+  Debug: Off
+  Object Name: 
+  Observers: 
+    none
+  Source: (none)
+  Source output name: (none)
+  Release Data: Off
+  Data Released: False
+  Global Release Data: Off
+  PipelineMTime: 180979421
+  UpdateMTime: 180979435
+  RealTimeStamp: 0 seconds 
+  LargestPossibleRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 149]
+  BufferedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 149]
+  RequestedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 149]
+  Spacing: [1, 1, 3]
+  Origin: [-205.5, 199.219, -442.25]
+  Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  IndexToPointMatrix: 
+1 0 0
+0 -1 0
+0 0 3
+
+  PointToIndexMatrix: 
+1 0 0
+0 -1 0
+0 0 0.333333
+
+  Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PixelContainer: 
+    ImportImageContainer (0x1d91c980)
+      RTTI typeinfo:   itk::ImportImageContainer<unsigned long, float>
+      Reference Count: 1
+      Modified Time: 180979433
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Pointer: 0x7fdb2e2c6010
+      Container manages memory: true
+      Size: 23840000
+      Capacity: 23840000
+
+
+Starting registration for patient 1.2.840.113619.2.278.3.717616.166.1580339223.616.4202498...
+Reading fixed image...
+Setting up moving image...
+Executing registration (this may take a while)...
+Iteration: 0, Metric: -0.977956
+Iteration: 1, Metric: -0.911855
+Iteration: 2, Metric: -0.893852
+Iteration: 3, Metric: -0.895748
+Iteration: 0, Metric: -0.788146
+Iteration: 1, Metric: -0.822253
+Iteration: 2, Metric: -0.799304
+Iteration: 3, Metric: -0.808741
+Iteration: 4, Metric: -0.812585
+Iteration: 0, Metric: -0.723037
+Iteration: 1, Metric: -0.734705
+Iteration: 2, Metric: -0.714301
+Iteration: 3, Metric: -0.734527
+Registration complete, resampling image...
+Saving registered image to ../../../ncct_cect/vindr_ds/original_volumes/Abdomen/pre_image/1.2.840.113619.2.278.3.717616.166.1580339223.616.4202498_reg.nrrd...
+Save complete.
+[Crop] Starting image cropping for patient 1.2.840.113619.2.278.3.717616.166.1580339223.616.4202498...
+[Crop] Loading image array...
+[Crop] Calculating center of mass...
+[Crop] Creating binary mask...
+[Crop] Mask created with range: 0.00 to 1.00
+[Crop] Computing center of mass...
+[Crop] Center of mass computed at: (248.2, 255.9)
+[Crop] Using slice 1127 of 1467 for centering (maximum tissue content)
+[Crop] Crop region - X: 152:344, Y: 159:351, Z: 1077:1177
+[Crop] Cropping image to shape [192, 192, 100] ...
+[Crop] Extracting region: z=1077:1177, y=159:351, x=152:344
+[Crop] Cropped shape: (100, 192, 192)
+[Crop] Value range: -955.8 to 1198.5 HU
+[Crop] Converting cropped array to NRRD format...
+[Crop] NRRD conversion complete
+[Crop] Saving cropped image for patient 1.2.840.113619.2.278.3.717616.166.1580339223.616.4202498...
+[Crop] Successfully saved cropped image for patient 1.2.840.113619.2.278.3.717616.166.1580339223.616.4202498
+[Crop] Returning result as nrrd...
+After respacing: -3024.0 3071.0
+After registration: -3024.0 3071.0
+1.2.840.113619.2.278.3.717616.166.1580339223.616.4202498a
+old size:  (512, 512, 357)
+old spacing:  (0.78125, 0.78125, 1.25)
+new size:  [400, 400, 149]
+img_nrrd Image (0x1db57710)
+  RTTI typeinfo:   itk::Image<float, 3u>
+  Reference Count: 1
+  Modified Time: 186462427
+  Debug: Off
+  Object Name: 
+  Observers: 
+    none
+  Source: (none)
+  Source output name: (none)
+  Release Data: Off
+  Data Released: False
+  Global Release Data: Off
+  PipelineMTime: 186462412
+  UpdateMTime: 186462426
+  RealTimeStamp: 0 seconds 
+  LargestPossibleRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 149]
+  BufferedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 149]
+  RequestedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 149]
+  Spacing: [1, 1, 3]
+  Origin: [-205.5, 199.219, -442.25]
+  Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  IndexToPointMatrix: 
+1 0 0
+0 -1 0
+0 0 3
+
+  PointToIndexMatrix: 
+1 0 0
+0 -1 0
+0 0 0.333333
+
+  Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PixelContainer: 
+    ImportImageContainer (0x1d91c9e0)
+      RTTI typeinfo:   itk::ImportImageContainer<unsigned long, float>
+      Reference Count: 1
+      Modified Time: 186462424
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Pointer: 0x7fdb287d4010
+      Container manages memory: true
+      Size: 23840000
+      Capacity: 23840000
+
+
+Starting registration for patient 1.2.840.113619.2.278.3.717616.166.1580339223.616.4202498a...
+Reading fixed image...
+Setting up moving image...
+Executing registration (this may take a while)...
+Iteration: 0, Metric: -0.979722
+Iteration: 1, Metric: -0.914956
+Iteration: 2, Metric: -0.893505
+Iteration: 3, Metric: -0.898334
+Iteration: 0, Metric: -0.782582
+Iteration: 1, Metric: -0.819928
+Iteration: 2, Metric: -0.796773
+Iteration: 3, Metric: -0.802693
+Iteration: 4, Metric: -0.814830
+Iteration: 0, Metric: -0.718839
+Iteration: 1, Metric: -0.737412
+Iteration: 2, Metric: -0.714301
+Iteration: 3, Metric: -0.730655
+Iteration: 4, Metric: -0.723751
+Registration complete, resampling image...
+Saving registered image to ../../../ncct_cect/vindr_ds/original_volumes/Abdomen/pre_image/1.2.840.113619.2.278.3.717616.166.1580339223.616.4202498a_reg.nrrd...
+Save complete.
+[Crop] Starting image cropping for patient 1.2.840.113619.2.278.3.717616.166.1580339223.616.4202498a...
+[Crop] Loading image array...
+[Crop] Calculating center of mass...
+[Crop] Creating binary mask...
+[Crop] Mask created with range: 0.00 to 1.00
+[Crop] Computing center of mass...
+[Crop] Center of mass computed at: (247.8, 253.2)
+[Crop] Using slice 1127 of 1467 for centering (maximum tissue content)
+[Crop] Crop region - X: 151:343, Y: 157:349, Z: 1077:1177
+[Crop] Cropping image to shape [192, 192, 100] ...
+[Crop] Extracting region: z=1077:1177, y=157:349, x=151:343
+[Crop] Cropped shape: (100, 192, 192)
+[Crop] Value range: -957.0 to 1251.3 HU
+[Crop] Converting cropped array to NRRD format...
+[Crop] NRRD conversion complete
+[Crop] Saving cropped image for patient 1.2.840.113619.2.278.3.717616.166.1580339223.616.4202498a...
+[Crop] Successfully saved cropped image for patient 1.2.840.113619.2.278.3.717616.166.1580339223.616.4202498a
+[Crop] Returning result as nrrd...
+After respacing: -3024.0 3071.0
+After registration: -3024.0 3071.0
+1.2.840.113619.2.278.3.717616.166.1580339223.961.3
+old size:  (512, 512, 357)
+old spacing:  (0.78125, 0.78125, 1.25)
+new size:  [400, 400, 149]
+img_nrrd Image (0x1d9181f0)
+  RTTI typeinfo:   itk::Image<float, 3u>
+  Reference Count: 1
+  Modified Time: 191945552
+  Debug: Off
+  Object Name: 
+  Observers: 
+    none
+  Source: (none)
+  Source output name: (none)
+  Release Data: Off
+  Data Released: False
+  Global Release Data: Off
+  PipelineMTime: 191945537
+  UpdateMTime: 191945551
+  RealTimeStamp: 0 seconds 
+  LargestPossibleRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 149]
+  BufferedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 149]
+  RequestedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [400, 400, 149]
+  Spacing: [1, 1, 3]
+  Origin: [-220, 199.219, -402]
+  Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  IndexToPointMatrix: 
+1 0 0
+0 -1 0
+0 0 3
+
+  PointToIndexMatrix: 
+1 0 0
+0 -1 0
+0 0 0.333333
+
+  Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PixelContainer: 
+    ImportImageContainer (0x1d908090)
+      RTTI typeinfo:   itk::ImportImageContainer<unsigned long, float>
+      Reference Count: 1
+      Modified Time: 191945549
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Pointer: 0x7fdb2e2c6010
+      Container manages memory: true
+      Size: 23840000
+      Capacity: 23840000
+
+
+Starting registration for patient 1.2.840.113619.2.278.3.717616.166.1580339223.961.3...
+Reading fixed image...
+Setting up moving image...
+Executing registration (this may take a while)...
+Iteration: 0, Metric: -1.016980
+Iteration: 1, Metric: -0.952304
+Iteration: 2, Metric: -0.960192
+Iteration: 3, Metric: -0.927708
+Iteration: 0, Metric: -0.830572
+Iteration: 1, Metric: -0.818707
+Iteration: 2, Metric: -0.824118
+Iteration: 3, Metric: -0.826155
+Iteration: 0, Metric: -0.737898
+Iteration: 1, Metric: -0.746539
+Iteration: 2, Metric: -0.737685
+Iteration: 3, Metric: -0.746069
+Iteration: 4, Metric: -0.738259
+Registration complete, resampling image...
+Saving registered image to ../../../ncct_cect/vindr_ds/original_volumes/Abdomen/pre_image/1.2.840.113619.2.278.3.717616.166.1580339223.961.3_reg.nrrd...
+Save complete.
+[Crop] Starting image cropping for patient 1.2.840.113619.2.278.3.717616.166.1580339223.961.3...
+[Crop] Loading image array...
+[Crop] Calculating center of mass...
+[Crop] Creating binary mask...
+[Crop] Mask created with range: 0.00 to 1.00
+[Crop] Computing center of mass...
+[Crop] Center of mass computed at: (261.2, 249.3)
+[Crop] Using slice 1103 of 1467 for centering (maximum tissue content)
+[Crop] Crop region - X: 165:357, Y: 153:345, Z: 1053:1153
+[Crop] Cropping image to shape [192, 192, 100] ...
+[Crop] Extracting region: z=1053:1153, y=153:345, x=165:357
+[Crop] Cropped shape: (100, 192, 192)
+[Crop] Value range: -896.3 to 1261.0 HU
+[Crop] Converting cropped array to NRRD format...
+[Crop] NRRD conversion complete
+[Crop] Saving cropped image for patient 1.2.840.113619.2.278.3.717616.166.1580339223.961.3...
+[Crop] Successfully saved cropped image for patient 1.2.840.113619.2.278.3.717616.166.1580339223.961.3
+[Crop] Returning result as nrrd...
+After respacing: -3024.0 2258.93603515625
+After registration: -3024.0 1826.244140625
+1.2.840.113619.2.278.3.717616.166.1580339223.961.3a
+old size:  (512, 512, 357)
+old spacing:  (0.78125, 0.78125, 1.25)
+new size:  [400, 400, 149]
+img_nrrd 

@@ -67,22 +67,23 @@ if __name__ == '__main__':
                 os.makedirs(d)
 
     print('\n--- STEP 1 - GET DATA ---\n')
-
     if opt.preprocess_data:
+        print('\nPreprocessing data...')
         preprocess_data(
             data_dir=data_dir,
             pre_data_dir=pre_data_dir,
             new_spacing=opt.new_spacing,
             data_exclude=opt.data_exclude,
             crop_shape=crop_shape)
-
+        print('\nPreprocessing completed.')
+    print("get pat dataset")
     data_tot, label_tot, ID_tot = get_pat_dataset(
         data_dir=data_dir,
         pre_data_dir=pre_data_dir,
         label_dir=label_dir,
         label_file=label_file,
         pro_data_dir=pro_data_dir)
-
+    print("get img dataset")
     get_img_dataset(
         pro_data_dir=pro_data_dir,
         run_type=None,
